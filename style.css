@@ -458,7 +458,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   overflow: hidden;
-  padding-top: 10px;
+  padding: 10px 0px 40px;
+
 }
 .product-card {
   /* width: 300px; */
