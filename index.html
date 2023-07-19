@@ -21,11 +21,10 @@
       </p>
     </div>
 
-    <!-- Header -->
-    <!-- <header class="Header__Wrapper">
-      <div class="Header__FlexItem .Header__FlexItem--navbar">
-        <button class="navbar_Icon">
-          <span class="bars"><i class="fas fa-bars"></i></span>
+    <header class="Header__Wrapper">
+      <div class="Header__FlexItem Header__FlexItem--navbar">
+        <button class="navbar_Icon bars" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
         </button>
         <nav class="Header__MainNav" aria-label="Main navigation">
           <ul class="HorizontalList">
@@ -61,57 +60,12 @@
         <a href="/account" class="navbar-icon">
           <i class="fas fa-user"></i>
         </a>
-        <a href="/search" class="navbar-icon" data-action="toggle-search" aria-label="Search">
-          <span class="hidden-phone">
-            <i class="fas fa-search"></i>
-          </span>
-        </a>
-        <a href="/cart" class="navbar-icon">
-          <i class="fas fa-shopping-bag"></i>
-        </a>
-      </div>
-    </header> -->
-
-    <header class="Header__Wrapper">
-      <div class="Header__FlexItem Header__FlexItem--navbar">
-        <button class="navbar_Icon bars" aria-label="Toggle Menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <nav class="Header__MainNav" aria-label="Main navigation">
-          <ul class="HorizontalList">
-            <li class="HorizontalList__Item is-active">
-              <a href="/" class="Heading u-h6 Link">Home</a>
-            </li>
-            <li class="HorizontalList__Item">
-              <a href="/collections/all" class="Heading Link">Shop</a>
-            </li>
-            <li class="HorizontalList__Item">
-              <a href="/pages/about-us" class="Heading u-h6 Link">About Us</a>
-            </li>
-            <li class="HorizontalList__Item">
-              <a href="/pages/contact" class="Heading u-h6 Link">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    
-      <div class="Header__FlexItem Header__FlexItem--logo">
-        <h1 class="Header__Logo">
-          <a href="/" class="Header__LogoLink">
-            <img
-              class="Header__LogoImage"
-              src="/assets/logo-rectangle-2023_Color_Tag_1_350x@2x.webp"
-              alt="HillCo, LLC"
-            />
-          </a>
-        </h1>
-      </div>
-    
-      <div class="navbar-icons">
-        <a href="/account" class="navbar-icon">
-          <i class="fas fa-user"></i>
-        </a>
-        <a href="/search" class="navbar-icon" data-action="toggle-search" aria-label="Search">
+        <a
+          href="/search"
+          class="navbar-icon"
+          data-action="toggle-search"
+          aria-label="Search"
+        >
           <span class="hidden-phone">
             <i class="fas fa-search"></i>
           </span>
@@ -121,22 +75,21 @@
         </a>
       </div>
     </header>
-    
 
     <!-- Extraction Section -->
     <div class="container">
       <div class="text-section">
-        <div class="text">
-          <h2 class="custom-heading">
-            The Finest Honey Extractors In America.....
-          </h2>
-          <div class="custom-description">
-            <p>
-              HillCo honey extractors are famous for quality, affordability, and
-              the best warranty in the industry. We strive for innovative
-              features to make extracting easy and enjoyable!
-            </p>
-          </div>
+        <h2 class="custom-heading">
+          The Finest Honey Extractors In America.....
+        </h2>
+        <div class="custom-description">
+          <p>
+            HillCo honey extractors are famous for quality, affordability, and
+            the best warranty in the industry. We strive for innovative features
+            to make extracting easy and enjoyable!
+          </p>
+        </div>
+        <div class="honey-extractor-link">
           <a
             href="https://hillcobees.com/collections/honey-extracting-extractors"
             class="custom-link-transiton"
@@ -144,11 +97,13 @@
           >
         </div>
       </div>
+
       <div class="image-section">
         <img
+          class="honey_extractor"
           src="/assests/ExtractorsGrouping_1200x.webp"
           alt="Image"
-          width="720px"
+          width="720vw"
         />
       </div>
     </div>
@@ -174,6 +129,40 @@
 
     <!-- Category Section -->
     <section class="Category__Section">
+      <div class="product-card">
+        <div class="product-image">
+          <img
+            src="/assests/1st_20201214_171537-1-scaled_400x.webp"
+            alt="Product Image"
+          />
+        </div>
+        <div class="product-details">
+          <h2 class="product-title">10 Frame Hives &amp; Components</h2>
+          <a
+            href="/collections/10-frame-hives-amp-components"
+            class="view-product-button"
+            >View Product</a
+          >
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img
+            src="/assests/1st_20201214_171537-1-scaled_400x.webp"
+            alt="Product Image"
+          />
+        </div>
+        <div class="product-details">
+          <h2 class="product-title">10 Frame Hives &amp; Components</h2>
+          <a
+            href="/collections/10-frame-hives-amp-components"
+            class="view-product-button"
+            >View Product</a
+          >
+        </div>
+      </div>
+
       <div class="product-card">
         <div class="product-image">
           <img
@@ -416,22 +405,20 @@
           </div>
 
           <div class="custom-block">
-            <div style="padding-left: 150px;">
-
-            <h2 class="custom-links-title">Quick Links</h2>
-            <ul class="custom-links">
-              <li class="custom-links-item">
-                <a href="/collections/all" class="custom-link">Shop</a>
-              </li>
-              <li class="custom-links-item">
-                <a href="/pages/about-us" class="custom-link">About Us</a>
-              </li>
-              <li class="custom-links-item">
-                <a href="/pages/contact" class="custom-link">Contact</a>
-              </li>
-            </ul>
-          </div>
-
+            <div style="padding-left: 150px">
+              <h2 class="custom-links-title">Quick Links</h2>
+              <ul class="custom-links">
+                <li class="custom-links-item">
+                  <a href="/collections/all" class="custom-link">Shop</a>
+                </li>
+                <li class="custom-links-item">
+                  <a href="/pages/about-us" class="custom-link">About Us</a>
+                </li>
+                <li class="custom-links-item">
+                  <a href="/pages/contact" class="custom-link">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="custom-block">
@@ -465,7 +452,6 @@
               accept-charset="UTF-8"
               class="custom-newsletter-form"
             >
-
               <input
                 type="email"
                 name="contact[email]"
