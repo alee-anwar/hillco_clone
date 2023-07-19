@@ -3,7 +3,6 @@
 }
 body {
   font-family: Chivo, sans-serif;
-  font-size: 15px;
   line-height: 1.65;
   background: #f2b737;
   padding: 0;
@@ -19,6 +18,7 @@ body {
 .AnnouncementBar__Content {
   color: #000 !important;
   font-weight: bold;
+  font-size: 16px!important;
 }
 
 .Heading {
@@ -126,7 +126,6 @@ body {
 .Header__LogoImage {
   max-width: 350px;
   height: auto;
-  display: block;
 }
 
 .container {
@@ -164,7 +163,7 @@ body {
   color: black;
 }
 .image-section {
-  flex: 1;
+  /* flex: 1; */
   width: 50%;
 }
 .honey_extractor {
@@ -270,6 +269,11 @@ body {
 .do__text {
   font-size: 15px;
   max-width: 430px;
+}
+
+.bee-img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Footer */
@@ -418,6 +422,41 @@ body {
   color: #fff;
 }
 
+/* -------------------1140px----------------- */
+@media screen and (max-width: 1140px) {
+  .bars {
+    display: block;
+  }
+  .Header__MainNav{
+    display: none;
+  }
+  .Header__FlexItem--logo {
+    margin-left: auto;
+  }
+}
+
+
+/* -------------------640px----------------- */
+@media screen and (max-width: 640px) {
+  .Header__Wrapper {
+    padding: 15px 18px;
+  }
+  .Header__LogoImage {
+    max-width: 185px;
+    height: auto;
+  }
+  .navbar-icon {
+    font-size: 18px;
+  }
+  .navbar-icon.fa-user {
+    display: none!important;
+  }
+}
+
+
+
+/* -------------------600px----------------- */
+
 @media screen and (max-width: 600px) {
   .AnnouncementBar__Wrapper {
     flex-direction: column;
@@ -430,9 +469,7 @@ body {
     flex-basis: 100%;
     margin-bottom: 10px;
   }
-  .Header__FlexItem--logo {
-    flex-basis: 100%;
-  }
+
   .colo {
     width: 100%;
   }
