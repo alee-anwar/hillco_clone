@@ -199,8 +199,9 @@ body {
   bottom: 0;
 }
 
-.HorizontalList__Item.is-active:after,
-.HorizontalList__Item:hover:after {
+.HorizontalList__Item.is-active:first-child,
+.HorizontalList__Item.is-active:hover:after {
+  position:absolute;
   width: 40px;
 }
 
