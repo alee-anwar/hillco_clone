@@ -122,7 +122,10 @@
           <!-- Drawer content goes here -->
           <header class="drawer-header">
             <button id="close-button" aria-label="Close">
-              <i class="fa-solid fa-xmark"></i>
+              <!-- <i class="fa-solid fa-xmark"></i> -->
+              <svg class="Icon Icon--close " role="presentation" viewBox="0 0 16 14" style="width: 16px">
+                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              </svg>
             </button>
           </header>
 
@@ -945,7 +948,7 @@
     </footer>
 
     <script>
-      // document;
+      // drawer
       document
         .getElementById("menu-button")
         .addEventListener("click", function () {
@@ -960,16 +963,14 @@
           document.querySelector(".menu-icon").classList.remove("open");
         });
 
-      // Get the plus icon and dropdown menu
+      //plus minu
       const dropdownIcon = document.querySelector(".dropdown-icon");
+      // const dropdownIcon = document.querySelector(".shop-header");
       const dropdownMenu = document.querySelector(".drawer-dropdown");
 
-      // Add click event listener to the plus icon
       dropdownIcon.addEventListener("click", function () {
-        // Toggle the visibility of the dropdown menu
         dropdownMenu.classList.toggle("show-dropdown");
 
-        // Change the plus/minus icon
         if (dropdownMenu.classList.contains("show-dropdown")) {
           dropdownIcon.classList.remove("fa-plus");
           dropdownIcon.classList.add("fa-minus");
@@ -979,6 +980,7 @@
         }
       });
 
+      // search
       document.addEventListener("click", function () {
         const searchIcon = document.getElementById(
           "search-click"
@@ -1009,7 +1011,6 @@
         searchIconPhone.addEventListener("click", function (event) {
           event.preventDefault();
 
-          // Toggle visibility of the search dropdown
           searchDropdown.style.visibility = "visible";
           pageOverlay.style.display = "block";
 
@@ -1018,9 +1019,8 @@
         });
 
         closeSearchButton.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default link behavior
+          event.preventDefault();
 
-          // Close the search dropdown
           searchDropdown.style.visibility = "hidden";
           pageOverlay.style.display = "none";
 
