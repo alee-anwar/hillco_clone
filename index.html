@@ -11,6 +11,7 @@
     ></script>
   </head>
   <body>
+    <div class="PageOverlay is-visible"></div>
     <!-- AnnouncementBar -->
     <div class="AnnouncementBar__Wrapper">
       <p class="AnnouncementBar__Content Heading right">
@@ -22,13 +23,99 @@
     </div>
 
     <header class="Header__Wrapper">
+      <!-- Search Section -->
+      <div class="SearchDropdown">
+        <div class="Search__Inner">
+          <form action="/search" role="search" class="Search__Form">
+            <div class="Search__InputIconWrapper">
+              <span class="hidden-tablet-and-up">
+                <svg
+                  class="Icon Icon--search"
+                  role="presentation"
+                  viewBox="0 0 18 17"
+                >
+                  <g
+                    transform="translate(1 1)"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="square"
+                  >
+                    <path d="M16 16l-5.0752-5.0752"></path>
+                    <circle cx="6.4" cy="6.4" r="6.4"></circle>
+                  </g>
+                </svg>
+              </span>
+              <span class="hidden-phone">
+                <svg
+                  class="Icon Icon--search-desktop"
+                  role="presentation"
+                  viewBox="0 0 21 21"
+                >
+                  <g
+                    transform="translate(1 1)"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="square"
+                  >
+                    <path d="M18 18l-5.7096-5.7096"></path>
+                    <circle cx="7.2" cy="7.2" r="7.2"></circle>
+                  </g>
+                </svg>
+              </span>
+            </div>
+
+            <input
+              type="search"
+              class="Search__Input"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              aria-label="Search..."
+              placeholder="Search..."
+              autofocus=""
+            />
+            <input type="hidden" name="type" value="product" />
+          </form>
+
+          <button id="Search__Close" aria-label="Close search">
+            <svg
+              class="Icon Icon--close"
+              role="presentation"
+              viewBox="0 0 16 14"
+              style="width: 16px"
+            >
+              <path
+                d="M15 0L1 14m14 0L1 0"
+                stroke="currentColor"
+                fill="none"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
       <div class="Header__FlexItem Header__FlexItem--navbar">
         <button
           id="menu-button"
           class="navbar_Icon bars"
           aria-label="Toggle Menu"
         >
-          <i class="fas fa-bars"></i>
+          <!-- <i class="fas fa-bars"></i> -->
+          <svg
+            class="Icon Icon--nav"
+            role="presentation"
+            viewBox="0 0 20 14"
+            style="width: 20px"
+          >
+            <path
+              d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
+              fill="currentColor"
+            ></path>
+          </svg>
         </button>
 
         <div id="drawer">
@@ -42,7 +129,6 @@
           <div class="drawer-content">
             <div class="drawer-main">
               <div class="drawer-container">
-
                 <nav
                   class="sidebar-nav primary-nav"
                   aria-label="Sidebar navigation"
@@ -53,9 +139,9 @@
 
                   <div class="shop-menu">
                     <div class="shop-header">
-                    <a href="/shop" class="primary-link">Shop</a>
-                    <i class="fa-solid fa-plus dropdown-icon"></i>
-                  </div>
+                      <a href="/shop" class="primary-link">Shop</a>
+                      <i class="fa-solid fa-plus dropdown-icon"></i>
+                    </div>
 
                     <div class="drawer-dropdown" aria-hidden="true">
                       <ul class="drawer-linklist">
@@ -67,52 +153,117 @@
                           >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/8-frame-hives-amp-components" class="drawer-link drawer-link--secondary">8 Frame Hives &amp; Components</a>
+                          <a
+                            href="/collections/8-frame-hives-amp-components"
+                            class="drawer-link drawer-link--secondary"
+                            >8 Frame Hives &amp; Components</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/5-frame-hives-amp-components" class="drawer-link drawer-link--secondary">5 Frame Hives &amp; Components</a>
+                          <a
+                            href="/collections/5-frame-hives-amp-components"
+                            class="drawer-link drawer-link--secondary"
+                            >5 Frame Hives &amp; Components</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/bee-suits-amp-gloves" class="drawer-link drawer-link--secondary">Bee Suits &amp; Gloves</a>
+                          <a
+                            href="/collections/bee-suits-amp-gloves"
+                            class="drawer-link drawer-link--secondary"
+                            >Bee Suits &amp; Gloves</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/bees-queens" class="drawer-link drawer-link--secondary">Bees &amp; Queens</a>
+                          <a
+                            href="/collections/bees-queens"
+                            class="drawer-link drawer-link--secondary"
+                            >Bees &amp; Queens</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/beginner-kits" class="drawer-link drawer-link--secondary">Beginner Kits</a>
+                          <a
+                            href="/collections/beginner-kits"
+                            class="drawer-link drawer-link--secondary"
+                            >Beginner Kits</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/feed-amp-supplements" class="drawer-link drawer-link--secondary">Feed &amp; Supplements</a>
+                          <a
+                            href="/collections/feed-amp-supplements"
+                            class="drawer-link drawer-link--secondary"
+                            >Feed &amp; Supplements</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/feeders" class="drawer-link drawer-link--secondary">Feeders</a>
+                          <a
+                            href="/collections/feeders"
+                            class="drawer-link drawer-link--secondary"
+                            >Feeders</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/frames-amp-foundation" class="drawer-link drawer-link--secondary">Frames &amp; Foundation</a>
+                          <a
+                            href="/collections/frames-amp-foundation"
+                            class="drawer-link drawer-link--secondary"
+                            >Frames &amp; Foundation</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/health-amp-pest-control" class="drawer-link drawer-link--secondary">Health &amp; Pest Control</a>
+                          <a
+                            href="/collections/health-amp-pest-control"
+                            class="drawer-link drawer-link--secondary"
+                            >Health &amp; Pest Control</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/hive-accessories" class="drawer-link drawer-link--secondary">Hive Accessories</a>
+                          <a
+                            href="/collections/hive-accessories"
+                            class="drawer-link drawer-link--secondary"
+                            >Hive Accessories</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/honey-extracting-extractors" class="drawer-link drawer-link--secondary">Honey Extracting - Extractors</a>
+                          <a
+                            href="/collections/honey-extracting-extractors"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Extractors</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/honey-extracting-honey-removal-processing-and-extracting-accessories" class="drawer-link drawer-link--secondary">Honey Extracting - Honey Removal, Processing, and Extracting Accessories</a>
+                          <a
+                            href="/collections/honey-extracting-honey-removal-processing-and-extracting-accessories"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Honey Removal, Processing, and
+                            Extracting Accessories</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/honey-extracting-uncapping-tanks-amp-tools" class="drawer-link drawer-link--secondary">Honey Extracting - Uncapping Tanks &amp; Tools</a>
+                          <a
+                            href="/collections/honey-extracting-uncapping-tanks-amp-tools"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Uncapping Tanks &amp; Tools</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/honey-storage-and-containers" class="drawer-link drawer-link--secondary">Honey Storage and Containers</a>
+                          <a
+                            href="/collections/honey-storage-and-containers"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Storage and Containers</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/queen-rearing-supplies" class="drawer-link drawer-link--secondary">Queen Rearing Supplies</a>
+                          <a
+                            href="/collections/queen-rearing-supplies"
+                            class="drawer-link drawer-link--secondary"
+                            >Queen Rearing Supplies</a
+                          >
                         </li>
                         <li class="drawer-linklist__item">
-                          <a href="/collections/smokers-amp-tools" class="drawer-link drawer-link--secondary">Smokers &amp; Tools</a>
+                          <a
+                            href="/collections/smokers-amp-tools"
+                            class="drawer-link drawer-link--secondary"
+                            >Smokers &amp; Tools</a
+                          >
                         </li>
                         <!-- Add more list items here -->
                       </ul>
@@ -295,22 +446,90 @@
       </div>
 
       <div class="navbar-icons">
-        <a href="/account" class="navbar-icon">
-          <i class="fas fa-user account-icon"></i>
-        </a>
-        <a
-          href="/search"
+        <button class="navbar-icon">
+          <!-- <i class="fas fa-user "></i> -->
+          <svg
+            class="Icon Icon--account account-icon"
+            role="presentation"
+            viewBox="0 0 20 20"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path
+                d="M0 18c0-4.5188182 3.663-8.18181818 8.18181818-8.18181818h1.63636364C14.337 9.81818182 18 13.4811818 18 18"
+              ></path>
+              <circle cx="9" cy="4.90909091" r="4.90909091"></circle>
+            </g>
+          </svg>
+        </button>
+
+        <button
           class="navbar-icon"
           data-action="toggle-search"
           aria-label="Search"
         >
-          <span class="hidden-phone">
-            <i class="fas fa-search"></i>
-          </span>
-        </a>
-        <a href="/cart" class="navbar-icon">
-          <i class="fas fa-shopping-bag"></i>
-        </a>
+          <svg
+            id="search-click"
+            class="Icon--search-desktop Icon"
+            role="presentation"
+            viewBox="0 0 21 21"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path d="M18 18l-5.7096-5.7096"></path>
+              <circle cx="7.2" cy="7.2" r="7.2"></circle>
+            </g>
+          </svg>
+          <svg
+            id="phone-search-click"
+            class=" Icon--search Icon"
+            role="presentation"
+            viewBox="0 0 18 17"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path d="M16 16l-5.0752-5.0752"></path>
+              <circle cx="6.4" cy="6.4" r="6.4"></circle>
+            </g>
+          </svg>
+        </button>
+
+        <button class="navbar-icon">
+          <!-- <i class="fas fa-shopping-bag"></i> -->
+          <svg
+            class="Icon Icon--cart-desktop"
+            role="presentation"
+            viewBox="0 0 19 23"
+          >
+            <path
+              d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg class="Icon Icon--cart" role="presentation" viewBox="0 0 17 20">
+            <path
+              d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -425,7 +644,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Frames &amp; Foundation</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Frames &amp; Foundation
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -442,7 +663,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Hive Accessories</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Hive Accessories
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -459,7 +682,7 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Feeders</h2>
+          <h2 class="product-title" style="padding-top: 19px">Feeders</h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -476,7 +699,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Bee Suits &amp; Gloves</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Bee Suits &amp; Gloves
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -493,7 +718,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Smokers &amp; Tools</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Smokers &amp; Tools
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -510,7 +737,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Health &amp; Pest Control</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Health &amp; Pest Control
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -527,7 +756,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Feed &amp; Supplements</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Feed &amp; Supplements
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -544,7 +775,9 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Bees &amp; Queens</h2>
+          <h2 class="product-title" style="padding-top: 19px">
+            Bees &amp; Queens
+          </h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -561,7 +794,7 @@
           />
         </div>
         <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px;">Beginner Kits</h2>
+          <h2 class="product-title" style="padding-top: 19px">Beginner Kits</h2>
           <a
             href="/collections/10-frame-hives-amp-components"
             class="view-product-button"
@@ -589,7 +822,7 @@
           bee equipment supplier.
         </p>
       </div>
-      <div class="image-section">
+      <div class="bee-image-section">
         <img
           class="bee-img"
           src="/assests/honey-bee-close-up_1200x.webp"
@@ -712,7 +945,7 @@
     </footer>
 
     <script>
-      document;
+      // document;
       document
         .getElementById("menu-button")
         .addEventListener("click", function () {
@@ -745,6 +978,56 @@
           dropdownIcon.classList.add("fa-plus");
         }
       });
+
+      document.addEventListener("click", function () {
+        const searchIcon = document.getElementById(
+          "search-click"
+        );
+
+        const searchIconPhone = document.getElementById(
+          "phone-search-click"
+        );
+
+        const searchDropdown = document.querySelector(".SearchDropdown");
+        const pageOverlay = document.querySelector(".PageOverlay");
+
+        const closeSearchButton = document.getElementById(
+          "Search__Close"
+        );
+
+        searchIcon.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          searchDropdown.style.visibility = "visible";
+          pageOverlay.style.display = "block";
+
+          console.log(searchDropdown.style.visibility);
+
+        });
+
+
+        searchIconPhone.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          // Toggle visibility of the search dropdown
+          searchDropdown.style.visibility = "visible";
+          pageOverlay.style.display = "block";
+
+          console.log(pageOverlay.style.display);
+
+        });
+
+        closeSearchButton.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+
+          // Close the search dropdown
+          searchDropdown.style.visibility = "hidden";
+          pageOverlay.style.display = "none";
+
+          console.log(pageOverlay.style.display);
+        });
+      });
+
     </script>
   </body>
 </html>
