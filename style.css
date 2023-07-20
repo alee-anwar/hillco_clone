@@ -10,6 +10,20 @@ body {
   
 }
 
+.PageOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  /* visibility: visible; */
+  display: none;
+  /* opacity: 0.1; */
+  background: #36363680;
+  /* transition: opacity .3s ease-in-out,visibility .3s ease-in-out; */
+}
+
 /* drawer */
 
 
@@ -209,6 +223,8 @@ body {
   justify-content: flex-start;
 }
 
+/* icons */
+
 .navbar_Icon {
   background: none;
   border: none;
@@ -216,6 +232,28 @@ body {
   color: white;
   font-size: 20px;
 }
+
+.Icon--account {
+  width: 20px;
+}
+
+.Icon--search-desktop {
+  width: 21px;
+}
+.Icon--search {
+  width: 18px;
+  display: none;
+}
+
+.Icon--cart-desktop {
+  width: 19px;
+}
+
+.Icon--cart {
+  width: 17px;
+  display: none;
+}
+
 
 .HorizontalList__Item {
   text-align: left !important;
@@ -358,6 +396,97 @@ body {
   height: auto;
 }
 
+/* Search Section */
+
+.SearchDropdown {
+
+  /* display: block; */
+  position: absolute;
+  top: 120%;
+  width: 100%;
+  left: 0;
+  /* border: 2px solid black; */
+  /* border-top: none; */
+  padding: 28px 50px;
+  background: #f2b737;
+  visibility: hidden;
+  /* opacity: 0; */
+  transform: translateY(-25px);
+  transition: transform .15s ease-in-out,opacity .15s ease-in-out,visibility .15s ease-in-out;
+  /* z-index: -1; */
+}
+
+.Search__Inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Search__InputIconWrapper{
+  padding-right: 20px;
+}
+
+.Search__Form {
+  display: flex;
+  align-items: center;
+}
+
+/* .Search__Input {
+  background: none;
+  width: 100%;
+  height: 25px;
+  border: none;
+  font-size: 14px;
+  vertical-align: middle;
+  padding: 0px;
+} */
+
+.Search__Input {
+  background: none;
+  width: 100%;
+  height: 25px;
+  border: none;
+  outline: none; /* Remove the default focus outline */
+  font-size: 14px;
+  vertical-align: middle;
+  padding: 0px;
+  box-sizing: border-box; /* Ensure the padding is included in the width */
+}
+
+.Search__Input::placeholder {
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+#Search__Close {
+  /* /* position: absolute; */
+  /* top: 50%;
+  right: 10px; */
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none; 
+  color: black;
+  font-size: 14;
+  line-height: 1;
+}
+
+.hidden-tablet-and-up{
+  width: 18px;
+  display: none;
+}
+
+.hidden-phone {
+  width: 21px;
+  display: block;
+}
+
+
+
+
+/* Extraction Section */
+
 .container {
   display: flex;
 }
@@ -404,6 +533,16 @@ body {
   color: black;
 }
 .image-section {
+  flex: 1;
+  /* width: 50%; */
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  /* overflow: hidden; */
+
+}
+
+.bee-image-section {
   /* flex: 1; */
   width: 50%;
   display: flex;
@@ -413,8 +552,8 @@ body {
 
 }
 
-.honey-extractor {
-  max-width: 50%;
+.honey_extractor {
+  max-width: 100%;
   height: auto;
 }
 
@@ -703,6 +842,14 @@ body {
   .account-icon {
     display: none!important;
   }
+  .hidden-tablet-and-up{
+    width: 18px;
+    display: block;
+  }
+  .hidden-phone {
+    width: 21px;
+    display: none;
+  }
 }
 
 /* -------------------640px----------------- */
@@ -724,7 +871,30 @@ body {
   }
   .navbar-icon {
     font-size: 18px;
+    display: flex;
+    align-items: center;
   }
+
+  .Icon--search-desktop {
+    width: 21px;
+    display: none;
+  }
+  .Icon--search {
+    width: 18px;
+    display: block
+  }
+  
+  .Icon--cart-desktop {
+    width: 19px;
+    display: none;
+  }
+  
+  .Icon--cart {
+    width: 17px;
+    color: white;
+    display: block;
+  }
+
   .account-icon {
     display: none!important;
   }
@@ -742,7 +912,12 @@ body {
   }
   .image-section {
     width: 100%;
-    
+  }
+  .honey_extractor{
+    width: 100%;
+  }
+  .bee-image-section {
+    width: 100%;
   }
   .colo {
     padding-right: 50px;
@@ -792,6 +967,10 @@ body {
   .roww {
     width: 100%;
     display: flex;
+  }
+
+  .Category__Section {
+    padding: 0px;
   }
 
   /* Footer */
@@ -905,5 +1084,44 @@ body {
     font-size: 12px;
     color: #fff;
     text-decoration: none;
+  }
+}
+
+/* -------------------450px----------------- */
+@media screen and (max-width: 450px) {
+  .Header__LogoImage{
+    margin-left: 30px;
+  }
+  .Shipping__Text {
+    font-size: 18px;
+  }
+  .roww {
+    padding: 0px 24px;
+  }
+  .colo {
+    padding: 0px;
+  }
+  .navbar-icon:first-child {
+    
+    margin-left: 0px;
+  }
+  .Category__Section {
+    padding: 0px;
+  }
+  .text-section {
+    
+    padding: 50px 24px 20px;
+  
+  }
+  #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100%;
+  }
+  .SearchDropdown {
+
+   
+    padding: 14px 18px;
+   
   }
 }
