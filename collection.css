@@ -1001,6 +1001,64 @@ select:focus {
   padding: 0px;
   opacity: 1;
 }
+
+
+/* Pagination */
+.Pagination {
+  margin: 120px 0px 80px;
+  margin: 60px 0;
+  text-align: center;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+  line-height: 1;
+}
+.Text--subdued {
+  color: var(--text-color-light);
+}
+.Pagination__NavItem {
+  display: inline-block;
+  list-style: none;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.Pagination__NavItem.is-active {
+  color: var(--text-color);
+  border-bottom-color: var(--text-color);
+  box-shadow: 0 -2px var(--text-color) inset;
+}
+.Pagination__Nav > .Link {
+  transition: color .2s ease-in-out,opacity .2s ease-in-out;
+  color:#000;
+}
+
+a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.Pagination__NaveItem svg {
+  width: 6px;
+  height: 10px;
+  vertical-align: -1px;
+}
+
+.Icon--select-arrow-right {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  stroke-width: 1px;
+  background: none;
+  pointer-events: none;
+}
+
+.Link--primary {
+  cursor: pointer;
+}
 /*------------------------main end--------------------------- */
 
 /* Footer Block */
