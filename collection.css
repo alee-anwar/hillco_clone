@@ -354,7 +354,6 @@ body {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid #fff;
-  position: relative;
 }
 
 .HorizontalList {
@@ -825,24 +824,35 @@ input[type="number"]:focus {
 .ProductList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0 50px;
-
 }
 
 .ProductItem {
   text-align: center;
   white-space: normal;
-  max-width: 221px;
+  width: 25%;
+  /* max-width: 221px; */
   margin: 0px 0px 60px;
+  /* padding: calc(25%-221px); */
+  /* border: 1px solid black; */
+  padding: 0px 0px 0px 67px;
+  position: relative;
+  overflow: hidden;
 }
 
 .ProductItem__Wrapper {
-  position: relative;
+  /* position: relative; */
 }
 
 .ProductItem__ImageWrapper {
-  display: block;
+  /* display: block; */
+}
+
+.AspectRatio {
+  width: 221px!important;
+  position: relative;
+  right: 0;
 }
 
 .CollectionInner__Products .ProductItem__Info {

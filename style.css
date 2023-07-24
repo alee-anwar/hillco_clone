@@ -9,7 +9,7 @@
   height: 100%; */
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 } 
 
 body {
@@ -19,8 +19,8 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px; 
-  /* padding: 0px; */
-  overflow-x: hidden;
+  padding: 0px;
+  /* overflow-x: hidden; */
 }
 
 .PageOverlay {
@@ -294,11 +294,10 @@ body {
   align-items: center;
   /* background-color: #262626; */
   padding: 18px 50px 11px;
-  position: sticky;
+  position: sticky!important;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid #fff;
-  position: relative;
 }
 
 .HorizontalList {
@@ -620,7 +619,7 @@ body {
   margin: 10px;
 }
 
-.view-product-button {
+/* .view-product-button {
   text-align: center;
   display: inline-block;
   padding: 7px 10px;
@@ -633,6 +632,31 @@ body {
   font-weight: bold;
   font-size: 13px;
   text-transform: uppercase;
+} */
+
+.view-product-button {
+  text-align: center;
+  display: inline-block;
+  padding: 7px 10px;
+  background-image: linear-gradient(to right,white 50%,#f2b737 50%);
+  background-position: right;
+  background-size: 200% 100%;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 1px solid #f2b737;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-position 0.5s ease;
+}
+
+
+.view-product-button:hover {
+  background-position: left;
+  color: #f2b737!important;
 }
 
 /* what we do */
