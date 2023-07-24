@@ -555,6 +555,10 @@ body {
 }
 
 /*---------------------main section-----------------------*/
+.CollectionToolbar {
+  display: none;
+}
+
 .CollectionInner {
   display: flex;
   margin: 50px 0px 0px;
@@ -849,11 +853,17 @@ input[type="number"]:focus {
   /* display: block; */
 }
 
-.AspectRatio {
+/* .AspectRatio {
   width: 221px!important;
   position: relative;
   right: 0;
+} */
+
+.ProductItem__Image {
+  max-width: 100%;
+  height: auto;
 }
+
 
 .CollectionInner__Products .ProductItem__Info {
   font-size: 14px !important;
@@ -1228,7 +1238,61 @@ a {
     width: 21px;
     display: none;
   }
+  .ProductItem {
+    width: 33.3%;
+    /* max-width: 221px; */
+    margin: 0px 0px 60px;
+    /* padding: calc(25%-221px); */
+    /* border: 1px solid black; */
+    padding: 0px 0px 0px 24px;
+  }
+  .ProductList {
+    padding: 0 24px;
+  }
+  .ProductItem__Image {
+    width: 100%;
+    height: auto;
+  }
 }
+
+/* -------------------1007px----------------- */
+@media only screen and (max-width: 1007px) {
+  .CollectionInner__Sidebar {
+   display: none;
+  }
+  .CollectionToolbar {
+    position: sticky;
+    display: flex;
+    /* justify-content: space-between; */
+    /* width: 100%; */
+    background: var(--background);
+    box-shadow: 1px 1px var(--border-color),-1px -1px var(--border-color);
+    z-index: 2;
+  }
+  .CollectionToolbar--top {
+    /* top: calc(var(--header-height) * var(--use-sticky-header, 0)); */
+    top: 130px;
+  }
+  .CollectionToolbar--reverse {
+    flex-direction: row-reverse;
+  }
+  .CollectionToolbar__Item {
+    /* flex: 1 0 auto; */
+    padding: 18px 45px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--border-color);
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    cursor: pointer;
+    font-weight: 700;
+    /* transition: background .2s ease-in-out; */
+  }
+  .Text--subdued {
+    color: var(--text-color-light);
+  }
+}
+
 
 /* -------------------640px----------------- */
 @media screen and (max-width: 640px) {
@@ -1284,6 +1348,23 @@ a {
   .custom-container {
     margin: 0 auto;
     padding: 0 20px;
+  }
+
+  /*main collection */
+  .ProductItem {
+    width: 50%;
+    /* max-width: 221px; */
+    margin: 0px 0px 60px;
+    /* padding: calc(25%-221px); */
+    /* border: 1px solid black; */
+    padding: 0px 0px 0px 12px;
+  }
+  .ProductList {
+    padding: 0px 12px 0px 0px;
+  }
+  .CollectionToolbar--top {
+    /* top: calc(var(--header-height) * var(--use-sticky-header, 0)); */
+    top: 90px;
   }
 
   /* Footer */
