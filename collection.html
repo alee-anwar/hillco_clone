@@ -11,7 +11,9 @@
     ></script>
   </head>
   <body>
-    <div class="PageOverlay is-visible"></div>
+    <div class="PageOverlay is-visible">
+
+    </div>
     <!-- AnnouncementBar -->
     <div class="AnnouncementBar__Wrapper">
       <p class="AnnouncementBar__Content Heading right">
@@ -105,18 +107,16 @@
           class="navbar_Icon bars"
           aria-label="Toggle Menu"
         >
-          <!-- <i class="fas fa-bars"></i> -->
-          <svg
-            class="Icon Icon--nav"
-            role="presentation"
-            viewBox="0 0 20 14"
-            style="width: 20px"
-          >
-            <path
-              d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
-              fill="currentColor"
-            ></path>
-          </svg>
+          <span class="hidden-tablet-and-up">
+            <svg class="Icon Icon--nav " role="presentation" viewBox="0 0 20 14" style="width: 20;">
+              <path d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z" fill="currentColor"></path>
+            </svg>
+          </span>
+          <span class="hidden-phone">
+            <svg class="Icon Icon--nav-desktop " role="presentation" viewBox="0 0 24 16" style="width: 24">
+              <path d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z" fill="currentColor"></path>
+            </svg>
+          </span>
         </button>
 
         <div id="drawer">
@@ -313,6 +313,7 @@
             </aside>
           </div>
         </div>
+
         <nav class="Header__MainNav" aria-label="Main navigation">
           <ul class="HorizontalList">
             <li class="HorizontalList__Item">
@@ -550,13 +551,150 @@
     <!-- Main -->
 
     <main id="main" role="main">
+      <!-- filter-drawer -->
+      <div id="collection-filter-drawer" class="Drawer--fromRight">
+        <header class="Drawer__Header Drawer__Header--bordered Drawer__Header--center Drawer__Container">
+          <span class="Drawer__Title  u-h4">
+            Filters
+          </span>
+
+          <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer" data-drawer-id="collection-filter-drawer" aria-label="Close navigation">
+            <svg id="close-filter-drawer" class="Icon Icon--close " role="presentation" viewBox="0 0 16 14">
+              <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+            </svg>
+          </button>
+        </header>
+
+        <div class="Drawer__Content">
+          <div class="Drawer__Main" data-scrollable="">
+            <form id="collection-filters-drawer-form" class="collection-filters-form">
+              <div class="Collapsible--padded Collapsible--autoExpand" data-filter-index="0">
+                <button type="button" class="Collapsible__Button u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                  Our Collections
+                  <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner">
+                  <div class="Collapsible__Content">
+                    <ul class="Linklist">
+                      <li class="Linklist__Item is-selected">
+                        <a href="/collections/10-frame-hives-amp-components" class="Link Link--primary Text--subdued is-active">
+                          10 Frame Hives &amp; Components
+                        </a>
+                      </li>
+                      <li class="Linklist__Item ">
+                        <a href="/collections/5-frame-hives-amp-components" class="Link Link--primary Text--subdued ">
+                          5 Frame Hives &amp; Components
+                        </a>
+                      </li>
+                      <li class="Linklist__Item ">
+                        <a href="/collections/8-frame-hives-amp-components" class="Link Link--primary Text--subdued ">8 Frame Hives &amp; Components</a>
+                      </li>
+                      <li class="Linklist__Item ">
+                      <a href="/collections/bee-suits-amp-gloves" class="Link Link--primary Text--subdued ">Bee Suits &amp; Gloves</a>
+                      </li><li class="Linklist__Item ">
+                      <a href="/collections/bees-queens" class="Link Link--primary Text--subdued ">Bees &amp; Queens</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/beginner-kits" class="Link Link--primary Text--subdued ">Beginner Kits</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/feed-amp-supplements" class="Link Link--primary Text--subdued ">Feed &amp; Supplements</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/feeders" class="Link Link--primary Text--subdued ">Feeders</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/frames-amp-foundation" class="Link Link--primary Text--subdued ">Frames &amp; Foundation</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/health-amp-pest-control" class="Link Link--primary Text--subdued ">Health &amp; Pest Control</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/hive-accessories" class="Link Link--primary Text--subdued ">Hive Accessories</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/honey-extracting" class="Link Link--primary Text--subdued ">Honey Extracting</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/honey-storage-and-containers" class="Link Link--primary Text--subdued ">Honey Storage and Containers</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/queen-rearing-supplies" class="Link Link--primary Text--subdued ">Queen Rearing Supplies</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="/collections/smokers-amp-tools" class="Link Link--primary Text--subdued ">Smokers &amp; Tools</a>
+                      </li><li class="Linklist__Item ">
+                        <a href="https://hillcobees.com/collections/books-gift-items" class="Link Link--primary Text--subdued ">Books &amp; Gift Items</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          
+              <div class=" Collapsible--padded Collapsible--autoExpand" data-filter-index="1">
+                <button type="button" class="Collapsible__Button u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                  Availability
+                  <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner">
+                  <div class="Collapsible__Content">
+                    <ul class="Linklist">
+                      <li class="Linklist__Item">
+                        <!-- <input class="Linklist__Checkbox u-visually-hidden" id="drawer-filter-v-availability1" type="checkbox" name="filter.v.availability" value="1"> -->
+                          <label for="drawer-filter-v-availability1" class="Text--subdued Link Link--primary">In stock (24)
+                          </label>
+                        </li>
+                        <li class="Linklist__Item">
+                          <!-- <input class="Linklist__Checkbox u-visually-hidden" id="drawer-filter-v-availability0" type="checkbox" name="filter.v.availability" value="0"> -->
+                          <label for="drawer-filter-v-availability0" class="Text--subdued Link Link--primary">Out of stock (0)
+                          </label>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" Collapsible--padded Collapsible--autoExpand" data-filter-index="2">
+                <button type="button" class="Collapsible__Button u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                  Price
+                  <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner">
+                  <div class="Collapsible__Content">
+                    <ul class="Linklist"><price-range class="price-range">
+                          <div class="price-range__range-group range-group" style="--range-min: 0.0%; --range-max: 99.99512195121952%">
+                            <input type="range" aria-label="From" class="range" min="0" max="205" value="0">
+                            <input type="range" aria-label="To" class="range" min="0" max="205" value="205">
+                          </div>  
+
+                          <div class="price-range__input-group">
+                            <div class="price-range__input input-prefix text--xsmall">
+                              <span class="input-prefix__value text--subdued">$</span>
+                              <input aria-label="From" class="input-prefix__field" type="number" inputmode="numeric" name="filter.v.price.gte" id="filter-v-price-gte" min="0" max="205" placeholder="0">
+                            </div>
+
+                            <span class="price-range__delimiter text--small">-</span>
+
+                            <div class="price-range__input input-prefix text--xsmall">
+                              <span class="input-prefix__value text--subdued">$</span>
+                              <input aria-label="To" class="input-prefix__field" type="number" inputmode="numeric" name="filter.v.price.lte" id="filter-v-price-lte" min="0" max="205" placeholder="205">
+                            </div>
+                          </div>
+                        </price-range>
+                    </ul>
+                  </div>
+                </div>
+              </div><input type="hidden" name="sort_by" value="manual">
+            </form>
+          </div>
+
+          <footer class="Drawer__Footer Drawer__Footer--padded">
+              <button type="button" class="ButtonGroup__Item ButtonGroup__Item--expand Button Button--primary" data-action="close-drawer" data-drawer-id="collection-filter-drawer">
+                See results
+              </button>
+          </footer>
+        </div>
+      </div>
+
+      <!-- main -->
       <div class="CollectionMain">
         <div class="CollectionToolbar CollectionToolbar--top CollectionToolbar--reverse">
-          <div class="CollectionToolbar__Group">
-            <button class="CollectionToolbar__Item CollectionToolbar__Item--filter Heading Text--subdued u-h6 hidden-lap-and-up" data-action="open-drawer" data-drawer-id="collection-filter-drawer" aria-label="Show filters">
+            <button id="button-filter-drawer" class="CollectionToolbar__Item Text--subdued u-h6 hidden-lap-and-up" data-action="open-drawer" data-drawer-id="collection-filter-drawer" aria-label="Show filters">
               Filter 
             </button>
-          </div>
         </div>
         <div class="CollectionInner">
           <!-- Filter -->
@@ -1607,7 +1745,6 @@
               </div>
             </div>
           </div>
-          </div>
         </div>
       </div>
     </main>
@@ -1726,12 +1863,12 @@
     </footer>
 
     <script>
-      // drawer
+      // left drawer
       document
         .getElementById("menu-button")
         .addEventListener("click", function () {
           document.getElementById("drawer").classList.toggle("open");
-          document.querySelector(".menu-icon").classList.toggle("open");
+          // document.querySelector(".menu-icon").classList.toggle("open");
         });
 
       document
@@ -1740,6 +1877,7 @@
           document.getElementById("drawer").classList.remove("open");
           document.querySelector(".menu-icon").classList.remove("open");
         });
+
 
       //plus minu
       const dropdownIcon = document.querySelector(".dropdown-icon");
@@ -1758,42 +1896,95 @@
         }
       });
 
-      // search
       document.addEventListener("click", function () {
         const searchIcon = document.getElementById("search-click");
-
         const searchIconPhone = document.getElementById("phone-search-click");
-
         const searchDropdown = document.querySelector(".SearchDropdown");
         const pageOverlay = document.querySelector(".PageOverlay");
 
+        // const filterDrawer = document.getElementById("collection-filter-drawer");
+        const closeFilterDrawer = document.getElementById("close-filter-drawer");
+        const openDrawerButton = document.getElementById("button-filter-drawer")
+        const filterDrawer = document.querySelector(".Drawer--fromRight");
+
+
         const closeSearchButton = document.getElementById("Search__Close");
+
+        const drawer = document.getElementById('collection-filter-drawer');
+
+        // const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
+
+        const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
+
+collapsibleButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const collapsibleInner = this.nextElementSibling;
+    collapsibleInner.classList.toggle("Collapsible__Inner--active");
+    this.setAttribute("aria-expanded", collapsibleInner.classList.contains("Collapsible__Inner--active"));
+
+    // Toggle the class to hide the plus sign when the collapsible inner section is active
+    const plusSign = this.querySelector(".Collapsible__Plus");
+    plusSign.classList.toggle("Collapsible__Plus--hidden", collapsibleInner.classList.contains("Collapsible__Inner--active"));
+  });
+});
+
+
+        // collapsibleButtons.forEach((button) => {
+        //   button.addEventListener("click", function () {
+        //     const collapsibleInner = this.nextElementSibling;
+        //     collapsibleInner.classList.toggle("Collapsible__Inner--active");
+        //     this.setAttribute("aria-expanded", collapsibleInner.classList.contains("Collapsible__Inner--active"));
+        //   });
+        // });
+
 
         searchIcon.addEventListener("click", function (event) {
           event.preventDefault();
-
           searchDropdown.style.visibility = "visible";
           pageOverlay.style.display = "block";
-
           console.log(searchDropdown.style.visibility);
         });
 
         searchIconPhone.addEventListener("click", function (event) {
           event.preventDefault();
-
           searchDropdown.style.visibility = "visible";
           pageOverlay.style.display = "block";
-
           console.log(pageOverlay.style.display);
         });
 
         closeSearchButton.addEventListener("click", function (event) {
           event.preventDefault();
-
           searchDropdown.style.visibility = "hidden";
           pageOverlay.style.display = "none";
-
           console.log(pageOverlay.style.display);
+        });
+
+        // filter drawer
+        openDrawerButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          filterDrawer.style.display = "block";
+          pageOverlay.style.display = "block";
+          drawer.classList.toggle('Drawer--open');
+          // drawer.classList.remove('Drawer--open');
+          pageOverlay.style.zIndex = "30";
+          console.log("darwer " + filterDrawer.style.display);
+          console.log("pageoverlay " + pageOverlay.style.display);
+        });
+
+        closeFilterDrawer.addEventListener("click", function (event) {
+          event.preventDefault();
+          drawer.classList.add("Drawer--closing"); // Add the closing class
+          setTimeout(function () {
+          filterDrawer.style.display = "none";
+          pageOverlay.style.display = "none";
+          pageOverlay.style.zIndex = "10";
+          console.log("drawer " + filterDrawer.style.display);
+          console.log("pageoverlay " + pageOverlay.style.display);
+          drawer.classList.remove("Drawer--closing"); // Remove the closing class after the transition
+          drawer.classList.remove("Drawer--open"); // Remove the closing class after the transition
+          drawer.style.display = "block"; // Reset the right position to the initial value
+
+        }, 500); // Adjust the delay to match the transition duration
         });
       });
     </script>
