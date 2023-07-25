@@ -682,7 +682,7 @@
           </div>
 
           <footer class="Drawer__Footer Drawer__Footer--padded">
-              <button type="button" class="ButtonGroup__Item ButtonGroup__Item--expand Button Button--primary" data-action="close-drawer" data-drawer-id="collection-filter-drawer">
+              <button type="button" class="ButtonGroup__Item ButtonGroup__Item--expand Button Button--results" data-action="close-drawer" data-drawer-id="collection-filter-drawer">
                 See results
               </button>
           </footer>
@@ -1862,131 +1862,6 @@
       </div>
     </footer>
 
-    <script>
-      // left drawer
-      document
-        .getElementById("menu-button")
-        .addEventListener("click", function () {
-          document.getElementById("drawer").classList.toggle("open");
-          // document.querySelector(".menu-icon").classList.toggle("open");
-        });
-
-      document
-        .getElementById("close-button")
-        .addEventListener("click", function () {
-          document.getElementById("drawer").classList.remove("open");
-          document.querySelector(".menu-icon").classList.remove("open");
-        });
-
-
-      //plus minu
-      const dropdownIcon = document.querySelector(".dropdown-icon");
-      // const dropdownIcon = document.querySelector(".shop-header");
-      const dropdownMenu = document.querySelector(".drawer-dropdown");
-
-      dropdownIcon.addEventListener("click", function () {
-        dropdownMenu.classList.toggle("show-dropdown");
-
-        if (dropdownMenu.classList.contains("show-dropdown")) {
-          dropdownIcon.classList.remove("fa-plus");
-          dropdownIcon.classList.add("fa-minus");
-        } else {
-          dropdownIcon.classList.remove("fa-minus");
-          dropdownIcon.classList.add("fa-plus");
-        }
-      });
-
-      document.addEventListener("click", function () {
-        const searchIcon = document.getElementById("search-click");
-        const searchIconPhone = document.getElementById("phone-search-click");
-        const searchDropdown = document.querySelector(".SearchDropdown");
-        const pageOverlay = document.querySelector(".PageOverlay");
-
-        // const filterDrawer = document.getElementById("collection-filter-drawer");
-        const closeFilterDrawer = document.getElementById("close-filter-drawer");
-        const openDrawerButton = document.getElementById("button-filter-drawer")
-        const filterDrawer = document.querySelector(".Drawer--fromRight");
-
-
-        const closeSearchButton = document.getElementById("Search__Close");
-
-        const drawer = document.getElementById('collection-filter-drawer');
-
-        // const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
-
-        const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
-
-collapsibleButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    const collapsibleInner = this.nextElementSibling;
-    collapsibleInner.classList.toggle("Collapsible__Inner--active");
-    this.setAttribute("aria-expanded", collapsibleInner.classList.contains("Collapsible__Inner--active"));
-
-    // Toggle the class to hide the plus sign when the collapsible inner section is active
-    const plusSign = this.querySelector(".Collapsible__Plus");
-    plusSign.classList.toggle("Collapsible__Plus--hidden", collapsibleInner.classList.contains("Collapsible__Inner--active"));
-  });
-});
-
-
-        // collapsibleButtons.forEach((button) => {
-        //   button.addEventListener("click", function () {
-        //     const collapsibleInner = this.nextElementSibling;
-        //     collapsibleInner.classList.toggle("Collapsible__Inner--active");
-        //     this.setAttribute("aria-expanded", collapsibleInner.classList.contains("Collapsible__Inner--active"));
-        //   });
-        // });
-
-
-        searchIcon.addEventListener("click", function (event) {
-          event.preventDefault();
-          searchDropdown.style.visibility = "visible";
-          pageOverlay.style.display = "block";
-          console.log(searchDropdown.style.visibility);
-        });
-
-        searchIconPhone.addEventListener("click", function (event) {
-          event.preventDefault();
-          searchDropdown.style.visibility = "visible";
-          pageOverlay.style.display = "block";
-          console.log(pageOverlay.style.display);
-        });
-
-        closeSearchButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          searchDropdown.style.visibility = "hidden";
-          pageOverlay.style.display = "none";
-          console.log(pageOverlay.style.display);
-        });
-
-        // filter drawer
-        openDrawerButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          filterDrawer.style.display = "block";
-          pageOverlay.style.display = "block";
-          drawer.classList.toggle('Drawer--open');
-          // drawer.classList.remove('Drawer--open');
-          pageOverlay.style.zIndex = "30";
-          console.log("darwer " + filterDrawer.style.display);
-          console.log("pageoverlay " + pageOverlay.style.display);
-        });
-
-        closeFilterDrawer.addEventListener("click", function (event) {
-          event.preventDefault();
-          drawer.classList.add("Drawer--closing"); // Add the closing class
-          setTimeout(function () {
-          filterDrawer.style.display = "none";
-          pageOverlay.style.display = "none";
-          pageOverlay.style.zIndex = "10";
-          console.log("drawer " + filterDrawer.style.display);
-          console.log("pageoverlay " + pageOverlay.style.display);
-          drawer.classList.remove("Drawer--closing"); // Remove the closing class after the transition
-          drawer.classList.remove("Drawer--open"); // Remove the closing class after the transition
-          drawer.style.display = "block"; // Reset the right position to the initial value
-
-        }, 500); // Adjust the delay to match the transition duration
-        });
-      });
-    </script>
+    <script src="./scripts/collection.js"></script>
   </body>
 </html>
