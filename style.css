@@ -541,7 +541,7 @@ body {
   display: flex;
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
-  /* overflow: hidden; */
+  overflow: hidden; /* Hide any overflow to prevent scrollbars */
 }
 
 .bee-image-section {
@@ -556,6 +556,24 @@ body {
 .honey_extractor {
   max-width: 100%;
   height: auto;
+  transform: translateX(100%); /* Start the image off-screen on the right */
+  transition: transform 1s ease;
+}
+
+.honey_extractor.show-image {
+  transform: translateX(0); /* Move the image back to its original position */
+}
+
+.bee-img {
+  max-width: 100%;
+  height: auto;
+  /* transition: transform 0.5s ease-in-out; */
+  transform: translateX(100%); /* Start the image off-screen on the right */
+  transition: transform 1s ease;
+}
+
+.bee-img.show-image {
+  transform: translateX(0); /* Move the image back to its original position */
 }
 
 .colo {
@@ -599,9 +617,19 @@ body {
   margin-bottom: 20px;
 }
 
+.product-image {
+  perspective: 800px; /* Set the perspective for 3D transformation */
+}
+
 .product-image img {
   width: 100%;
   height: auto;
+  transform: translateZ(0); /* Set the initial z-axis value for 3D transformation */
+  transition: transform 0.5s ease;
+}
+
+.product-image img.loaded {
+  transform: translateZ(-200px); /* Move the image back in the z-axis to create the 3D effect */
 }
 
 .product-details {
@@ -682,12 +710,6 @@ body {
 .do__text {
   font-size: 15px;
   max-width: 430px;
-}
-
-.bee-img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.5s ease-in-out;
 }
 
 /* Footer */

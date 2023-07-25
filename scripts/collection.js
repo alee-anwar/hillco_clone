@@ -42,6 +42,23 @@ const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
 
 // const seeResultsButton = document.querySelector(".Button--results");
 
+// collapsibleButtons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     const collapsibleInner = this.nextElementSibling;
+//     collapsibleInner.classList.toggle("Collapsible__Inner--active");
+//     this.setAttribute(
+//       "aria-expanded",
+//       collapsibleInner.classList.contains("Collapsible__Inner--active")
+//     );
+
+//     const plusSign = this.querySelector(".Collapsible__Plus");
+//     plusSign.classList.toggle(
+//       "Collapsible__Plus--hidden",
+//       collapsibleInner.classList.contains("Collapsible__Inner--active")
+//     );
+//   });
+// });
+
 collapsibleButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const collapsibleInner = this.nextElementSibling;
@@ -51,13 +68,17 @@ collapsibleButtons.forEach((button) => {
       collapsibleInner.classList.contains("Collapsible__Inner--active")
     );
 
+    // Toggle the plus and minus buttons when the collapsible inner section is active
     const plusSign = this.querySelector(".Collapsible__Plus");
-    plusSign.classList.toggle(
-      "Collapsible__Plus--hidden",
-      collapsibleInner.classList.contains("Collapsible__Inner--active")
-    );
+    plusSign.classList.toggle("Collapsible__Plus--hidden", 
+        collapsibleInner.classList.contains("Collapsible__Inner--active"));
+        
+    const minusSign = this.querySelector(".Collapsible__Minus");
+    minusSign.classList.toggle("Collapsible__Minus--hidden", 
+        !collapsibleInner.classList.contains("Collapsible__Inner--active"));
   });
 });
+
 
 searchIcon.addEventListener("click", function (event) {
   event.preventDefault();

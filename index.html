@@ -123,8 +123,18 @@
           <header class="drawer-header">
             <button id="close-button" aria-label="Close">
               <!-- <i class="fa-solid fa-xmark"></i> -->
-              <svg class="Icon Icon--close " role="presentation" viewBox="0 0 16 14" style="width: 16px">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              <svg
+                class="Icon Icon--close"
+                role="presentation"
+                viewBox="0 0 16 14"
+                style="width: 16px"
+              >
+                <path
+                  d="M15 0L1 14m14 0L1 0"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"
+                ></path>
               </svg>
             </button>
           </header>
@@ -302,7 +312,7 @@
             </aside>
           </div>
         </div>
-        
+
         <nav class="Header__MainNav" aria-label="Main navigation">
           <ul class="HorizontalList">
             <li class="HorizontalList__Item is-active">
@@ -313,9 +323,7 @@
               <div class="DropdownMenu" aria-hidden="true">
                 <ul class="Linklist">
                   <li class="Linklist__Item">
-                    <a
-                      href="/collection.html"
-                      class="Link--secondary"
+                    <a href="/collection.html" class="Link--secondary"
                       >10 Frame Hives &amp; Components</a
                     >
                   </li>
@@ -498,7 +506,7 @@
           </svg>
           <svg
             id="phone-search-click"
-            class=" Icon--search Icon"
+            class="Icon--search Icon"
             role="presentation"
             viewBox="0 0 18 17"
           >
@@ -561,6 +569,7 @@
 
       <div class="image-section">
         <img
+          id="animated-image"
           class="honey_extractor"
           src="/assests/ExtractorsGrouping_1200x.webp"
           alt="Image"
@@ -598,9 +607,7 @@
         </div>
         <div class="product-details">
           <h2 class="product-title">10 Frame Hives &amp; Components</h2>
-          <a
-            href="/collection.html"
-            class="view-product-button"
+          <a href="/collection.html" class="view-product-button"
             >View Product</a
           >
         </div>
@@ -828,6 +835,7 @@
       </div>
       <div class="bee-image-section">
         <img
+          id="bee-animated-image"
           class="bee-img"
           src="/assests/honey-bee-close-up_1200x.webp"
           alt="Image"
@@ -950,6 +958,25 @@
 
     <script>
       // drawer
+      // Wait for the image to load
+      window.addEventListener("load", function () {
+        const image = document.getElementById("animated-image");
+        image.classList.add("show-image");
+      });
+      window.addEventListener("load", function () {
+        const image = document.getElementById("bee-animated-image");
+        image.classList.add("show-image");
+      });
+      // Wait for the image to load
+      window.addEventListener("load", function () {
+        const productImages = document.querySelectorAll(".product-image img");
+        productImages.forEach((image) => {
+          image.addEventListener("load", function () {
+            this.classList.add("loaded");
+          });
+        });
+      });
+
       document
         .getElementById("menu-button")
         .addEventListener("click", function () {
@@ -983,20 +1010,14 @@
 
       // search
       document.addEventListener("click", function () {
-        const searchIcon = document.getElementById(
-          "search-click"
-        );
+        const searchIcon = document.getElementById("search-click");
 
-        const searchIconPhone = document.getElementById(
-          "phone-search-click"
-        );
+        const searchIconPhone = document.getElementById("phone-search-click");
 
         const searchDropdown = document.querySelector(".SearchDropdown");
         const pageOverlay = document.querySelector(".PageOverlay");
 
-        const closeSearchButton = document.getElementById(
-          "Search__Close"
-        );
+        const closeSearchButton = document.getElementById("Search__Close");
 
         searchIcon.addEventListener("click", function (event) {
           event.preventDefault();
@@ -1005,9 +1026,7 @@
           pageOverlay.style.display = "block";
 
           console.log(searchDropdown.style.visibility);
-
         });
-
 
         searchIconPhone.addEventListener("click", function (event) {
           event.preventDefault();
@@ -1016,7 +1035,6 @@
           pageOverlay.style.display = "block";
 
           console.log(pageOverlay.style.display);
-
         });
 
         closeSearchButton.addEventListener("click", function (event) {
@@ -1028,7 +1046,6 @@
           console.log(pageOverlay.style.display);
         });
       });
-
     </script>
   </body>
 </html>

@@ -1262,7 +1262,6 @@ a {
   transform: translateY(-10px);
 }
 
-
 /* -------------------1140px----------------- */
 @media screen and (max-width: 1140px) {
   .bars {
@@ -1561,7 +1560,7 @@ a {
   .Drawer--open {
     right: 0;
   }
-  
+
   .Drawer--closing {
     right: -575px;
     transition: right 0.5s ease;
@@ -1585,6 +1584,7 @@ a {
     padding: 0 24px;
     box-shadow: 0 -1px rgba(var(--border-color-rgb), 0.6) inset;
   }
+
   .Collapsible__Plus {
     position: absolute;
     right: 0;
@@ -1592,6 +1592,15 @@ a {
     width: 11px;
     height: 11px;
   }
+
+  .Collapsible__Minus {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 5.5px);
+    width: 11px;
+    height: 11px;
+  }
+
   .Collapsible__Plus::before {
     width: 11px;
     height: 1px;
@@ -1604,6 +1613,7 @@ a {
     background-color: currentColor;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
+
   .Collapsible__Plus::after {
     width: 1px;
     height: 11px;
@@ -1615,10 +1625,32 @@ a {
     background-color: currentColor;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
-  /* Hide the plus sign when the inner collapsible is open */
-  .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus:before {
+
+  /* Rotate the plus and minus buttons for the initial state */
+  .Collapsible__Plus {
+    transform: rotate(-90deg);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  .Collapsible__Minus {
+    transform: rotate(0);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus::after {
+    transform: rotate(0);
     opacity: 0;
   }
+
+  .Collapsible__Button[aria-expanded="true"] .Collapsible__Minus {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+
+  /* .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus:before {
+    opacity: 0;
+  } */
   .Collapsible__Content {
     padding: 0px 0px 18px;
   }
