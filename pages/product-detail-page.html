@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="header&footer.css" />
+    <title>Collection</title>
+    <link rel="stylesheet" href="../styling/product-detail-page.css" />
     <script
       src="https://kit.fontawesome.com/281de20304.js"
       crossorigin="anonymous"
@@ -22,6 +22,7 @@
       </p>
     </div>
 
+    <!-- Header -->
     <header class="Header__Wrapper">
       <!-- Search Section -->
       <div class="SearchDropdown">
@@ -104,18 +105,32 @@
           class="navbar_Icon bars"
           aria-label="Toggle Menu"
         >
-          <!-- <i class="fas fa-bars"></i> -->
-          <svg
-            class="Icon Icon--nav"
-            role="presentation"
-            viewBox="0 0 20 14"
-            style="width: 20px"
-          >
-            <path
-              d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
-              fill="currentColor"
-            ></path>
-          </svg>
+          <span class="hidden-tablet-and-up">
+            <svg
+              class="Icon Icon--nav"
+              role="presentation"
+              viewBox="0 0 20 14"
+              style="width: 20"
+            >
+              <path
+                d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+          <span class="hidden-phone">
+            <svg
+              class="Icon Icon--nav-desktop"
+              role="presentation"
+              viewBox="0 0 24 16"
+              style="width: 24"
+            >
+              <path
+                d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
         </button>
 
         <div id="drawer">
@@ -123,8 +138,18 @@
           <header class="drawer-header">
             <button id="close-button" aria-label="Close">
               <!-- <i class="fa-solid fa-xmark"></i> -->
-              <svg class="Icon Icon--close " role="presentation" viewBox="0 0 16 14" style="width: 16px">
-                <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+              <svg
+                class="Icon Icon--close"
+                role="presentation"
+                viewBox="0 0 16 14"
+                style="width: 16px"
+              >
+                <path
+                  d="M15 0L1 14m14 0L1 0"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"
+                ></path>
               </svg>
             </button>
           </header>
@@ -302,9 +327,10 @@
             </aside>
           </div>
         </div>
+
         <nav class="Header__MainNav" aria-label="Main navigation">
           <ul class="HorizontalList">
-            <li class="HorizontalList__Item is-active">
+            <li class="HorizontalList__Item">
               <a href="/" class="Heading Link">Home</a>
             </li>
             <li class="HorizontalList__Item">
@@ -497,7 +523,7 @@
           </svg>
           <svg
             id="phone-search-click"
-            class=" Icon--search Icon"
+            class="Icon--search Icon"
             role="presentation"
             viewBox="0 0 18 17"
           >
@@ -535,6 +561,376 @@
         </button>
       </div>
     </header>
+
+    <!-- Detail Page Start -->
+
+    <main id="main" role="main">
+      <div class="main__container">
+        <section class="Product__Section">
+          <div class="Product__Wrapper">
+            <div class="Product__Gallary">
+              <div
+                class="Product__SlideshowNav Product__SlideshowNav--thumbnails"
+              >
+                <div class="Product__SlideshowNavScroller">
+                  <a
+                    href="#Media31932391489791"
+                    data-offset="-25"
+                    data-focus-on-click=""
+                    data-media-id="31932391489791"
+                    class="Product__SlideshowNavImage AspectRatio is-selected"
+                    style="--aspect-ratio: 1"
+                  >
+                    <img
+                      src="//hillcobees.com/cdn/shop/products/20230311_142456_160x.jpg?v=1678721239"
+                      alt="Complete Hive - 10 Frame"
+                    />
+                  </a>
+                  <a
+                    href="#Media31932391555327"
+                    data-offset="-25"
+                    data-focus-on-click=""
+                    data-media-id="31932391555327"
+                    class="Product__SlideshowNavImage AspectRatio"
+                    style="--aspect-ratio: 1"
+                  >
+                    <img
+                      src="//hillcobees.com/cdn/shop/products/20230311_141906_160x.jpg?v=1678721244"
+                      alt="Complete Hive - 10 Frame"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="Product__Slideshow Product__Slideshow--zoomable Carousel"
+              >
+                <div
+                  id="Media31932391489791"
+                  tabindex="0"
+                  class="Product__SlideItem Product__SlideItem--image Carousel__Cell is-selected"
+                  data-media-type="image"
+                  data-media-id="31932391489791"
+                  data-media-position="1"
+                  data-image-media-position="0"
+                >
+                  <div
+                    class="AspectRatio AspectRatio--withFallback"
+                    style="padding-bottom: 100%; --aspect-ratio: 1"
+                  >
+                    <img
+                      class="Image--fadeIn lazyautosizes Image--lazyLoaded"
+                      data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
+                      data-sizes="auto"
+                      data-expand="-100"
+                      alt="Complete Hive - 10 Frame"
+                      data-max-width="3000"
+                      data-max-height="3000"
+                      data-original-src="//hillcobees.com/cdn/shop/products/20230311_142456.jpg?v=1678721239"
+                      data-srcset="//hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239 200w, //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239 400w, //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239 600w, //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239 700w, //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239 800w, //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239 900w, //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w, //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w, //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w, //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w"
+                      sizes="350px"
+                      srcset="
+                        //hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239   200w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239   400w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239   600w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239   700w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239   800w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239   900w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w,
+                        //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w
+                      "
+                    />
+                    <span class="Image__Loader"></span>
+
+                    <noscript>
+                      <img
+                        src="//hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239"
+                        alt="Complete Hive - 10 Frame"
+                      />
+                    </noscript>
+                  </div>
+                </div>
+                <div
+                  id="Media31932391555327"
+                  tabindex="0"
+                  class="Product__SlideItem Product__SlideItem--image Carousel__Cell"
+                  data-media-type="image"
+                  data-media-id="31932391555327"
+                  data-media-position="2"
+                  data-image-media-position="1"
+                >
+                  <div
+                    class="AspectRatio AspectRatio--withFallback"
+                    style="padding-bottom: 100%; --aspect-ratio: 1"
+                  >
+                    <img
+                      class="Image--lazyLoad Image--fadeIn"
+                      data-src="//hillcobees.com/cdn/shop/products/20230311_141906_{width}x.jpg?v=1678721244"
+                      data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
+                      data-sizes="auto"
+                      data-expand="-100"
+                      alt="Complete Hive - 10 Frame"
+                      data-max-width="3000"
+                      data-max-height="3000"
+                      data-original-src="//hillcobees.com/cdn/shop/products/20230311_141906.jpg?v=1678721244"
+                    />
+                    <span class="Image__Loader"></span>
+
+                    <noscript>
+                      <img
+                        src="//hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244"
+                        alt="Complete Hive - 10 Frame"
+                      />
+                    </noscript>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product__InfoWrapper">
+              <div class="Product__Info">
+                <div class="ProductMeta">
+                  <h1 class="ProductMeta__Title">Complete Hive - 10 Frame</h1>
+                  <div class="ProductMeta__PriceList">
+                    <span class="ProductMeta__Price Price Text--subdued u-h4">
+                      $133.99
+                    </span>
+                  </div>
+                </div>
+
+                <div class="reviews">
+                  <!-- BEGIN app snippet: star_rating -->
+                  <div class="spr-stars">
+                    <span role="img" aria-label="0 out of 5 stars">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spr-star"
+                        style="width: 15px; height: 15px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <path
+                          fill="#000000 "
+                          d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                        ></path>
+                      </svg>
+
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spr-star"
+                        style="width: 15px; height: 15px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <path
+                          fill="#000000 "
+                          d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                        ></path>
+                      </svg>
+
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spr-star"
+                        style="width: 15px; height: 15px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <path
+                          fill="#000000 "
+                          d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                        ></path>
+                      </svg>
+
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spr-star"
+                        style="width: 15px; height: 15px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <path
+                          fill="#000000 "
+                          d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                        ></path>
+                      </svg>
+
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="spr-star"
+                        style="width: 15px; height: 15px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <path
+                          fill="#000000 "
+                          d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <!-- </div> -->
+                    <!-- END app snippet -->
+
+                    <span class="stars--text">No reviews</span>
+                  </div>
+                </div>
+
+                <div class="ProductMeta__Description">
+                  <div class="Rte">
+                    <p>
+                      Our complete beehives are just what you need to get
+                      started or expand your apiary! This is the most widely
+                      used size of beehive. A simple, 10 frame Langstroth design
+                      which has been a mainstay of beekeeping for 150 years!
+                    </p>
+                    <p>
+                      These&nbsp;complete hives now come with 3 bottom board
+                      options. The standard option is our fabulous Maxima
+                      plastic screened bottom board. This bottom board is well
+                      designed and includes a built-in mouse guard entrance
+                      reducer. It never rots and never needs painted!&nbsp;
+                    </p>
+                    <p>
+                      Also available are the solid wood bottom board, or a
+                      screened wooden bottom board.
+                    </p>
+                    <p><br />Includes the following:</p>
+                    <p>
+                      <br />1 -&nbsp;&nbsp;bottom board (select option at
+                      checkout)<br />1 -&nbsp; pine deep 9-5/8" hive body
+                      (assembled)<br />10 - assembled wood frames with plastic
+                      double wax coated foundation<br />1 -&nbsp; inner cover
+                      (assembled)<br />1 -&nbsp; Maxima plastic outer cover<br />1
+                      -&nbsp; entrance reducer (reducer is built-in on the
+                      Maxima plastic bottom board)<br />
+                    </p>
+                    <p>
+                      <br />All components are fully assembled and ready to use!
+                      If you opt for the standard Maxima bottom board option,
+                      the only thing you'll need to do is paint the box!
+                    </p>
+                  </div>
+                </div>
+
+                <div class="ProductMeta__ShareButtons">
+                  <span class="ProductMeta__ShareTitle Text--subdued u-h7"
+                    >Share</span
+                  >
+                  <div class="ProductMeta__ShareList Text--subdued">
+                    <a
+                      class="ProductMeta__ShareItem"
+                      href="https://www.facebook.com/sharer.php?u=https://hillcobees.com/products/complete-hive-10-frame"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Facebook"
+                    >
+                      <svg class="Icon Icon--facebook" viewBox="0 0 9 17">
+                        <path
+                          d="M5.842 17V9.246h2.653l.398-3.023h-3.05v-1.93c0-.874.246-1.47 1.526-1.47H9V.118C8.718.082 7.75 0 6.623 0 4.27 0 2.66 1.408 2.66 3.994v2.23H0v3.022h2.66V17h3.182z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      class="ProductMeta__ShareItem"
+                      href="https://twitter.com/share?text=Complete Hive - 10 Frame&amp;url=https://hillcobees.com/products/complete-hive-10-frame"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Twitter"
+                    >
+                      <svg
+                        class="Icon Icon--twitter"
+                        role="presentation"
+                        viewBox="0 0 32 26"
+                      >
+                        <path
+                          d="M32 3.077c-1.1748.525-2.4433.8748-3.768 1.031 1.356-.8123 2.3932-2.0995 2.887-3.6305-1.2686.7498-2.6746 1.2997-4.168 1.5934C25.751.796 24.045.0025 22.158.0025c-3.6242 0-6.561 2.937-6.561 6.5612 0 .5124.0562 1.0123.1686 1.4935C10.3104 7.7822 5.474 5.1702 2.237 1.196c-.5624.9687-.8873 2.0997-.8873 3.2994 0 2.2746 1.156 4.2867 2.9182 5.4615-1.075-.0314-2.0872-.3313-2.9745-.8187v.0812c0 3.1806 2.262 5.8363 5.2677 6.4362-.55.15-1.131.2312-1.731.2312-.4248 0-.831-.0438-1.2372-.1188.8374 2.6057 3.262 4.5054 6.13 4.5616-2.2495 1.7622-5.074 2.812-8.1546 2.812-.531 0-1.0498-.0313-1.5684-.0938 2.912 1.8684 6.3613 2.9494 10.0668 2.9494 12.0726 0 18.6776-10.0043 18.6776-18.6776 0-.2874-.0063-.5686-.0188-.8498C30.0066 5.5514 31.119 4.3954 32 3.077z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      class="ProductMeta__ShareItem"
+                      href="https://pinterest.com/pin/create/button/?url=https://hillcobees.com/products/complete-hive-10-frame&amp;media=https://hillcobees.com/cdn/shop/products/20230311_142456_large.jpg?v=1678721239&amp;description=Our%20complete%20beehives%20are%20just%20what%20you%20need%20to%20get%20started%20or%20expand%20your%20apiary!..."
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Pinterest"
+                    >
+                      <svg
+                        class="Icon Icon--pinterest"
+                        role="presentation"
+                        viewBox="0 0 32 32"
+                      >
+                        <path
+                          d="M16 0q3.25 0 6.208 1.271t5.104 3.417 3.417 5.104T32 16q0 4.333-2.146 8.021t-5.833 5.833T16 32q-2.375 0-4.542-.625 1.208-1.958 1.625-3.458l1.125-4.375q.417.792 1.542 1.396t2.375.604q2.5 0 4.479-1.438t3.063-3.937 1.083-5.625q0-3.708-2.854-6.437t-7.271-2.729q-2.708 0-4.958.917T8.042 8.689t-2.104 3.208-.729 3.479q0 2.167.812 3.792t2.438 2.292q.292.125.5.021t.292-.396q.292-1.042.333-1.292.167-.458-.208-.875-1.083-1.208-1.083-3.125 0-3.167 2.188-5.437t5.729-2.271q3.125 0 4.875 1.708t1.75 4.458q0 2.292-.625 4.229t-1.792 3.104-2.667 1.167q-1.25 0-2.042-.917t-.5-2.167q.167-.583.438-1.5t.458-1.563.354-1.396.167-1.25q0-1.042-.542-1.708t-1.583-.667q-1.292 0-2.167 1.188t-.875 2.979q0 .667.104 1.292t.229.917l.125.292q-1.708 7.417-2.083 8.708-.333 1.583-.25 3.708-4.292-1.917-6.938-5.875T0 16Q0 9.375 4.687 4.688T15.999.001z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="ProductForm__Variants">
+                  <div class="ProductForm__Option">
+                    <button
+                      type="button"
+                      class="ProductForm__Item"
+                      aria-expanded="false"
+                      aria-controls="popover-7610385301759-template--15778185838847__main-bottom-board-options"
+                    >
+                      <span class="ProductForm__OptionName"
+                        >Bottom Board Options:
+                        <span class="ProductForm__SelectedValue"
+                          >Screened Wooden Bottom Board (add $8)</span
+                        ></span
+                      ><svg
+                        class="Icon Icon--select-arrow"
+                        role="presentation"
+                        viewBox="0 0 19 12"
+                      >
+                        <polyline
+                          fill="none"
+                          stroke="currentColor"
+                          points="17 2 9.5 10 2 2"
+                          fill-rule="evenodd"
+                          stroke-width="2"
+                          stroke-linecap="square"
+                        ></polyline>
+                      </svg></button
+                    >ƒ
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="Product__Recommendation"></section>
+      </div>
+    </main>
+
+    <!-- Detail Page End -->
 
     <!-- footer -->
     <footer class="custom-footer">
@@ -649,87 +1045,6 @@
       </div>
     </footer>
 
-    <script>
-      // drawer
-      document
-        .getElementById("menu-button")
-        .addEventListener("click", function () {
-          document.getElementById("drawer").classList.toggle("open");
-          document.querySelector(".menu-icon").classList.toggle("open");
-        });
-
-      document
-        .getElementById("close-button")
-        .addEventListener("click", function () {
-          document.getElementById("drawer").classList.remove("open");
-          document.querySelector(".menu-icon").classList.remove("open");
-        });
-
-      //plus minu
-      const dropdownIcon = document.querySelector(".dropdown-icon");
-      // const dropdownIcon = document.querySelector(".shop-header");
-      const dropdownMenu = document.querySelector(".drawer-dropdown");
-
-      dropdownIcon.addEventListener("click", function () {
-        dropdownMenu.classList.toggle("show-dropdown");
-
-        if (dropdownMenu.classList.contains("show-dropdown")) {
-          dropdownIcon.classList.remove("fa-plus");
-          dropdownIcon.classList.add("fa-minus");
-        } else {
-          dropdownIcon.classList.remove("fa-minus");
-          dropdownIcon.classList.add("fa-plus");
-        }
-      });
-
-      // search
-      document.addEventListener("click", function () {
-        const searchIcon = document.getElementById(
-          "search-click"
-        );
-
-        const searchIconPhone = document.getElementById(
-          "phone-search-click"
-        );
-
-        const searchDropdown = document.querySelector(".SearchDropdown");
-        const pageOverlay = document.querySelector(".PageOverlay");
-
-        const closeSearchButton = document.getElementById(
-          "Search__Close"
-        );
-
-        searchIcon.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          searchDropdown.style.visibility = "visible";
-          pageOverlay.style.display = "block";
-
-          console.log(searchDropdown.style.visibility);
-
-        });
-
-
-        searchIconPhone.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          searchDropdown.style.visibility = "visible";
-          pageOverlay.style.display = "block";
-
-          console.log(pageOverlay.style.display);
-
-        });
-
-        closeSearchButton.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          searchDropdown.style.visibility = "hidden";
-          pageOverlay.style.display = "none";
-
-          console.log(pageOverlay.style.display);
-        });
-      });
-
-    </script>
+    <script src="./scripts/collection.js"></script>
   </body>
 </html>
