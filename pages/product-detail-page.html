@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail</title>
     <link rel="stylesheet" href="../styling/product-detail-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+
     <script
       src="https://kit.fontawesome.com/281de20304.js"
       crossorigin="anonymous"
@@ -575,22 +580,17 @@
                 <div class="Product__SlideshowNavScroller">
                   <a
                     href="#Media31932391489791"
-                    data-offset="-25"
-                    data-focus-on-click=""
-                    data-media-id="31932391489791"
-                    class="Product__SlideshowNavImage AspectRatio is-selected"
+                    class="Product__SlideshowNavImage AspectRatio"
                     style="--aspect-ratio: 1"
                   >
                     <img
+                      class="is-selected"
                       src="//hillcobees.com/cdn/shop/products/20230311_142456_160x.jpg?v=1678721239"
                       alt="Complete Hive - 10 Frame"
                     />
                   </a>
                   <a
                     href="#Media31932391555327"
-                    data-offset="-25"
-                    data-focus-on-click=""
-                    data-media-id="31932391555327"
                     class="Product__SlideshowNavImage AspectRatio"
                     style="--aspect-ratio: 1"
                   >
@@ -605,98 +605,62 @@
                 class="Product__Slideshow Product__Slideshow--zoomable Carousel"
               >
                 <div
-                  id="Media31932391489791"
-                  tabindex="0"
-                  class="Product__SlideItem Product__SlideItem--image Carousel__Cell is-selected"
-                  data-media-type="image"
-                  data-media-id="31932391489791"
-                  data-media-position="1"
-                  data-image-media-position="0"
+                  class="Product__SlideItem Product__SlideItem--image Carousel__Cell"
                 >
-                  <div
-                    class="AspectRatio AspectRatio--withFallback"
-                    style="padding-bottom: 100%; --aspect-ratio: 1"
-                  >
-                    <img
-                      class="Image--fadeIn lazyautosizes Image--lazyLoaded"
-                      data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
-                      data-sizes="auto"
-                      data-expand="-100"
-                      alt="Complete Hive - 10 Frame"
-                      data-max-width="3000"
-                      data-max-height="3000"
-                      data-original-src="//hillcobees.com/cdn/shop/products/20230311_142456.jpg?v=1678721239"
-                      data-srcset="//hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239 200w, //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239 400w, //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239 600w, //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239 700w, //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239 800w, //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239 900w, //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w, //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w, //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w, //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w"
-                      sizes="350px"
-                      srcset="
-                        //hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239   200w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239   400w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239   600w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239   700w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239   800w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239   900w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w,
-                        //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w
-                      "
-                    />
-                    <span class="Image__Loader"></span>
-
-                    <noscript>
-                      <img
-                        src="//hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239"
-                        alt="Complete Hive - 10 Frame"
-                      />
-                    </noscript>
-                  </div>
+                  <img
+                    id="Media31932391489791"
+                    class="Product--image"
+                    data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
+                    data-sizes="auto"
+                    data-expand="-100"
+                    alt="Complete Hive - 10 Frame"
+                    data-max-width="3000"
+                    data-max-height="3000"
+                    data-original-src="//hillcobees.com/cdn/shop/products/20230311_142456.jpg?v=1678721239"
+                    data-srcset="//hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239 200w, //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239 400w, //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239 600w, //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239 700w, //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239 800w, //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239 900w, //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w, //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w, //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w, //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w"
+                    sizes="350px"
+                    srcset="
+                      //hillcobees.com/cdn/shop/products/20230311_142456_200x.jpg?v=1678721239   200w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_400x.jpg?v=1678721239   400w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_600x.jpg?v=1678721239   600w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_700x.jpg?v=1678721239   700w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_800x.jpg?v=1678721239   800w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_900x.jpg?v=1678721239   900w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_1000x.jpg?v=1678721239 1000w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_1200x.jpg?v=1678721239 1200w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_1400x.jpg?v=1678721239 1400w,
+                      //hillcobees.com/cdn/shop/products/20230311_142456_1600x.jpg?v=1678721239 1600w
+                    "
+                  />
                 </div>
                 <div
-                  id="Media31932391555327"
-                  tabindex="0"
                   class="Product__SlideItem Product__SlideItem--image Carousel__Cell"
-                  data-media-type="image"
-                  data-media-id="31932391555327"
-                  data-media-position="2"
-                  data-image-media-position="1"
                 >
-                  <div
-                    class="AspectRatio AspectRatio--withFallback"
-                    style="padding-bottom: 100%; --aspect-ratio: 1"
-                  >
-                    <img
-                      class="Image--fadeIn lazyautosizes Image--lazyLoaded"
-                      data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
-                      data-sizes="auto"
-                      data-expand="-100"
-                      alt="Complete Hive - 10 Frame"
-                      data-max-width="3000"
-                      data-max-height="3000"
-                      data-original-src="//hillcobees.com/cdn/shop/products/20230311_141906.jpg?v=1678721244"
-                      data-srcset="//hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244 200w, //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244 400w, //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244 600w, //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244 700w, //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244 800w, //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244 900w, //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w, //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w, //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w, //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w"
-                      sizes="350px"
-                      srcset="
-                        //hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244   200w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244   400w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244   600w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244   700w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244   800w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244   900w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w,
-                        //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w
-                      "
-                    />
-                    <span class="Image__Loader"></span>
-
-                    <noscript>
-                      <img
-                        src="//hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244"
-                        alt="Complete Hive - 10 Frame"
-                      />
-                    </noscript>
-                  </div>
+                  <img
+                    id="Media31932391555327"
+                    class="Product--image"
+                    data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
+                    data-sizes="auto"
+                    data-expand="-100"
+                    alt="Complete Hive - 10 Frame"
+                    data-max-width="3000"
+                    data-max-height="3000"
+                    data-original-src="//hillcobees.com/cdn/shop/products/20230311_141906.jpg?v=1678721244"
+                    data-srcset="//hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244 200w, //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244 400w, //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244 600w, //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244 700w, //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244 800w, //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244 900w, //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w, //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w, //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w, //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w"
+                    sizes="350px"
+                    srcset="
+                      //hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244   200w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244   400w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244   600w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244   700w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244   800w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244   900w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w,
+                      //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w
+                    "
+                  />
                 </div>
               </div>
             </div>
@@ -937,56 +901,58 @@
                   </div>
                 </div>
 
-                <div class="ProductForm__QuantitySelector">
-                  <div class="QuantitySelector QuantitySelector--large">
-                    <button
-                      type="button"
-                      class="QuantitySelector__Button Link Link--secondary"
-                      data-action="decrease-quantity"
-                    >
-                      <svg
-                        class="Icon Icon--minus"
-                        role="presentation"
-                        viewBox="0 0 16 2"
+                <div class="button__container">
+                  <div class="ProductForm__QuantitySelector">
+                    <div class="QuantitySelector QuantitySelector--large">
+                      <button
+                        type="button"
+                        class="QuantitySelector__Button Link Link--secondary"
+                        data-action="decrease-quantity"
                       >
-                        <path
-                          d="M1,1 L15,1"
-                          stroke="currentColor"
-                          fill="none"
-                          fill-rule="evenodd"
-                          stroke-linecap="square"
-                        ></path>
-                      </svg>
-                    </button>
-                    <input
-                      type="text"
-                      class="QuantitySelector__CurrentQuantity"
-                      pattern="[0-9]*"
-                      name="quantity"
-                      value="1"
-                      aria-label="Quantity"
-                    />
-                    <button
-                      type="button"
-                      class="QuantitySelector__Button Link Link--secondary"
-                      data-action="increase-quantity"
-                    >
-                      <svg
-                        class="Icon Icon--plus"
-                        role="presentation"
-                        viewBox="0 0 16 16"
-                      >
-                        <g
-                          stroke="currentColor"
-                          fill="none"
-                          fill-rule="evenodd"
-                          stroke-linecap="square"
+                        <svg
+                          class="Icon Icon--minus"
+                          role="presentation"
+                          viewBox="0 0 16 2"
                         >
-                          <path d="M8,1 L8,15"></path>
-                          <path d="M1,8 L15,8"></path>
-                        </g>
-                      </svg>
-                    </button>
+                          <path
+                            d="M1,1 L15,1"
+                            stroke="currentColor"
+                            fill="none"
+                            fill-rule="evenodd"
+                            stroke-linecap="square"
+                          ></path>
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        class="QuantitySelector__CurrentQuantity"
+                        pattern="[0-9]*"
+                        name="quantity"
+                        value="1"
+                        aria-label="Quantity"
+                      />
+                      <button
+                        type="button"
+                        class="QuantitySelector__Button Link Link--secondary"
+                        data-action="increase-quantity"
+                      >
+                        <svg
+                          class="Icon Icon--plus"
+                          role="presentation"
+                          viewBox="0 0 16 16"
+                        >
+                          <g
+                            stroke="currentColor"
+                            fill="none"
+                            fill-rule="evenodd"
+                            stroke-linecap="square"
+                          >
+                            <path d="M8,1 L8,15"></path>
+                            <path d="M1,8 L15,8"></path>
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -1028,15 +994,284 @@
                   More payment options
                 </button>
 
-                <a href="#" class="spr-summary-actions-newreview">
+                <div class="button__container">
+                  <button
+                    type="submit"
+                    data-use-primary-button="false"
+                    class="ReviewButton"
+                    data-action="add-to-cart"
+                  >
+                    <span>Write a review</span>
+                  </button>
+                </div>
+
+                <!-- <a href="#" class="spr-summary-actions-newreview">
                   Write a review
-                </a>
+                </a> -->
               </div>
             </div>
           </div>
         </section>
 
-        <section class="Product__Recommendation"></section>
+        <section class="Product__Recommendation">
+          <header class="SectionHeader SectionHeader--center">
+            <div class="Heading__Container">
+              <h3 class="SectionHeader__Heading u-h3">You may also like</h3>
+            </div>
+          </header>
+          <main class="ProductRecommendation">
+            <div
+              class="RecommendationListWrapper"
+            >
+              <div class="carousel" data-flickity='{"autoPlay": false, "pageDots": false}'>
+              <!-- <div
+                class="ProductList ProductList--carousel Carousel"
+                data-flickity='{
+                  "prevNextButtons": true,
+                  "pageDots": false,
+                  "wrapAround": false,
+                  "contain": true,
+                  "cellAlign": "center",
+                  "watchCSS": true,
+                  "dragThreshold": 8,
+                  "groupCells": true,
+                  "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+                }'
+              > -->
+                <div class="Carousel__Cell">
+                  <div class="ProductItem">
+                    <div class="ProductItem__Wrapper">
+                      <a
+                        href="/products/complete-medium-hive-10-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385105151&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                        class="ProductItem__ImageWrapper"
+                        ><div
+                          class="AspectRatio AspectRatio--square"
+                          style="max-width: 3000px; --aspect-ratio: 1"
+                        >
+                          <img
+                            class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                            data-widths="[200,400,600,700,800,900,1000,1200]"
+                            data-sizes="auto"
+                            alt="Complete Medium Hive - 10 Frame"
+                            data-media-id="31932417802495"
+                            data-srcset="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_200x.jpg?v=1678722001 200w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_400x.jpg?v=1678722001 400w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_600x.jpg?v=1678722001 600w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_700x.jpg?v=1678722001 700w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_800x.jpg?v=1678722001 800w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_900x.jpg?v=1678722001 900w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_1000x.jpg?v=1678722001 1000w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_1200x.jpg?v=1678722001 1200w"
+                            sizes="255px"
+                            srcset="
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_200x.jpg?v=1678722001   200w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_400x.jpg?v=1678722001   400w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_600x.jpg?v=1678722001   600w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_700x.jpg?v=1678722001   700w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_800x.jpg?v=1678722001   800w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_900x.jpg?v=1678722001   900w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_1000x.jpg?v=1678722001 1000w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_1200x.jpg?v=1678722001 1200w
+                            "
+                          />
+                          <span class="Image__Loader"></span>
+
+                          <noscript>
+                            <img
+                              class="ProductItem__Image ProductItem__Image--alternate"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142041_600x.jpg?v=1678722011"
+                              alt="Complete Medium Hive - 10 Frame"
+                            />
+                            <img
+                              class="ProductItem__Image"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20230311_142337_600x.jpg?v=1678722001"
+                              alt="Complete Medium Hive - 10 Frame"
+                            />
+                          </noscript>
+                        </div>
+                      </a>
+                      <div class="ProductItem__Info ProductItem__Info--center">
+                        <h2 class="ProductItem__Title Heading">
+                          <a
+                            href="/products/complete-medium-hive-10-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385105151&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                            >Complete Medium Hive - 10 Frame</a
+                          >
+                        </h2>
+                        <div class="ProductItem__PriceList">
+                          <span class="ProductItem__Price Price Text--subdued"
+                            >From $196.99</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Carousel__Cell">
+                  <div class="ProductItem">
+                    <div class="ProductItem__Wrapper">
+                      <a
+                        href="/products/complete-hive-8-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385203455&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                        class="ProductItem__ImageWrapper"
+                        ><div
+                          class="AspectRatio AspectRatio--square"
+                          style="max-width: 340px; --aspect-ratio: 1"
+                        >
+                          <img
+                            class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                            data-widths="[200]"
+                            data-sizes="auto"
+                            alt="Complete bee Hive - 8 Frame for beekeeping"
+                            data-media-id="29484269732095"
+                            data-srcset="//cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_b9eca25aea3d40a288bacf93bc6c3e41_mv2_200x.jpg?v=1649456411 200w"
+                            sizes="255px"
+                            srcset="
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_b9eca25aea3d40a288bacf93bc6c3e41_mv2_200x.jpg?v=1649456411 200w
+                            "
+                          />
+                          <span class="Image__Loader"></span>
+
+                          <noscript>
+                            <img
+                              class="ProductItem__Image ProductItem__Image--alternate"
+                              src="//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x.gif"
+                              alt=""
+                            />
+                            <img
+                              class="ProductItem__Image"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_b9eca25aea3d40a288bacf93bc6c3e41_mv2_600x.jpg?v=1649456411"
+                              alt="Complete bee Hive - 8 Frame for beekeeping"
+                            />
+                          </noscript>
+                        </div>
+                      </a>
+                      <div class="ProductItem__Info ProductItem__Info--center">
+                        <h2 class="ProductItem__Title Heading">
+                          <a
+                            href="/products/complete-hive-8-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385203455&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                            >Complete Hive - 8 Frame</a
+                          >
+                        </h2>
+                        <div class="ProductItem__PriceList">
+                          <span class="ProductItem__Price Price Text--subdued"
+                            >From $129.59</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Carousel__Cell">
+                  <div class="ProductItem">
+                    <div class="ProductItem__Wrapper">
+                      <a
+                        href="/products/complete-medium-hive-8-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385072383&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                        class="ProductItem__ImageWrapper"
+                        ><div
+                          class="AspectRatio AspectRatio--square"
+                          style="max-width: 340px; --aspect-ratio: 1"
+                        >
+                          <img
+                            class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                            data-widths="[200]"
+                            data-sizes="auto"
+                            alt="Complete Medium bee Hive - 8  frame for beekeeping"
+                            data-media-id="29484269371647"
+                            data-srcset="//cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_7b5c3bd02de34087a6165d7374c8b749_mv2_200x.jpg?v=1649456404 200w"
+                            sizes="255px"
+                            srcset="
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_7b5c3bd02de34087a6165d7374c8b749_mv2_200x.jpg?v=1649456404 200w
+                            "
+                          />
+                          <span class="Image__Loader"></span>
+
+                          <noscript>
+                            <img
+                              class="ProductItem__Image ProductItem__Image--alternate"
+                              src="//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_600x.gif"
+                              alt=""
+                            />
+                            <img
+                              class="ProductItem__Image"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/2d7a31_7b5c3bd02de34087a6165d7374c8b749_mv2_600x.jpg?v=1649456404"
+                              alt="Complete Medium bee Hive - 8  frame for beekeeping"
+                            />
+                          </noscript>
+                        </div>
+                      </a>
+                      <div class="ProductItem__Info ProductItem__Info--center">
+                        <h2 class="ProductItem__Title Heading">
+                          <a
+                            href="/products/complete-medium-hive-8-frame?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7610385072383&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                            >Complete Medium Hive - 8 Frame</a
+                          >
+                        </h2>
+                        <div class="ProductItem__PriceList">
+                          <span class="ProductItem__Price Price Text--subdued"
+                            >From $183.59</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="Carousel__Cell">
+                  <div class="ProductItem">
+                    <div class="ProductItem__Wrapper">
+                      <a
+                        href="/products/maxima-plastic-bottom-board?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7627465163007&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                        class="ProductItem__ImageWrapper"
+                        ><div
+                          class="AspectRatio AspectRatio--square"
+                          style="max-width: 3000px; --aspect-ratio: 1"
+                        >
+                          <img
+                            class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                            data-widths="[200,400,600,700,800,900,1000,1200]"
+                            data-sizes="auto"
+                            alt="Maxima Plastic bee hive Bottom Board - 10 frame For beekeeping"
+                            data-media-id="29577886040319"
+                            data-srcset="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_200x.jpg?v=1650920594 200w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_400x.jpg?v=1650920594 400w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_600x.jpg?v=1650920594 600w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_700x.jpg?v=1650920594 700w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_800x.jpg?v=1650920594 800w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_900x.jpg?v=1650920594 900w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_1000x.jpg?v=1650920594 1000w, //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_1200x.jpg?v=1650920594 1200w"
+                            sizes="255px"
+                            srcset="
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_200x.jpg?v=1650920594   200w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_400x.jpg?v=1650920594   400w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_600x.jpg?v=1650920594   600w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_700x.jpg?v=1650920594   700w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_800x.jpg?v=1650920594   800w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_900x.jpg?v=1650920594   900w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_1000x.jpg?v=1650920594 1000w,
+                              //cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_1200x.jpg?v=1650920594 1200w
+                            "
+                          />
+                          <span class="Image__Loader"></span>
+
+                          <noscript>
+                            <img
+                              class="ProductItem__Image ProductItem__Image--alternate"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120320_600x.jpg?v=1650920594"
+                              alt="Maxima Plastic bee hive Bottom Board - 10 frame For beekeeping"
+                            />
+                            <img
+                              class="ProductItem__Image"
+                              src="//cdn.shopify.com/s/files/1/0630/5520/0511/products/20220423_120208_600x.jpg?v=1650920594"
+                              alt="Maxima Plastic bee hive Bottom Board - 10 frame For beekeeping"
+                            />
+                          </noscript>
+                        </div>
+                      </a>
+                      <div class="ProductItem__Info ProductItem__Info--center">
+                        <h2 class="ProductItem__Title Heading">
+                          <a
+                            href="/products/maxima-plastic-bottom-board?pr_prod_strat=use_description&amp;pr_rec_id=f872bfa5e&amp;pr_rec_pid=7627465163007&amp;pr_ref_pid=7610385301759&amp;pr_seq=uniform"
+                            >Maxima Plastic Bottom Board - 10 frame</a
+                          >
+                        </h2>
+                        <div class="ProductItem__PriceList">
+                          <span class="ProductItem__Price Price Text--subdued"
+                            >$26.59</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
       </div>
     </main>
 
@@ -1155,6 +1390,7 @@
       </div>
     </footer>
 
-    <script src="./scripts/collection.js"></script>
+    <script src="./scripts/product-detail-page.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>
