@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Collection</title>
+    <title>Product Detail</title>
     <link rel="stylesheet" href="../styling/product-detail-page.css" />
     <script
       src="https://kit.fontawesome.com/281de20304.js"
@@ -465,7 +465,7 @@
       </div>
 
       <div class="Header__FlexItem Header__FlexItem--logo">
-        <a href="/" class="Header__LogoLink">
+        <a href="/pages/index.html" class="Header__LogoLink">
           <img
             class="Header__LogoImage"
             src="/assests/logo-rectangle-2023_Color_Tag_1_350x@2x.webp"
@@ -665,8 +665,7 @@
                     style="padding-bottom: 100%; --aspect-ratio: 1"
                   >
                     <img
-                      class="Image--lazyLoad Image--fadeIn"
-                      data-src="//hillcobees.com/cdn/shop/products/20230311_141906_{width}x.jpg?v=1678721244"
+                      class="Image--fadeIn lazyautosizes Image--lazyLoaded"
                       data-widths="[200,400,600,700,800,900,1000,1200,1400,1600]"
                       data-sizes="auto"
                       data-expand="-100"
@@ -674,6 +673,20 @@
                       data-max-width="3000"
                       data-max-height="3000"
                       data-original-src="//hillcobees.com/cdn/shop/products/20230311_141906.jpg?v=1678721244"
+                      data-srcset="//hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244 200w, //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244 400w, //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244 600w, //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244 700w, //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244 800w, //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244 900w, //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w, //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w, //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w, //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w"
+                      sizes="350px"
+                      srcset="
+                        //hillcobees.com/cdn/shop/products/20230311_141906_200x.jpg?v=1678721244   200w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_400x.jpg?v=1678721244   400w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_600x.jpg?v=1678721244   600w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_700x.jpg?v=1678721244   700w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_800x.jpg?v=1678721244   800w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_900x.jpg?v=1678721244   900w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_1000x.jpg?v=1678721244 1000w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_1200x.jpg?v=1678721244 1200w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_1400x.jpg?v=1678721244 1400w,
+                        //hillcobees.com/cdn/shop/products/20230311_141906_1600x.jpg?v=1678721244 1600w
+                      "
                     />
                     <span class="Image__Loader"></span>
 
@@ -978,29 +991,42 @@
                 </div>
 
                 <div class="ProductForm__BuyButtons">
-                  <button type="submit" data-use-primary-button="false" class="ProductForm__AddToCart BuyButton Button--full Button--secondary" data-action="add-to-cart">
+                  <button
+                    type="submit"
+                    data-use-primary-button="false"
+                    class="BuyButton"
+                    data-action="add-to-cart"
+                  >
                     <span>Add to cart</span>
                     <span class="Button__SeparatorDot"></span>
                     <span data-money-convertible="">$133.99</span>
                   </button>
 
                   <div class="payment-button">
-                    <button type="submit" data-use-primary-button="false" class="PaymentButton" data-action="add-to-cart">
+                    <button
+                      type="submit"
+                      data-use-primary-button="false"
+                      class="PaymentButton"
+                      data-action="add-to-cart"
+                    >
                       <span>Buy with</span>
                       <!-- <span> -->
-                        <!-- <svg preserveAspectRatio="xMidYMid" class="qZgSr5RiiBCTAMfQYsty" style="height: 20px; width: 85px; color: white;">
+                      <!-- <svg preserveAspectRatio="xMidYMid" class="qZgSr5RiiBCTAMfQYsty" style="height: 20px; width: 85px; color: white;">
                           <use xlink:href="#shopify-svg__payments-shop-pay"></use>
                         </svg> -->
                       <!-- </span> -->
-                      <img src="../assests/shop-pay.png" alt="shop pay" style="height: 23px; padding-left: 3px; width: 85px;">
+                      <img
+                        src="../assests/shop-pay.png"
+                        alt="shop pay"
+                        style="height: 23px; padding-left: 3px; width: 85px"
+                      />
                     </button>
                   </div>
-
                 </div>
 
-                <Button class="shopify-payment-button__more-options">
+                <button class="shopify-payment-button__more-options">
                   More payment options
-                </Button>
+                </button>
 
                 <a href="#" class="spr-summary-actions-newreview">
                   Write a review
