@@ -584,7 +584,7 @@
                     style="--aspect-ratio: 1"
                   >
                     <img
-                      class="is-selected"
+                      class="navImage is-selected"
                       src="//hillcobees.com/cdn/shop/products/20230311_142456_160x.jpg?v=1678721239"
                       alt="Complete Hive - 10 Frame"
                     />
@@ -595,17 +595,22 @@
                     style="--aspect-ratio: 1"
                   >
                     <img
+                      class="navImage"
                       src="//hillcobees.com/cdn/shop/products/20230311_141906_160x.jpg?v=1678721244"
                       alt="Complete Hive - 10 Frame"
                     />
                   </a>
                 </div>
               </div>
+
               <div
-                class="Product__Slideshow Product__Slideshow--zoomable Carousel"
+                class="Product__Slideshow Product__Slideshow--zoomable Carousel Product__Slideshow--left"
+                data-flickity
               >
+                <!-- <div class="Product__Slideshow Product__Slideshow--zoomable Carousel Product__Slideshow--main"> -->
+
                 <div
-                  class="Product__SlideItem Product__SlideItem--image Carousel__Cell"
+                  class="Product__SlideItem Product__SlideItem--image carousel_cell"
                 >
                   <img
                     id="Media31932391489791"
@@ -664,6 +669,7 @@
                 </div>
               </div>
             </div>
+
             <div class="Product__InfoWrapper">
               <div class="Product__Info">
                 <div class="ProductMeta">
@@ -870,7 +876,7 @@
                   </div>
                 </div>
 
-                <div class="ProductForm__Variants">
+                <!-- <div class="ProductForm__Variants">
                   <div class="ProductForm__Option">
                     <button
                       type="button"
@@ -899,7 +905,52 @@
                       </svg>
                     </button>
                   </div>
+
+                  <div class="no-js ProductForm__Option">
+                    <div class="Select Select--primary">
+                    
+                      <select
+                      class="ProductForm__Item"
+                        id="product-select-7610385301759"
+                        name="id"
+                        title="Variant"
+                      >
+                        <option value="43863966023935" data-sku="">
+                          Maxima Lifetime Bottom Board - $133.99
+                        </option>
+                        <option value="42657555087615" data-sku="1403">
+                          Solid Wood Bottom Board - $133.99
+                        </option>
+                        <option
+                          selected="selected"
+                          value="42657555120383"
+                          data-sku="1404"
+                        >
+                          Screened Wooden Bottom Board (add $8) - $141.99
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="ProductForm__Variants">
+                  <div class="ProductForm__Option">
+                    <button type="button" class="ProductForm__Item" aria-expanded="false" id="dropdownToggleBtn">
+                      <span class="ProductForm__OptionName">Bottom Board Options:
+                        <span class="ProductForm__SelectedValue">Screened Wooden Bottom Board (add $8)</span>
+                      </span>
+                      <svg class="Icon Icon--select-arrow" role="presentation" viewBox="0 0 19 12">
+                        <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+                      </svg>
+                    </button>
+                    <ul class="ProductForm__OptionsList" id="optionsList">
+                      <li class="ProductForm__OptionItem" data-value="Maxima Lifetime Bottom Board">Maxima Lifetime Bottom Board</li>
+                      <li class="ProductForm__OptionItem" data-value="Solid Wood Bottom Board">Solid Wood Bottom Board</li>
+                      <li class="ProductForm__OptionItem" data-value="Screened Wooden Bottom Board (add $8)">Screened Wooden Bottom Board (add $8)</li>
+                    </ul>
+                  </div>
                 </div>
+                
 
                 <div class="button__container">
                   <div class="ProductForm__QuantitySelector">
@@ -995,6 +1046,248 @@
                 </button>
 
                 <div class="button__container">
+                  <!-- Form Start-->
+                  <div class="spr-content">
+                    <form
+                      method="post"
+                      id="new-review-form_7610385301759"
+                      class="new-review-form"
+                    >
+                      <h3 class="spr-form-title">Write a review</h3>
+
+                      <fieldset class="spr-form-contact">
+                        <div class="spr-form-contact-name">
+                          <label
+                            class="spr-form-label"
+                            for="review_author_7610385301759"
+                          >
+                            Name
+                          </label>
+                          <input
+                            class="spr-form-input spr-form-input-text"
+                            id="review_author_7610385301759"
+                            type="text"
+                            name="review[author]"
+                            value=""
+                            placeholder="Enter your name"
+                          />
+                        </div>
+
+                        <div class="spr-form-contact-email">
+                          <label
+                            class="spr-form-label"
+                            for="review_email_7610385301759"
+                          >
+                            Email
+                          </label>
+                          <input
+                            class="spr-form-input spr-form-input-email"
+                            id="review_email_7610385301759"
+                            type="email"
+                            name="review[email]"
+                            value=""
+                            placeholder="john.smith@example.com"
+                          />
+                        </div>
+                      </fieldset>
+
+                      <fieldset class="spr-form-review">
+                        <div class="spr-form-review-rating">
+                          <label class="spr-form-label" for="review[rating]">
+                            Rating
+                          </label>
+                          <span role="img" aria-label="0 out of 5 stars">
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              role="presentation"
+                              class="spr-star"
+                              style="width: 15px; height: 15px"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                            >
+                              <path
+                                fill="#000000 "
+                                d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                              ></path>
+                            </svg>
+
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              role="presentation"
+                              class="spr-star"
+                              style="width: 15px; height: 15px"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                            >
+                              <path
+                                fill="#000000 "
+                                d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                              ></path>
+                            </svg>
+
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              role="presentation"
+                              class="spr-star"
+                              style="width: 15px; height: 15px"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                            >
+                              <path
+                                fill="#000000 "
+                                d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                              ></path>
+                            </svg>
+
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              role="presentation"
+                              class="spr-star"
+                              style="width: 15px; height: 15px"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                            >
+                              <path
+                                fill="#000000 "
+                                d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                              ></path>
+                            </svg>
+
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              role="presentation"
+                              class="spr-star"
+                              style="width: 15px; height: 15px"
+                              xmlns="http://www.w3.org/2000/svg"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 512 512"
+                              xml:space="preserve"
+                            >
+                              <path
+                                fill="#000000 "
+                                d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z"
+                              ></path>
+                            </svg>
+                          </span>
+                          <!-- <div class="spr-form-input spr-starrating">
+                            <a
+                              href="#"
+                              onclick="SPR.setRating(this);return false;"
+                              class="spr-icon spr-icon-star spr-icon-star-empty"
+                              data-value="1"
+                              aria-label="1 of 5 stars"
+                              >&nbsp;</a
+                            >
+                            <a
+                              href="#"
+                              onclick="SPR.setRating(this);return false;"
+                              class="spr-icon spr-icon-star spr-icon-star-empty"
+                              data-value="2"
+                              aria-label="2 of 5 stars"
+                              >&nbsp;</a
+                            >
+                            <a
+                              href="#"
+                              onclick="SPR.setRating(this);return false;"
+                              class="spr-icon spr-icon-star spr-icon-star-empty"
+                              data-value="3"
+                              aria-label="3 of 5 stars"
+                              >&nbsp;</a
+                            >
+                            <a
+                              href="#"
+                              onclick="SPR.setRating(this);return false;"
+                              class="spr-icon spr-icon-star spr-icon-star-empty"
+                              data-value="4"
+                              aria-label="4 of 5 stars"
+                              >&nbsp;</a
+                            >
+                            <a
+                              href="#"
+                              onclick="SPR.setRating(this);return false;"
+                              class="spr-icon spr-icon-star spr-icon-star-empty"
+                              data-value="5"
+                              aria-label="5 of 5 stars"
+                              >&nbsp;</a
+                            >
+                          </div> -->
+                        </div>
+
+                        <div class="spr-form-review-title">
+                          <label
+                            class="spr-form-label"
+                            for="review_title_7610385301759"
+                          >
+                            Review Title
+                          </label>
+                          <input
+                            class="spr-form-input spr-form-input-text"
+                            id="review_title_7610385301759"
+                            type="text"
+                            name="review[title]"
+                            value=""
+                            placeholder="Give your review a title"
+                          />
+                        </div>
+
+                        <div class="spr-form-review-body">
+                          <label
+                            class="spr-form-label"
+                            for="review_body_7610385301759"
+                          >
+                            Body of Review
+                            <span
+                              role="status"
+                              aria-live="polite"
+                              aria-atomic="true"
+                            >
+                              <span
+                                class="spr-form-review-body-charactersremaining"
+                                >(1500)</span
+                              >
+                            </span>
+                          </label>
+
+                          <div class="spr-form-input">
+                            <textarea
+                              class="spr-form-input spr-form-input-textarea"
+                              rows="10"
+                              placeholder="Write your comments here"
+                            >
+                            </textarea>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <fieldset class="spr-form-actions">
+                        <input
+                          type="submit"
+                          class="spr-button spr-button-primary button button-primary btn btn-primary"
+                          value="Submit Review"
+                        />
+                      </fieldset>
+                    </form>
+                  </div>
+
+                  <!-- Review Button -->
                   <button
                     type="submit"
                     data-use-primary-button="false"
@@ -1020,24 +1313,11 @@
             </div>
           </header>
           <main class="ProductRecommendation">
-            <div
-              class="RecommendationListWrapper"
-            >
-              <div class="carousel" data-flickity='{"autoPlay": false, "pageDots": false}'>
-              <!-- <div
-                class="ProductList ProductList--carousel Carousel"
-                data-flickity='{
-                  "prevNextButtons": true,
-                  "pageDots": false,
-                  "wrapAround": false,
-                  "contain": true,
-                  "cellAlign": "center",
-                  "watchCSS": true,
-                  "dragThreshold": 8,
-                  "groupCells": true,
-                  "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
-                }'
-              > -->
+            <div class="RecommendationListWrapper">
+              <div
+                class=".ProductList--carousel carousel"
+                data-flickity='{"autoPlay": false, "pageDots": false, "cellAlign": "left"}'
+              >
                 <div class="Carousel__Cell">
                   <div class="ProductItem">
                     <div class="ProductItem__Wrapper">
@@ -1099,6 +1379,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="Carousel__Cell">
                   <div class="ProductItem">
                     <div class="ProductItem__Wrapper">
@@ -1153,6 +1434,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="Carousel__Cell">
                   <div class="ProductItem">
                     <div class="ProductItem__Wrapper">
@@ -1207,6 +1489,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="Carousel__Cell">
                   <div class="ProductItem">
                     <div class="ProductItem__Wrapper">
@@ -1390,7 +1673,124 @@
       </div>
     </footer>
 
-    <script src="./scripts/product-detail-page.js"></script>
+    <script>
+      const navImages = document.querySelectorAll(".navImage");
+
+      const reviewButton = document.querySelector(".ReviewButton");
+      const sprContent = document.querySelector(".spr-content");
+
+      // Select -----------------------------------------
+
+      // const svgSelectArrow = document.querySelector(".Icon--select-arrow");
+      // const noJsProductOption = document.querySelector(
+      //   ".no-js.ProductForm__Option"
+      // );
+      // const productSelectedValue = document.querySelector(
+      //   ".ProductForm__SelectedValue"
+      // );
+
+      // svgSelectArrow.addEventListener("click", function () {
+      //   noJsProductOption.style.display = "block";
+      //   // selectElement.click();
+
+      // });
+
+      // // Get reference to the select element
+      // const productSelect = document.getElementById(
+      //   "product-select-7610385301759"
+      // );
+
+      // // Add change event listener to the select element
+      // productSelect.addEventListener("change", function () {
+      //   // Update the content of ProductForm__SelectedValue with the selected value
+      //   const selectedOption =
+      //     productSelect.options[productSelect.selectedIndex];
+      //   productSelectedValue.textContent = selectedOption.textContent;
+      //   noJsProductOption.style.display = "none";
+      // });
+
+      // ------------------------------------------------
+
+      // ***************
+
+      const dropdownToggleBtn = document.getElementById('dropdownToggleBtn');
+    const optionsList = document.getElementById('optionsList');
+
+    // Add click event listener to the button
+    dropdownToggleBtn.addEventListener('click', function () {
+      // Toggle the display of the options list
+      const isExpanded = dropdownToggleBtn.getAttribute('aria-expanded') === 'true';
+      dropdownToggleBtn.setAttribute('aria-expanded', !isExpanded);
+      optionsList.style.display = isExpanded ? 'none' : 'block';
+    });
+
+    // Add click event listener to the options list items
+    const optionItems = document.querySelectorAll('.ProductForm__OptionItem');
+    optionItems.forEach((item) => {
+      item.addEventListener('click', function () {
+        // Update the selected value and close the options list
+        const selectedValue = item.getAttribute('data-value');
+        dropdownToggleBtn.querySelector('.ProductForm__SelectedValue').textContent = selectedValue;
+        dropdownToggleBtn.setAttribute('aria-expanded', 'false');
+        optionsList.style.display = 'none';
+      });
+    });
+
+
+
+      // *****************
+
+      // Add click event listener to the review button
+      reviewButton.addEventListener("click", function () {
+        // Toggle the display of sprContent and the reviewButton
+        if (
+          sprContent.style.display === "none" ||
+          sprContent.style.display === ""
+        ) {
+          sprContent.style.display = "block";
+          reviewButton.style.display = "none";
+        } else {
+          sprContent.style.display = "none";
+          reviewButton.style.display = "block";
+        }
+      });
+
+      // const productWrapper = document.querySelector(".Product__Wrapper");
+
+      // const navigationLinks = document.querySelectorAll(
+      //   ".Product__SlideshowNavScroller"
+      // );
+
+      // for (const link of navigationLinks) {
+      //   link.addEventListener("click", function (event) {
+      //     event.preventDefault();
+      //     const target = document.querySelector(link.getAttribute("href"));
+      //     const headerHeight =
+      //       document.querySelector(".Header__Wrapper").offsetHeight;
+
+      //     window.scrollTo({
+      //       top: target.offsetTop - headerHeight,
+      //       behavior: "smooth",
+      //     });
+      //   });
+      // }
+
+      navImages.forEach((navImage) => {
+        navImage.addEventListener("click", function () {
+          // Remove .is-selected class from all nav images
+          navImages.forEach((img) => img.classList.remove("is-selected"));
+
+          // Add .is-selected class to the clicked nav image
+          this.classList.add("is-selected");
+
+          // if (this.classList.contains("is-selected")) {
+          //   productWrapper.classList.add("custom-padding");
+          // } else {
+          //   productWrapper.classList.remove("custom-padding");
+          // }
+        });
+      });
+    </script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>
