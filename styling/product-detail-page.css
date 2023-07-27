@@ -731,12 +731,12 @@ main {
 .ProductForm__OptionsList {
   display: none;
   position: absolute;
-  left: -425px;
+  left: -420px;
   top: -70%;
   width: 400px;
   background-color: #fff;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-  padding: 14px 8px ;
+  padding: 14px 0px ;
   list-style-type: none;
   font-size: 12px;
   text-align: center;
@@ -757,7 +757,7 @@ main {
 
 
 .ProductForm__OptionItem {
-  padding: 12px 12px;
+  padding: 12px 0px;
   cursor: pointer;
 }
 
