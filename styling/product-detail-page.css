@@ -732,24 +732,35 @@ main {
 .Button--full {
   width: 100%;
 }
+
 .BuyButton {
-  position: relative;
+  text-align: center;
   display: inline-block;
   padding: 14px 28px;
-  line-height: normal;
   color: #000;
-  border: 1px solid rgba(var(--text-color-light-rgb), 0.2);
+  position: relative;
+  line-height: normal;
+  /* border: 1px solid rgba(var(--text-color-light-rgb), 0.2); */
+  border: 1px solid black;
   text-transform: uppercase;
   font-size: 13px;
   font-family: Chivo, sans-serif;
-  text-align: center;
   letter-spacing: 0.2em;
   font-weight: 700;
   background-color: transparent;
-  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  z-index: 1;
+  /* z-index: 1; */
   width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #000 50%, #fff 50%);
+  background-position: right;
+  background-size: 200% 100%;
+  transition: background-position 0.5s ease;
+}
+
+.BuyButton:hover {
+  background-position: left;
+  color: #fff !important;
 }
 
 .Button__SeparatorDot {
@@ -826,18 +837,29 @@ main {
   padding: 14px 8px;
   line-height: normal;
   color: #fff;
-  border: 1px solid rgba(var(--text-color-light-rgb), 0.2);
+  /* border: 1px solid rgba(var(--text-color-light-rgb), 0.2); */
+  border: 1px solid black;
+
   text-transform: uppercase;
   font-size: 13px;
   text-align: center;
   letter-spacing: 0.2em;
   font-weight: 700;
   background-color: black;
-  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  /* transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
   z-index: 1;
   width: 50%;
   font-family: Chivo, sans-serif;
+  background-image: linear-gradient(to right, white 50%, #000 50%);
+  background-position: right;
+  background-size: 200% 100%;
+  transition: background-position 0.5s ease;
+}
+
+.ReviewButton:hover {
+  background-position: left;
+  color: #000 !important;
 }
 
 /* Product Recommendation */
