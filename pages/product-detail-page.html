@@ -906,7 +906,10 @@
                       </svg>
                     </button>
 
-                    <ul class="ProductForm__OptionsList hide-1007px" id="optionsList">
+                    <ul
+                      class="ProductForm__OptionsList hide-1007px"
+                      id="optionsList"
+                    >
                       <li
                         class="ProductForm__OptionItem"
                         data-value="Maxima Lifetime Bottom Board"
@@ -1049,16 +1052,17 @@
                 </div>
 
                 <div class="ProductForm__BuyButtons">
-                  <button
+                  <a
                     type="submit"
                     data-use-primary-button="false"
                     class="BuyButton"
                     data-action="add-to-cart"
+                    href="/pages/cart.html"
                   >
-                    <span>Add to cart</span>
-                    <span class="Button__SeparatorDot"></span>
-                    <span data-money-convertible="">$133.99</span>
-                  </button>
+                      <span>Add to cart</span>
+                      <span class="Button__SeparatorDot"></span>
+                      <span data-money-convertible="">$133.99</span>
+                </a>
 
                   <div class="payment-button">
                     <button
@@ -1714,9 +1718,7 @@
       </div>
     </footer>
 
-    <script src="/scripts/product-detail-page.js">
-      
-    </script>
+    <script src="/scripts/product-detail-page.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

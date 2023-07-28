@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collection</title>
+    <link rel="stylesheet" href="/styling/cart.css" />
+    <script
+      src="https://kit.fontawesome.com/281de20304.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="PageOverlay is-visible"></div>
+    <!-- AnnouncementBar -->
+    <div class="AnnouncementBar__Wrapper">
+      <p class="AnnouncementBar__Content Heading right">
+        FREE SHIPPING ON ALL ORDERS OVER $100
+      </p>
+      <p class="AnnouncementBar__Content Heading left">
+        LOCALLY PICKED UP ORDERS GET A 10% DISCOUNT
+      </p>
+    </div>
+
+    <!-- Header -->
+    <header class="Header__Wrapper">
+      <!-- Search Section -->
+      <div class="SearchDropdown">
+        <div class="Search__Inner">
+          <form action="/search" role="search" class="Search__Form">
+            <div class="Search__InputIconWrapper">
+              <span class="hidden-tablet-and-up">
+                <svg
+                  class="Icon Icon--search"
+                  role="presentation"
+                  viewBox="0 0 18 17"
+                >
+                  <g
+                    transform="translate(1 1)"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="square"
+                  >
+                    <path d="M16 16l-5.0752-5.0752"></path>
+                    <circle cx="6.4" cy="6.4" r="6.4"></circle>
+                  </g>
+                </svg>
+              </span>
+              <span class="hidden-phone">
+                <svg
+                  class="Icon Icon--search-desktop"
+                  role="presentation"
+                  viewBox="0 0 21 21"
+                >
+                  <g
+                    transform="translate(1 1)"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="square"
+                  >
+                    <path d="M18 18l-5.7096-5.7096"></path>
+                    <circle cx="7.2" cy="7.2" r="7.2"></circle>
+                  </g>
+                </svg>
+              </span>
+            </div>
+
+            <input
+              type="search"
+              class="Search__Input"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              aria-label="Search..."
+              placeholder="Search..."
+              autofocus=""
+            />
+            <input type="hidden" name="type" value="product" />
+          </form>
+
+          <button id="Search__Close" aria-label="Close search">
+            <svg
+              class="Icon Icon--close"
+              role="presentation"
+              viewBox="0 0 16 14"
+              style="width: 16px"
+            >
+              <path
+                d="M15 0L1 14m14 0L1 0"
+                stroke="currentColor"
+                fill="none"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="Header__FlexItem Header__FlexItem--navbar">
+        <button
+          id="menu-button"
+          class="navbar_Icon bars"
+          aria-label="Toggle Menu"
+        >
+          <span class="hidden-tablet-and-up">
+            <svg
+              class="Icon Icon--nav"
+              role="presentation"
+              viewBox="0 0 20 14"
+              style="width: 20"
+            >
+              <path
+                d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+          <span class="hidden-phone">
+            <svg
+              class="Icon Icon--nav-desktop"
+              role="presentation"
+              viewBox="0 0 24 16"
+              style="width: 24"
+            >
+              <path
+                d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+        </button>
+
+        <div id="drawer">
+          <!-- Drawer content goes here -->
+          <header class="drawer-header">
+            <button id="close-button" aria-label="Close">
+              <!-- <i class="fa-solid fa-xmark"></i> -->
+              <svg
+                class="Icon Icon--close"
+                role="presentation"
+                viewBox="0 0 16 14"
+                style="width: 16px"
+              >
+                <path
+                  d="M15 0L1 14m14 0L1 0"
+                  stroke="currentColor"
+                  fill="none"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </header>
+
+          <div class="drawer-content">
+            <div class="drawer-main">
+              <div class="drawer-container">
+                <nav
+                  class="sidebar-nav primary-nav"
+                  aria-label="Sidebar navigation"
+                >
+                  <!-- Primary navigation links -->
+                  <a href="/" class="primary-link">Home</a>
+                  <hr class="horizontal-line" />
+
+                  <div class="shop-menu">
+                    <div class="shop-header">
+                      <a href="/shop" class="primary-link">Shop</a>
+                      <i class="fa-solid fa-plus dropdown-icon"></i>
+                    </div>
+
+                    <div class="drawer-dropdown" aria-hidden="true">
+                      <ul class="drawer-linklist">
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/10-frame-hives-amp-components"
+                            class="drawer-link drawer-link--secondary"
+                            >10 Frame Hives &amp; Components</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/8-frame-hives-amp-components"
+                            class="drawer-link drawer-link--secondary"
+                            >8 Frame Hives &amp; Components</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/5-frame-hives-amp-components"
+                            class="drawer-link drawer-link--secondary"
+                            >5 Frame Hives &amp; Components</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/bee-suits-amp-gloves"
+                            class="drawer-link drawer-link--secondary"
+                            >Bee Suits &amp; Gloves</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/bees-queens"
+                            class="drawer-link drawer-link--secondary"
+                            >Bees &amp; Queens</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/beginner-kits"
+                            class="drawer-link drawer-link--secondary"
+                            >Beginner Kits</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/feed-amp-supplements"
+                            class="drawer-link drawer-link--secondary"
+                            >Feed &amp; Supplements</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/feeders"
+                            class="drawer-link drawer-link--secondary"
+                            >Feeders</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/frames-amp-foundation"
+                            class="drawer-link drawer-link--secondary"
+                            >Frames &amp; Foundation</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/health-amp-pest-control"
+                            class="drawer-link drawer-link--secondary"
+                            >Health &amp; Pest Control</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/hive-accessories"
+                            class="drawer-link drawer-link--secondary"
+                            >Hive Accessories</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/honey-extracting-extractors"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Extractors</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/honey-extracting-honey-removal-processing-and-extracting-accessories"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Honey Removal, Processing, and
+                            Extracting Accessories</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/honey-extracting-uncapping-tanks-amp-tools"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Extracting - Uncapping Tanks &amp; Tools</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/honey-storage-and-containers"
+                            class="drawer-link drawer-link--secondary"
+                            >Honey Storage and Containers</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/queen-rearing-supplies"
+                            class="drawer-link drawer-link--secondary"
+                            >Queen Rearing Supplies</a
+                          >
+                        </li>
+                        <li class="drawer-linklist__item">
+                          <a
+                            href="/collections/smokers-amp-tools"
+                            class="drawer-link drawer-link--secondary"
+                            >Smokers &amp; Tools</a
+                          >
+                        </li>
+                        <!-- Add more list items here -->
+                      </ul>
+                    </div>
+                  </div>
+
+                  <hr class="horizontal-line" />
+
+                  <a href="/pages/about-us" class="primary-link">About Us</a>
+                  <hr class="horizontal-line" />
+
+                  <a href="/pages/contact" class="primary-link">Contact</a>
+                  <hr class="horizontal-line" />
+
+                  <a href="/account" class="primary-link account-drawer"
+                    >Account</a
+                  >
+                </nav>
+              </div>
+            </div>
+
+            <aside class="drawer-footer" data-animated-bottom="">
+              <hr class="horizontal-line" />
+
+              <ul class="social-list">
+                <li>
+                  <i class="fa-brands fa-facebook-f"></i>
+                </li>
+                <li>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+
+        <nav class="Header__MainNav" aria-label="Main navigation">
+          <ul class="HorizontalList">
+            <li class="HorizontalList__Item">
+              <a href="/" class="Heading Link">Home</a>
+            </li>
+            <li class="HorizontalList__Item">
+              <a href="/collections/all" class="Heading Link">Shop</a>
+              <div class="DropdownMenu" aria-hidden="true">
+                <ul class="Linklist">
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/10-frame-hives-amp-components"
+                      class="Link--secondary"
+                      >10 Frame Hives &amp; Components</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/8-frame-hives-amp-components"
+                      class="Link--secondary"
+                      >8 Frame Hives &amp; Components</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/5-frame-hives-amp-components"
+                      class="Link--secondary"
+                      >5 Frame Hives &amp; Components</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/bee-suits-amp-gloves"
+                      class="Link--secondary"
+                      >Bee Suits &amp; Gloves</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a href="/collections/bees-queens" class="Link--secondary"
+                      >Bees &amp; Queens</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a href="/collections/beginner-kits" class="Link--secondary"
+                      >Beginner Kits</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/feed-amp-supplements"
+                      class="Link--secondary"
+                      >Feed &amp; Supplements</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a href="/collections/feeders" class="Link--secondary"
+                      >Feeders</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/frames-amp-foundation"
+                      class="Link--secondary"
+                      >Frames &amp; Foundation</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/health-amp-pest-control"
+                      class="Link--secondary"
+                      >Health &amp; Pest Control</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/hive-accessories"
+                      class="Link--secondary"
+                      >Hive Accessories</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/honey-extracting-extractors"
+                      class="Link--secondary"
+                      >Honey Extracting - Extractors</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/honey-extracting-honey-removal-processing-and-extracting-accessories"
+                      class="Link--secondary"
+                      >Honey Extracting - Honey Removal, Processing, and
+                      Extracting Accessories</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/honey-extracting-uncapping-tanks-amp-tools"
+                      class="Link--secondary"
+                      >Honey Extracting - Uncapping Tanks &amp; Tools</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/honey-storage-and-containers"
+                      class="Link--secondary"
+                      >Honey Storage and Containers</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/queen-rearing-supplies"
+                      class="Link--secondary"
+                      >Queen Rearing Supplies</a
+                    >
+                  </li>
+                  <li class="Linklist__Item">
+                    <a
+                      href="/collections/smokers-amp-tools"
+                      class="Link--secondary"
+                      >Smokers &amp; Tools</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="HorizontalList__Item">
+              <a href="/pages/about-us" class="Heading Link">About Us</a>
+            </li>
+            <li class="HorizontalList__Item">
+              <a href="/pages/contact" class="Heading Link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="Header__FlexItem Header__FlexItem--logo">
+        <a href="/pages/index.html" class="Header__LogoLink">
+          <img
+            class="Header__LogoImage"
+            src="/assests/logo-rectangle-2023_Color_Tag_1_350x@2x.webp"
+            alt="HillCo, LLC"
+          />
+        </a>
+      </div>
+
+      <div class="navbar-icons">
+        <button class="navbar-icon">
+          <!-- <i class="fas fa-user "></i> -->
+          <svg
+            class="Icon Icon--account account-icon"
+            role="presentation"
+            viewBox="0 0 20 20"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path
+                d="M0 18c0-4.5188182 3.663-8.18181818 8.18181818-8.18181818h1.63636364C14.337 9.81818182 18 13.4811818 18 18"
+              ></path>
+              <circle cx="9" cy="4.90909091" r="4.90909091"></circle>
+            </g>
+          </svg>
+        </button>
+
+        <button
+          class="navbar-icon"
+          data-action="toggle-search"
+          aria-label="Search"
+        >
+          <svg
+            id="search-click"
+            class="Icon--search-desktop Icon"
+            role="presentation"
+            viewBox="0 0 21 21"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path d="M18 18l-5.7096-5.7096"></path>
+              <circle cx="7.2" cy="7.2" r="7.2"></circle>
+            </g>
+          </svg>
+          <svg
+            id="phone-search-click"
+            class="Icon--search Icon"
+            role="presentation"
+            viewBox="0 0 18 17"
+          >
+            <g
+              transform="translate(1 1)"
+              stroke="currentColor"
+              fill="none"
+              fill-rule="evenodd"
+              stroke-linecap="square"
+            >
+              <path d="M16 16l-5.0752-5.0752"></path>
+              <circle cx="6.4" cy="6.4" r="6.4"></circle>
+            </g>
+          </svg>
+        </button>
+
+        <button class="navbar-icon">
+          <!-- <i class="fas fa-shopping-bag"></i> -->
+          <svg
+            class="Icon Icon--cart-desktop"
+            role="presentation"
+            viewBox="0 0 19 23"
+          >
+            <path
+              d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg class="Icon Icon--cart" role="presentation" viewBox="0 0 17 20">
+            <path
+              d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <span class="Header__CartDot is-visible"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Cart -->
+
+    <main id="main" role="main">
+      <div class="Container">
+        <header class="PageHeader">
+          <div class="SectionHeader SectionHeader--center">
+            <h1 class="SectionHeader__Heading">Cart</h1>
+          </div>
+        </header>
+      </div>
+
+      <div class="PageContent">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left; width: 545px">Product</th>
+              <th style="text-align: center; width: 280px">Quantity</th>
+              <th style="text-align: right; width: 175px">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="productMeta">
+                  <div class="CartItem__ImageWrapper">
+                    <img
+                      class="CartItem__Image"
+                      src="//hillcobees.com/cdn/shop/products/20230311_142456_240x.jpg?v=1678721239"
+                      alt=""
+                    />
+                  </div>
+                  <div class="CartItem__Info">
+                    <h2 class="CartItem__Title">
+                      <a
+                        href="/products/complete-hive-10-frame?variant=43863966023935"
+                      >
+                        Complete Hive - 10 Frame
+                      </a>
+                    </h2>
+                    <p class="CartItem__Variant">
+                      Maxima Lifetime Bottom Board
+                    </p>
+                    <div class="CartItem__PriceList">
+                      <span
+                        class="discounted_price appkion_original_price"
+                        style="font-weight: normal"
+                      >
+                        $133.99
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              <td style="text-align: center">
+                <div class="CartItem__QuantitySelector">
+                  <div class="QuantitySelector">
+                    <div class="QuantitySelector__Button">
+                      <svg
+                        class="Icon Icon--minus"
+                        role="presentation"
+                        viewBox="0 0 16 2"
+                        style="width: 10px; height: 10"
+                      >
+                        <path
+                          d="M1,1 L15,1"
+                          stroke="currentColor"
+                          fill="none"
+                          fill-rule="evenodd"
+                          stroke-linecap="square"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <input
+                      type="text"
+                      name="updates[]"
+                      id="updates_43863966023935:586325a9d320347b37cb6f706224c2b7"
+                      class="QuantitySelector__CurrentQuantity"
+                      pattern="[0-9]*"
+                      data-line="1"
+                      value="1"
+                    />
+
+                    <div class="QuantitySelector__Button">
+                      <svg
+                        class="Icon Icon--plus"
+                        role="presentation"
+                        viewBox="0 0 16 16"
+                        style="width: 10px; height: 10"
+                      >
+                        <g
+                          stroke="currentColor"
+                          fill="none"
+                          fill-rule="evenodd"
+                          stroke-linecap="square"
+                        >
+                          <path d="M8,1 L8,15"></path>
+                          <path d="M1,8 L15,8"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <a
+                    class="CartItem__Remove Link--underline Link--underlineShort"
+                    >Remove</a
+                  >
+                </div>
+              </td>
+
+              <td class="last-column" style="text-align: right">
+                <div class="CartItem__LinePriceList Text--subdued">
+                  <span
+                    class="discounted_price appkion_original_price"
+                    style="font-weight: normal"
+                    >$133.99</span
+                  >
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="tabletTable">
+          <div class="productMeta">
+            <div class="CartItem__ImageWrapper">
+              <img
+                class="CartItem__Image"
+                src="//hillcobees.com/cdn/shop/products/20230311_142456_240x.jpg?v=1678721239"
+                alt=""
+              />
+            </div>
+            <div class="CartItem__Info">
+              <h2 class="CartItem__Title">
+                <a
+                  href="/products/complete-hive-10-frame?variant=43863966023935"
+                >
+                  Complete Hive - 10 Frame
+                </a>
+              </h2>
+              <p class="CartItem__Variant">
+                Maxima Lifetime Bottom Board
+              </p>
+              <div class="CartItem__PriceList">
+                <span
+                  class="discounted_price appkion_original_price"
+                  style="font-weight: normal"
+                >
+                  $133.99
+                </span>
+              </div>
+
+              <div class="secondColumn">
+                <div class="QuantitySelector">
+                  <div class="QuantitySelector__Button">
+                    <svg
+                      class="Icon Icon--minus"
+                      role="presentation"
+                      viewBox="0 0 16 2"
+                      style="width: 10px; height: 10"
+                    >
+                      <path
+                        d="M1,1 L15,1"
+                        stroke="currentColor"
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke-linecap="square"
+                      ></path>
+                    </svg>
+                  </div>
+
+                  <input
+                    type="text"
+                    name="updates[]"
+                    id="updates_43863966023935:586325a9d320347b37cb6f706224c2b7"
+                    class="QuantitySelector__CurrentQuantity"
+                    pattern="[0-9]*"
+                    data-line="1"
+                    value="1"
+                  />
+
+                  <div class="QuantitySelector__Button">
+                    <svg
+                      class="Icon Icon--plus"
+                      role="presentation"
+                      viewBox="0 0 16 16"
+                      style="width: 10px; height: 10"
+                    >
+                      <g
+                        stroke="currentColor"
+                        fill="none"
+                        fill-rule="evenodd"
+                        stroke-linecap="square"
+                      >
+                        <path d="M8,1 L8,15"></path>
+                        <path d="M1,8 L15,8"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+
+                <a
+                  class="CartItem__Remove Link--underline Link--underlineShort"
+                  >Remove</a
+                >
+              </div>
+
+             
+
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="Cart__Footer">
+          <div class="Cart__NoteContainer">
+            <span class="Cart__NoteButton">Add Order Note</span>
+            <textarea
+              class="Cart__Note Form__Textarea"
+              name="note"
+              id="cart-note"
+              rows="4"
+              placeholder="How can we help you?"
+            ></textarea>
+          </div>
+
+          <div class="Cart__Recap">
+            <!-- Cart Total -->
+            <p class="Cart__Total">Total:</p>
+            <span class="wholesale-cart-total" style="font-weight: normal">
+              $133.99
+            </span>
+            <!-- Taxes Information -->
+            <p class="Cart__Taxes Text--subdued">
+              Shipping &amp; taxes calculated at checkout
+            </p>
+
+            <!-- Checkout Button -->
+            <button
+              type="submit"
+              name="checkout"
+              class="Cart__Checkout Button Button--primary Button--full eo-sh-checkOut"
+            >
+              Checkout
+            </button>
+          </div>
+        </footer>
+
+        <div class="Section Section--spacingExtraLarge">
+          <div class="panel">
+            <h2 class="Panel__Title">Estimate shipping</h2>
+            <div class="Panle__Content">
+              <div class="ShippingEstimator">
+                <div class="ShippingEstimator__Form">
+                  <div
+                    class="ShippingEstimator__Country Form__Select Select Select--primary"
+                  >
+                    <!-- <svg
+                      class="Icon Icon--select-arrow"
+                      role="presentation"
+                      viewBox="0 0 19 12"
+                      style="width: 10px"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="17 2 9.5 10 2 2"
+                        fill-rule="evenodd"
+                        stroke-width="2"
+                        stroke-linecap="square"
+                      ></polyline>
+                    </svg> -->
+                    <select
+                      name="country"
+                      title="Country"
+                      data-default="United States"
+                    >
+                      <option value="United States">United States</option>
+                    </select>
+                  </div>
+                  <input
+                    type="text"
+                    class="ShippingEstimator__Zip Form__Input"
+                    name="zip"
+                    placeholder="Zip code"
+                  />
+                  <button
+                    type="submit"
+                    name="checkout"
+                    class="Cart__Estimate"
+                  >
+                    Estimate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Cart End -->
+
+    <!-- footer -->
+    <footer class="custom-footer">
+      <div class="custom-container">
+        <div class="custom-inner">
+          <div class="custom-block">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0630/5520/0511/files/Asset_1_300x-8_300x@2x.png?v=1647328688"
+              alt="Logo"
+              class="custom-logo"
+            />
+            <div class="custom-content">
+              <p>
+                447 Oak St <br />Minonk, IL 61760 USA<br />(888) 210-6564<br /><br /><strong
+                  >Business Hours (CST):<br /></strong
+                >Monday-Friday 9am to 5pm<br />Saturday - 9am to 1pm
+              </p>
+            </div>
+
+            <ul class="custom-social">
+              <li class="custom-social-item">
+                <a
+                  href="https://facebook.com/hillcobees"
+                  class="custom-link"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="custom-social-item">
+                <a
+                  href="https://www.youtube.com/channel/UCIDZk0425SiNkJs4CUzbZig?view_as=subscriber"
+                  class="custom-link"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube"
+                >
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="custom-block">
+            <div class="custom-padding">
+              <h2 class="custom-links-title">Quick Links</h2>
+              <ul class="custom-links">
+                <li class="custom-links-item">
+                  <a href="/collections/all" class="custom-link">Shop</a>
+                </li>
+                <li class="custom-links-item">
+                  <a href="/pages/about-us" class="custom-link">About Us</a>
+                </li>
+                <li class="custom-links-item">
+                  <a href="/pages/contact" class="custom-link">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="custom-block">
+            <h2 class="custom-info-title">More Info</h2>
+            <ul class="custom-info">
+              <li class="custom-info-item">
+                <a href="/pages/privacy" class="custom-link">Privacy</a>
+              </li>
+              <li class="custom-info-item">
+                <a href="/pages/fullfillment-and-refunds" class="custom-link"
+                  >Fulfillment and Refunds</a
+                >
+              </li>
+              <li class="custom-info-item">
+                <a href="/pages/terms-of-service" class="custom-link"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="custom-block">
+            <h2 class="custom-newsletter-title">SUBSCRIBE TO OUR NEWSLETTER</h2>
+            <div class="custom-newsletter-content">
+              <p>For the best offers and new product launches.</p>
+            </div>
+            <form
+              method="post"
+              action="/contact#footer-newsletter"
+              id="footer-newsletter"
+              accept-charset="UTF-8"
+              class="custom-newsletter-form"
+            >
+              <input
+                type="email"
+                name="contact[email]"
+                class="custom-newsletter-input"
+                aria-label="Enter your email address"
+                placeholder="Enter your email address"
+                value="Enter your email address"
+                required=""
+              />
+              <button type="submit" class="custom-newsletter-submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="custom-aside">
+          <a href="/" class="custom-storename">© HillCo, LLC</a>
+          <p class="custom-themeauthor"></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/collection.js"></script>
+  </body>
+</html>
