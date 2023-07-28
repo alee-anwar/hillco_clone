@@ -40,25 +40,6 @@ const drawer = document.getElementById("collection-filter-drawer");
 
 const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
 
-// const seeResultsButton = document.querySelector(".Button--results");
-
-// collapsibleButtons.forEach((button) => {
-//   button.addEventListener("click", function () {
-//     const collapsibleInner = this.nextElementSibling;
-//     collapsibleInner.classList.toggle("Collapsible__Inner--active");
-//     this.setAttribute(
-//       "aria-expanded",
-//       collapsibleInner.classList.contains("Collapsible__Inner--active")
-//     );
-
-//     const plusSign = this.querySelector(".Collapsible__Plus");
-//     plusSign.classList.toggle(
-//       "Collapsible__Plus--hidden",
-//       collapsibleInner.classList.contains("Collapsible__Inner--active")
-//     );
-//   });
-// });
-
 collapsibleButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const collapsibleInner = this.nextElementSibling;

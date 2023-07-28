@@ -876,12 +876,13 @@
                   </div>
                 </div>
 
-                <!-- <div class="ProductForm__Variants">
+                <div class="ProductForm__Variants">
                   <div class="ProductForm__Option">
                     <button
                       type="button"
                       class="ProductForm__Item"
                       aria-expanded="false"
+                      id="dropdownToggleBtn"
                     >
                       <span class="ProductForm__OptionName"
                         >Bottom Board Options:
@@ -904,53 +905,93 @@
                         ></polyline>
                       </svg>
                     </button>
-                  </div>
 
-                  <div class="no-js ProductForm__Option">
-                    <div class="Select Select--primary">
-                    
-                      <select
-                      class="ProductForm__Item"
-                        id="product-select-7610385301759"
-                        name="id"
-                        title="Variant"
+                    <ul class="ProductForm__OptionsList hide-1007px" id="optionsList">
+                      <li
+                        class="ProductForm__OptionItem"
+                        data-value="Maxima Lifetime Bottom Board"
                       >
-                        <option value="43863966023935" data-sku="">
-                          Maxima Lifetime Bottom Board - $133.99
-                        </option>
-                        <option value="42657555087615" data-sku="1403">
-                          Solid Wood Bottom Board - $133.99
-                        </option>
-                        <option
-                          selected="selected"
-                          value="42657555120383"
-                          data-sku="1404"
-                        >
-                          Screened Wooden Bottom Board (add $8) - $141.99
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                </div> -->
-
-                <div class="ProductForm__Variants">
-                  <div class="ProductForm__Option">
-                    <button type="button" class="ProductForm__Item" aria-expanded="false" id="dropdownToggleBtn">
-                      <span class="ProductForm__OptionName">Bottom Board Options:
-                        <span class="ProductForm__SelectedValue">Screened Wooden Bottom Board (add $8)</span>
-                      </span>
-                      <svg class="Icon Icon--select-arrow" role="presentation" viewBox="0 0 19 12">
-                        <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
-                      </svg>
-                    </button>
-                    <ul class="ProductForm__OptionsList" id="optionsList">
-                      <li class="ProductForm__OptionItem" data-value="Maxima Lifetime Bottom Board">Maxima Lifetime Bottom Board</li>
-                      <li class="ProductForm__OptionItem" data-value="Solid Wood Bottom Board">Solid Wood Bottom Board</li>
-                      <li class="ProductForm__OptionItem" data-value="Screened Wooden Bottom Board (add $8)">Screened Wooden Bottom Board (add $8)</li>
+                        Maxima Lifetime Bottom Board
+                      </li>
+                      <li
+                        class="ProductForm__OptionItem"
+                        data-value="Solid Wood Bottom Board"
+                      >
+                        Solid Wood Bottom Board
+                      </li>
+                      <li
+                        class="ProductForm__OptionItem"
+                        data-value="Screened Wooden Bottom Board (add $8)"
+                      >
+                        Screened Wooden Bottom Board (add $8)
+                      </li>
                     </ul>
                   </div>
                 </div>
-                
+
+                <div class="Product__OffScreen" id="bottomDrawer">
+                  <div
+                    class="OptionSelector Popover Popover--withMinWidth"
+                    aria-hidden="true"
+                  >
+                    <header class="Popover__Header">
+                      <button
+                        type="button"
+                        class="Popover__Close Icon-Wrapper--clickable"
+                        id="Popover__Close-id"
+                        data-action="close-popover"
+                      >
+                        <svg
+                          class="Icon Icon-bottom-close"
+                          role="presentation"
+                          viewBox="0 0 16 14"
+                        >
+                          <path
+                            d="M15 0L1 14m14 0L1 0"
+                            stroke="currentColor"
+                            fill="none"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                      <span class="Popover__Title u-h4"
+                        >Bottom Board Options</span
+                      >
+                    </header>
+
+                    <div class="Popover__Content">
+                      <div class="Popover__ValueList" data-scrollable>
+                        <button
+                          type="button"
+                          class="Popover__Value Link--primary u-h6"
+                          data-value="Maxima Lifetime Bottom Board"
+                          data-option-position="1"
+                          data-action="select-value"
+                        >
+                          Maxima Lifetime Bottom Board
+                        </button>
+                        <button
+                          type="button"
+                          class="Popover__Value Link--primary u-h6"
+                          data-value="Solid Wood Bottom Board"
+                          data-option-position="1"
+                          data-action="select-value"
+                        >
+                          Solid Wood Bottom Board
+                        </button>
+                        <button
+                          type="button"
+                          class="Popover__Value is-selected Link--primary u-h6"
+                          data-value="Screened Wooden Bottom Board (add $8)"
+                          data-option-position="1"
+                          data-action="select-value"
+                        >
+                          Screened Wooden Bottom Board (add $8)
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="button__container">
                   <div class="ProductForm__QuantitySelector">
@@ -1673,123 +1714,8 @@
       </div>
     </footer>
 
-    <script>
-      const navImages = document.querySelectorAll(".navImage");
-
-      const reviewButton = document.querySelector(".ReviewButton");
-      const sprContent = document.querySelector(".spr-content");
-
-      // Select -----------------------------------------
-
-      // const svgSelectArrow = document.querySelector(".Icon--select-arrow");
-      // const noJsProductOption = document.querySelector(
-      //   ".no-js.ProductForm__Option"
-      // );
-      // const productSelectedValue = document.querySelector(
-      //   ".ProductForm__SelectedValue"
-      // );
-
-      // svgSelectArrow.addEventListener("click", function () {
-      //   noJsProductOption.style.display = "block";
-      //   // selectElement.click();
-
-      // });
-
-      // // Get reference to the select element
-      // const productSelect = document.getElementById(
-      //   "product-select-7610385301759"
-      // );
-
-      // // Add change event listener to the select element
-      // productSelect.addEventListener("change", function () {
-      //   // Update the content of ProductForm__SelectedValue with the selected value
-      //   const selectedOption =
-      //     productSelect.options[productSelect.selectedIndex];
-      //   productSelectedValue.textContent = selectedOption.textContent;
-      //   noJsProductOption.style.display = "none";
-      // });
-
-      // ------------------------------------------------
-
-      // ***************
-
-      const dropdownToggleBtn = document.getElementById('dropdownToggleBtn');
-    const optionsList = document.getElementById('optionsList');
-
-    // Add click event listener to the button
-    dropdownToggleBtn.addEventListener('click', function () {
-      // Toggle the display of the options list
-      const isExpanded = dropdownToggleBtn.getAttribute('aria-expanded') === 'true';
-      dropdownToggleBtn.setAttribute('aria-expanded', !isExpanded);
-      optionsList.style.display = isExpanded ? 'none' : 'block';
-    });
-
-    // Add click event listener to the options list items
-    const optionItems = document.querySelectorAll('.ProductForm__OptionItem');
-    optionItems.forEach((item) => {
-      item.addEventListener('click', function () {
-        // Update the selected value and close the options list
-        const selectedValue = item.getAttribute('data-value');
-        dropdownToggleBtn.querySelector('.ProductForm__SelectedValue').textContent = selectedValue;
-        dropdownToggleBtn.setAttribute('aria-expanded', 'false');
-        optionsList.style.display = 'none';
-      });
-    });
-
-
-
-      // *****************
-
-      // Add click event listener to the review button
-      reviewButton.addEventListener("click", function () {
-        // Toggle the display of sprContent and the reviewButton
-        if (
-          sprContent.style.display === "none" ||
-          sprContent.style.display === ""
-        ) {
-          sprContent.style.display = "block";
-          reviewButton.style.display = "none";
-        } else {
-          sprContent.style.display = "none";
-          reviewButton.style.display = "block";
-        }
-      });
-
-      // const productWrapper = document.querySelector(".Product__Wrapper");
-
-      // const navigationLinks = document.querySelectorAll(
-      //   ".Product__SlideshowNavScroller"
-      // );
-
-      // for (const link of navigationLinks) {
-      //   link.addEventListener("click", function (event) {
-      //     event.preventDefault();
-      //     const target = document.querySelector(link.getAttribute("href"));
-      //     const headerHeight =
-      //       document.querySelector(".Header__Wrapper").offsetHeight;
-
-      //     window.scrollTo({
-      //       top: target.offsetTop - headerHeight,
-      //       behavior: "smooth",
-      //     });
-      //   });
-      // }
-
-      navImages.forEach((navImage) => {
-        navImage.addEventListener("click", function () {
-          // Remove .is-selected class from all nav images
-          navImages.forEach((img) => img.classList.remove("is-selected"));
-
-          // Add .is-selected class to the clicked nav image
-          this.classList.add("is-selected");
-
-          // if (this.classList.contains("is-selected")) {
-          //   productWrapper.classList.add("custom-padding");
-          // } else {
-          //   productWrapper.classList.remove("custom-padding");
-          // }
-        });
-      });
+    <script src="/scripts/product-detail-page.js">
+      
     </script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>

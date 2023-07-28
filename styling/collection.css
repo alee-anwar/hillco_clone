@@ -1004,6 +1004,10 @@ select:focus {
 .Text--subdued {
   color: var(--text-color-light);
 }
+.Pagination__Nav {
+  display: flex;
+  justify-content: center;
+}
 .Pagination__NavItem {
   display: inline-block;
   list-style: none;
