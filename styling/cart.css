@@ -287,6 +287,36 @@ body {
   width: 40px;
 }
 
+.About_HorizontalList_Item::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: auto;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s;
+  bottom: 0;
+}
+
+.About_HorizontalList_Item:hover::after {
+  width: 58px;
+}
+
+.Contact_HorizontalList_Item::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: auto;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s;
+  bottom: 0;
+}
+
+.Contact_HorizontalList_Item:hover::after {
+  width: 50px;
+}
+
 .Header__FlexItem {
   display: flex;
   justify-content: flex-start;
@@ -458,6 +488,7 @@ body {
   align-items: center;
   flex-grow: 1;
   margin-left: -150px;
+  z-index: -1;
 }
 
 .Header__Logo {
@@ -728,13 +759,14 @@ td {
     resize: none;
     transition: border-color .1s ease-in-out;
     background: transparent;
+    height: 96px;
 }
 
 .Form__Textarea::placeholder {
   color: black;
   font-size: 15px;
   font-family:  var(--text-font-family);
-  font-weight: 400;
+  font-weight: 300;
 
 }
 
@@ -824,6 +856,11 @@ td {
   width: 10px;
   height: 10px;
   z-index: 1;
+  position: absolute;
+  line-height: normal;
+  pointer-events: none;
+  vertical-align: baseline;
+  fill: currentColor;
 }
 
 .Select--primary select {
@@ -833,6 +870,17 @@ td {
   padding-right: 28px;
   border: 1px solid var(--border-color);
   background: var(--background);
+}
+
+.Select--primary:after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: calc(100% - 2px);
+  width: 55px;
+  background: linear-gradient(to right,rgba(var(--background-rgb),0),rgba(var(--background-rgb),.7) 20%,var(--background) 40%);
+  pointer-events: none;
 }
 
 select:focus {

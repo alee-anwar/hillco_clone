@@ -287,6 +287,36 @@ body {
   width: 40px;
 }
 
+.About_HorizontalList_Item::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: auto;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s;
+  bottom: 0;
+}
+
+.About_HorizontalList_Item:hover::after {
+  width: 58px;
+}
+
+.Contact_HorizontalList_Item::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: auto;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s;
+  bottom: 0;
+}
+
+.Contact_HorizontalList_Item:hover::after {
+  width: 50px;
+}
+
 .Header__FlexItem {
   display: flex;
   justify-content: flex-start;
@@ -443,6 +473,7 @@ body {
   align-items: center;
   flex-grow: 1;
   margin-left: -150px;
+  z-index: -1;
 }
 
 .Header__Logo {
@@ -951,9 +982,38 @@ main {
   text-align: center;
   width: 100%;
   font-size: 15px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   font-family: Chivo, sans-serif;
+  position: relative;
+  display: inline-block;
+  transition: color .3s ease-in-out,opacity .2s ease-in-out;
+  width: auto;
+  line-height: normal;
 }
+
+.center-align {
+  text-align: center;
+
+}
+
+.shopify-payment-button__more-options:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -1px;
+  background: currentColor;
+  transform: scale(1);
+  transform-origin: left center;
+  transition: transform .2s ease-in-out;
+}
+
+.shopify-payment-button__more-options:hover::before {
+  transform: scale(0);
+}
+
+
 
 .ReviewButton {
   position: relative;

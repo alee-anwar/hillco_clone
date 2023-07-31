@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HillCo Clone</title>
-    <link rel="stylesheet" href="../styling/style.css" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/styling/login.css" />
     <script
       src="https://kit.fontawesome.com/281de20304.js"
       crossorigin="anonymous"
@@ -22,6 +22,7 @@
       </p>
     </div>
 
+    <!-- Header -->
     <header class="Header__Wrapper">
       <!-- Search Section -->
       <div class="SearchDropdown">
@@ -104,18 +105,32 @@
           class="navbar_Icon bars"
           aria-label="Toggle Menu"
         >
-          <!-- <i class="fas fa-bars"></i> -->
-          <svg
-            class="Icon Icon--nav"
-            role="presentation"
-            viewBox="0 0 20 14"
-            style="width: 20px"
-          >
-            <path
-              d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
-              fill="currentColor"
-            ></path>
-          </svg>
+          <span class="hidden-tablet-and-up">
+            <svg
+              class="Icon Icon--nav"
+              role="presentation"
+              viewBox="0 0 20 14"
+              style="width: 20"
+            >
+              <path
+                d="M0 14v-1h20v1H0zm0-7.5h20v1H0v-1zM0 0h20v1H0V0z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
+          <span class="hidden-phone">
+            <svg
+              class="Icon Icon--nav-desktop"
+              role="presentation"
+              viewBox="0 0 24 16"
+              style="width: 24"
+            >
+              <path
+                d="M0 15.985v-2h24v2H0zm0-9h24v2H0v-2zm0-7h24v2H0v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </span>
         </button>
 
         <div id="drawer">
@@ -160,7 +175,7 @@
                       <ul class="drawer-linklist">
                         <li class="drawer-linklist__item">
                           <a
-                            href="../pages/collection.html"
+                            href="/collections/10-frame-hives-amp-components"
                             class="drawer-link drawer-link--secondary"
                             >10 Frame Hives &amp; Components</a
                           >
@@ -315,15 +330,17 @@
 
         <nav class="Header__MainNav" aria-label="Main navigation">
           <ul class="HorizontalList">
-            <li class="HorizontalList__Item is-active">
-              <a href="/pages/index.html" class="Heading Link">Home</a>
+            <li class="HorizontalList__Item">
+              <a href="/" class="Heading Link">Home</a>
             </li>
             <li class="HorizontalList__Item">
               <a href="/collections/all" class="Heading Link">Shop</a>
               <div class="DropdownMenu" aria-hidden="true">
                 <ul class="Linklist">
                   <li class="Linklist__Item">
-                    <a href="/pages/collection.html" class="Link--secondary"
+                    <a
+                      href="/collections/10-frame-hives-amp-components"
+                      class="Link--secondary"
                       >10 Frame Hives &amp; Components</a
                     >
                   </li>
@@ -448,7 +465,7 @@
       </div>
 
       <div class="Header__FlexItem Header__FlexItem--logo">
-        <a href="/" class="Header__LogoLink">
+        <a href="/pages/index.html" class="Header__LogoLink">
           <img
             class="Header__LogoImage"
             src="/assests/logo-rectangle-2023_Color_Tag_1_350x@2x.webp"
@@ -458,7 +475,7 @@
       </div>
 
       <div class="navbar-icons">
-        <a class="navbar-icon" href="/pages/login.html">
+        <button class="navbar-icon">
           <!-- <i class="fas fa-user "></i> -->
           <svg
             class="Icon Icon--account account-icon"
@@ -479,7 +496,7 @@
               <circle cx="9" cy="4.90909091" r="4.90909091"></circle>
             </g>
           </svg>
-        </a>
+        </button>
 
         <button
           class="navbar-icon"
@@ -545,303 +562,77 @@
       </div>
     </header>
 
-    <!-- Extraction Section -->
-    <div class="container">
-      <div class="text-section">
-        <h2 class="custom-heading">
-          The Finest Honey Extractors In America.....
-        </h2>
-        <div class="custom-description">
-          <p>
-            HillCo honey extractors are famous for quality, affordability, and
-            the best warranty in the industry. We strive for innovative features
-            to make extracting easy and enjoyable!
-          </p>
-        </div>
-        <div class="honey-extractor-link">
-          <a
-            href="https://hillcobees.com/collections/honey-extracting-extractors"
-            class="custom-link-transiton"
-            >Click Here To View Our Honey Extractors</a
+    <!-- Main -->
+
+    <main id="main" role="main">
+      <section data-section-id="login" data-section-type="login">
+        <div class="Container">
+          <div
+            class="PageContent PageContent--fitScreen PageContent--extraNarrow"
           >
-        </div>
-      </div>
+            <form
+              method="post"
+              action="/account/login"
+              id="customer_login"
+              accept-charset="UTF-8"
+              data-login-with-shop-sign-in="true"
+              name="login"
+              class="Form Form--spacingTight"
+              style="display: block"
+            >
+              <header class="Form__Header">
+                <h1 class="Form__Title">Login</h1>
+                <p class="Form__Legend">
+                  Please enter your e-mail and password:
+                </p>
+              </header>
 
-      <div class="image-section">
-        <img
-          id="animated-image"
-          class="honey_extractor"
-          src="/assests/ExtractorsGrouping_1200x.webp"
-          alt="Image"
-        />
-      </div>
-    </div>
+              <div class="Form__Item">
+                <input
+                  type="email"
+                  class="Form__Input"
+                  name="customer[email]"
+                  required="required"
+                  placeholder="Email"
+                  aria-label="Email"
+                  autofocus=""
+                />
+                <label class="Form__FloatingLabel">Email</label>
+              </div>
 
-    <!-- Shipping Section -->
-    <section class="Shipping__Section">
-      <div class="Shipping__Container">
-        <div class="roww">
-          <div class="colo">
-            <h3 class="Shipping__Text">
-              Free Shipping <br />on ALL orders over $100
-            </h3>
+              <div class="Form__Item">
+                <div class="PasswordContainer">
+                  <input
+                    type="password"
+                    class="Form__Input"
+                    name="customer[password]"
+                    required="required"
+                    placeholder="Password"
+                    aria-label="Password"
+                  />
+                  <label class="Form__FloatingLabel">Password</label>
+                  <button type="button" class="Form__ItemHelp Link--primary">
+                    Forgot password?
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="Form__Submit Button Button--primary Button--full"
+              >
+                Login
+              </button>
+
+              <div class="Form__Hint Form__Hint--center">
+                <span class="Text--subdued">Don't have an account?</span>
+                <a href="/account/register" class="Create--Link">Create one</a>
+              </div>
+            </form>
           </div>
-          <div class="col">
-            <img
-              src="//cdn.shopify.com/s/files/1/0630/5520/0511/files/download_7_800x.png?v=1647343551"
-              style="width: 100px; margin: 0"
-            />
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Category Section -->
-    <section class="Category__Section">
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/1st_20201214_171537-1-scaled_400x.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title">10 Frame Hives &amp; Components</h2>
-          <a href="/pages/collection.html" class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/2nd_20201214_171428-1-scaled_1800x1800.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title">8 Frame Hives &amp; Components</h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/1st_20201214_171537-1-scaled_400x.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title">10 Frame Hives &amp; Components</h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/4th_20201216_152307-scaled_400x.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Frames &amp; Foundation
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/5th_20201216_134658-scaled_400x.jpeg"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Hive Accessories
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/6th_20201217_174135-1-scaled_3c512a5e-cb47-456c-a8a1-a02a1801bfea_1800x1800.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">Feeders</h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/7th_20220127_114129_400x.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Bee Suits &amp; Gloves
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/8th_20210308_185155-scaled_1800x1800.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Smokers &amp; Tools
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/9th_20210424_113542-scaled_1800x1800.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Health &amp; Pest Control
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/10th_20201215_122117-1-scaled_1800x1800.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Feed &amp; Supplements
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/11th_FB_IMG_1588685336116_f9c09a2b-b78f-4142-a4f4-1b338f8a3eda_822x822.jpeg"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">
-            Bees &amp; Queens
-          </h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">
-          <img
-            src="/assests/1st_20201214_171537-1-scaled_400x.webp"
-            alt="Product Image"
-          />
-        </div>
-        <div class="product-details">
-          <h2 class="product-title" style="padding-top: 19px">Beginner Kits</h2>
-          <a
-            href="/collections/10-frame-hives-amp-components"
-            class="view-product-button"
-            >View Product</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- What we do -->
-    <div class="do__container">
-      <div class="do-text-section">
-        <h2>What We Do</h2>
-        <p class="do__text">
-          HillCo, LLC is a bee equipment supplier committed to helping
-          beekeepers maintain their colonies and harvest delicious honey with
-          our line of quality products.<br /><br />We carry a variety of
-          beekeeping equipment, including beehives and components, bee suits,
-          smokers, uncapping tools, uncapping tanks, honey tanks, and especially
-          our signature honey extractors.<br /><br />We also work with reputable
-          bee breeders to supply you with healthy bees and queens and supplies
-          to take care of them. (Note: Live bees are available only for pickup
-          at our facility in Minonk, IL.)<br /><br />Contact us today with any
-          questions you may have about beekeeping or what we can provide as a
-          bee equipment supplier.
-        </p>
-      </div>
-      <div class="bee-image-section">
-        <img
-          id="bee-animated-image"
-          class="bee-img"
-          src="/assests/honey-bee-close-up_1200x.webp"
-          alt="Image"
-        />
-      </div>
-    </div>
+      </section>
+    </main>
 
     <!-- footer -->
     <footer class="custom-footer">
@@ -957,8 +748,6 @@
     </footer>
 
     <script>
-      // drawer
-      // Wait for the image to load
       window.addEventListener("load", function () {
         const image = document.getElementById("animated-image");
         image.classList.add("show-image");
