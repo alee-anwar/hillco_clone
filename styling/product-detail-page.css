@@ -767,7 +767,10 @@ main {
   top: -70%;
   width: 400px;
   background-color: #fff;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 
+              0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   padding: 14px 0px;
   list-style-type: none;
   font-size: 12px;
@@ -788,23 +791,17 @@ main {
 }
 
 .Product__OffScreen {
-  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  /* height: 227px; */
   height: auto;
   background-color: #fff;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); 
   z-index: 30;
-  transition: transform 0.1s ease;
-  transform: translateY(0); 
+  transform: translateY(100%);
+  transition: transform 0.5s ease; 
 }
-
-/* .performTransition {
-  transform: translateY(100%); /* Slide the drawer into view when open */
-/* }  */
 
 .Popover__Close {
   border: none;
@@ -813,7 +810,14 @@ main {
   left: 20px;
   top: calc(50% - 7px);
   line-height: 0;
+  transition: transform 0.5s ease;
+
 }
+
+.drawer-open {
+  display: block;
+  transform: translateY(0); 
+} 
 
 .Popover__ValueList {
   padding: 18px 0px;
@@ -845,13 +849,7 @@ main {
   font-weight: 700;
 }
 .Icon-bottom-close{
- 
   width: 16px;
-}
-
-
-.drawer-open {
-  display: block; /* Show the bottom drawer when the class is applied */
 }
 
 .ProductForm__OptionItem {
@@ -978,11 +976,9 @@ main {
   cursor: pointer;
   display: block;
   font-size: 1em;
-  /* margin-top: 1em; */
   text-align: center;
   width: 100%;
   font-size: 15px;
-  /* text-decoration: underline; */
   font-family: Chivo, sans-serif;
   position: relative;
   display: inline-block;
@@ -1997,3 +1993,43 @@ textarea::placeholder {
     border: none;
   }
 }
+
+/* -------------------350px----------------- */
+@media screen and (max-width: 350px) {
+  .Header__LogoLink {
+    max-height: 49.5px;
+  }
+  .Header__LogoImage {
+    margin-left: auto;
+  }
+  .navbar-icon {
+    margin-left: auto;
+  }
+  .navbar-icon:last-child {
+    margin-left: 15px;
+  }
+  #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100vh;
+  }
+  #drawer {
+    width: 234px;
+    left: -234px;
+    height: 100vh;
+  }
+  .Drawer--fromRight {
+    width: 234px;
+  }
+  .Drawer--open {
+    right: 0;
+  }
+  .Drawer--closing {
+    right: -234px;
+    transition: right 0.5s ease;
+  }
+  .Heading__Container {
+    padding: 0px;
+  }
+}
+

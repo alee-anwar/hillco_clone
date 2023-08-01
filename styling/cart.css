@@ -1524,3 +1524,39 @@ select:focus {
     padding: 14px 18px;
   }
 }
+
+/* -------------------350px----------------- */
+@media screen and (max-width: 350px) {
+  .Header__LogoLink {
+    max-height: 49.5px;
+  }
+  .Header__LogoImage {
+    margin-left: auto;
+  }
+  .navbar-icon {
+    margin-left: auto;
+  }
+  .navbar-icon:last-child {
+    margin-left: 15px;
+  }
+  #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100vh;
+  }
+  #drawer {
+    width: 234px;
+    left: -234px;
+    height: 100vh;
+  }
+  .Drawer--fromRight {
+    width: 234px;
+  }
+  .Drawer--open {
+    right: 0;
+  }
+  .Drawer--closing {
+    right: -234px;
+    transition: right 0.5s ease;
+  }
+}

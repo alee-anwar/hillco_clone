@@ -1502,3 +1502,70 @@ textarea:focus {
     transition: right 0.5s ease;
   }
 }
+
+/* -------------------450px----------------- */
+@media screen and (max-width: 450px) {
+  .AnnouncementBar__Wrapper {
+    padding: 10px 40px;
+  }
+  .Header__LogoImage {
+    margin-left: 30px;
+  }
+  .navbar-icon:first-child {
+    margin-left: 0px;
+  }
+  #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100%;
+  }
+  .SearchDropdown {
+    padding: 14px 18px;
+  }
+  .Drawer--fromRight {
+    width: 335px;
+  }
+  .Drawer--open {
+    right: 0;
+  }
+  .Drawer--closing {
+    right: -335px;
+    transition: right 0.5s ease;
+  }
+}
+
+/* -------------------350px----------------- */
+@media screen and (max-width: 350px) {
+  .Header__LogoLink {
+    max-height: 49.5px;
+  }
+  .Header__LogoImage {
+    margin-left: auto;
+  }
+  .navbar-icon {
+    margin-left: auto;
+  }
+  .navbar-icon:last-child {
+    margin-left: 15px;
+  }
+  #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100vh;
+  }
+  #drawer {
+    width: 234px;
+    left: -234px;
+    height: 100vh;
+  }
+  .Drawer--fromRight {
+    width: 234px;
+  }
+  .Drawer--open {
+    right: 0;
+  }
+  .Drawer--closing {
+    right: -234px;
+    transition: right 0.5s ease;
+  }
+}

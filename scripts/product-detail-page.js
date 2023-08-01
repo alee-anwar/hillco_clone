@@ -17,19 +17,7 @@ const tabletMobileBreakpoint = 1007;
 
 const isTabletMobile = viewportWidth <= tabletMobileBreakpoint;
 
-dropdownToggleBtn.addEventListener('click', () => {
-    bottomDrawer.classList.toggle('open');
-    console.log("transition execute");
-});
-
-
-closeButton.addEventListener("click", () => {
-  bottomDrawer.classList.remove("drawer-open");
-  pageOverlay.style.display = "none";
-  pageOverlay.style.zIndex = "10";
-});
-
-// Add click event listener to the button
+// ------------------Bottom Drawer------------------------
 dropdownToggleBtn.addEventListener("click", function () {
   // Toggle the display of the options list
   if (isTabletMobile) {
@@ -49,23 +37,10 @@ dropdownToggleBtn.addEventListener("click", function () {
   }
 });
 
-// dropdownToggleBtn.addEventListener('click', () => {
-//   bottomDrawer.classList.toggle('performTransition');
-//   console.log("transition execute");
-// });
-
-// Add click event listener to the options list items
-const optionItems = document.querySelectorAll(".ProductForm__OptionItem");
-optionItems.forEach((item) => {
-  item.addEventListener("click", function () {
-    // Update the selected value and close the options list
-    const selectedValue = item.getAttribute("data-value");
-    dropdownToggleBtn.querySelector(".ProductForm__SelectedValue").textContent =
-      selectedValue;
-    dropdownToggleBtn.setAttribute("aria-expanded", "false");
-    optionsList.style.display = "none";
-    pageOverlay.style.zIndex = "10";
-  });
+closeButton.addEventListener("click", () => {
+  bottomDrawer.classList.remove("drawer-open");
+  pageOverlay.style.display = "none";
+  pageOverlay.style.zIndex = "10";
 });
 
 const drawerItems = document.querySelectorAll(".Popover__Value");
@@ -81,10 +56,51 @@ drawerItems.forEach((item) => {
     pageOverlay.style.zIndex = "30";
   });
 });
+// ----------------------------End----------------------------------
 
-// *****************
+// ------------------------Option List------------------------------
 
-// Add click event listener to the review button
+const optionItems = document.querySelectorAll(".ProductForm__OptionItem");
+
+optionItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    // Update the selected value and close the options list
+    const selectedValue = item.getAttribute("data-value");
+    dropdownToggleBtn.querySelector(".ProductForm__SelectedValue").textContent =
+      selectedValue;
+    dropdownToggleBtn.setAttribute("aria-expanded", "false");
+    optionsList.style.display = "none";
+    pageOverlay.style.zIndex = "10";
+  });
+});
+
+// function hideOptionsList() {
+//   //   console.log("status" + optionsList.style.display);
+//   if (optionsList.style.display == "block") {
+//     optionsList.style.display = "none";
+//   }
+// }
+
+// // // Event listener to detect clicks on the body
+// document.body.addEventListener("click", hideOptionsList);
+
+function hideOptionsList(event) {
+  if (
+      !optionsList.contains(event.target) &&
+      event.target !== dropdownToggleBtn &&
+      optionsList.style.display === "block"
+  ) {
+      optionsList.style.display = "none";
+      dropdownToggleBtn.setAttribute("aria-expanded", "false");
+  }
+}
+
+// Event listener to detect clicks on the body and close the optionsList if needed
+document.body.addEventListener("click", hideOptionsList);
+
+// ----------------------------End----------------------------------
+
+// ---------------------Review Button--------------------------
 reviewButton.addEventListener("click", function () {
   // Toggle the display of sprContent and the reviewButton
   if (sprContent.style.display === "none" || sprContent.style.display === "") {
@@ -95,6 +111,8 @@ reviewButton.addEventListener("click", function () {
     reviewButton.style.display = "block";
   }
 });
+
+// ---------------------Image Border--------------------------
 
 navImages.forEach((navImage) => {
   navImage.addEventListener("click", function () {
