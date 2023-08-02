@@ -86,7 +86,7 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 10;
+  z-index: 20;
   /* visibility: visible; */
   display: none;
   /* opacity: 0.1; */
@@ -117,23 +117,40 @@ body {
 
 #drawer {
   position: relative;
-  width: 500px;
+  width: 340px;
   height: 100vh;
   background-color: #f2b737;
   position: fixed;
   top: 0;
-  left: -500px;
-  transition: left 0.5s ease;
+  left: -340px;
+  transition: left 0.5s ease-in-out;
+  z-index: 30;
   /* transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1),visibility .5s cubic-bezier(0.645, 0.045, 0.355, 1); */
 }
 
+#drawer.open {
+  left: 0;
+}
+
+.bold-text {
+  display: block;
+  /* display: inline-block; */
+  font-weight: bold;
+}
+
+/* .drawer-main::after {
+  display: block;
+  content: "";
+  height: 35px;
+} */
+
 .drawer-main {
-  padding: 0px 24px 18px 18px;
+  padding: 26px 30px 18px;
 }
 
 .drawer-content {
   flex: 1;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   max-height: calc(100vh - 130px);
 }
 #close-button {
@@ -146,16 +163,10 @@ body {
 }
 
 .drawer-header {
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
-  padding: 18px;
-}
-
-.drawer-main::after {
-  display: block;
-  content: "";
-  height: 35px;
+  padding: 18px 30px;
 }
 
 #drawer.open {
@@ -207,7 +218,7 @@ body {
 }
 
 .horizontal-line {
-  border: 0.5px solid #00000080;
+  border: 0.5px solid #00000040;
   margin: 0px !important;
 }
 
@@ -221,10 +232,53 @@ body {
   font-weight: 700;
 }
 
+.Collapsible__Plus {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 5.5px);
+  width: 11px;
+  height: 11px;
+  transform-origin: center; /* Set the transform origin to the center of the plus icon */
+}
+
+.Collapsible__Plus:before {
+  width: 11px;
+  height: 1px;
+  opacity: 1;
+}
+
+.Collapsible__Plus:before,
+.Collapsible__Plus:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background-color: currentColor;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.Collapsible__Plus:after {
+  width: 1px;
+  height: 11px;
+}
+
+/* CSS for the Minus icon */
+.Collapsible__Plus.minus:before {
+  transform: translate(-50%, -50%) rotate(0deg); /* Rotate back to 0 degrees */
+}
+
+.Collapsible__Plus.minus:after {
+  width: 0; /* Hide the vertical line */
+  height: 0; /* Hide the vertical line */
+}
+
 .account-drawer {
   color: #00000080;
   font-weight: 300 !important;
   font-size: 15px;
+  margin-top: 8px;
+  padding-bottom: 0px;
 }
 
 .social-list {
@@ -232,16 +286,67 @@ body {
   list-style: none;
   color: #00000080;
   justify-content: space-around;
-  padding: 12px 0px;
+  padding: 12px 50px;
+  align-items: center;
 }
 
 .drawer-footer {
   position: absolute;
-  bottom: 0;
+  bottom: -100%;
   left: 0;
   width: 100%;
   height: 48px;
   /* padding-top: 10px; */
+  transition: bottom 0.25s ease-out 0.45s;
+}
+
+.drawer-up {
+  bottom: 0;
+}
+
+.drawer-footer::before {
+  bottom: 100%;
+  height: 30px;
+  background-image: linear-gradient(
+    rgba(var(--navigation-background-rgb), 0.5),
+    rgba(var(--navigation-background-rgb), 0.8) 40%,
+    var(--navigation-background)
+  );
+  position: absolute;
+  content: "";
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  /* backdrop-filter: blur(1px); Standard syntax  */
+}
+
+/* [data-drawer-animated-bottom] {
+  opacity: 0;
+  transform: translateY(45px);
+  /* transition: opacity .35s cubic-bezier(.25,.46,.45,.94),transform .35s cubic-bezier(.25,.46,.45,.94); 
+  transition: opacity .35s ease, transform .35s ease;
+
+}
+
+.Drawer[aria-hidden=false] [data-drawer-animated-bottom] {
+  opacity: 1;
+  transform: translateY(0);
+  /* transition: opacity .25s cubic-bezier(.25,.46,.45,.94) .45s,transform .25s cubic-bezier(.25,.46,.45,.94) .45s; 
+  transition: opacity .25s ease 0.45s, transform .25s ease 0.45s;
+} */
+
+
+
+.Icon--facebook {
+  height: 15px;
+  width: 15px;
+  fill: currentColor;
+}
+
+.Icon--youtube {
+  height: 15px;
+  width: 15px;
+  fill: currentColor;
 }
 
 /* AnnoucementBar */
@@ -385,10 +490,10 @@ body {
   display: flex;
   align-items: center;
   background-color: #262626;
-  padding: 18px 50px 11px;
+  padding: 18px 50px;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 10;
   border-bottom: 1px solid #fff;
 }
 
@@ -410,6 +515,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .DropdownMenu {
@@ -488,6 +594,7 @@ body {
   text-decoration: none;
   padding: 0;
   margin: 0;
+  height: 93.5px;
 }
 
 .Header__LogoImage {
@@ -500,18 +607,25 @@ body {
 .SearchDropdown {
   /* display: block; */
   position: absolute;
-  top: 120%;
+  top: 100%;
   width: 100%;
   left: 0;
+  z-index: -1;
   /* border: 2px solid black; */
   /* border-top: none; */
   padding: 28px 50px;
   background: #f2b737;
   visibility: hidden;
-  /* opacity: 0; */
+  opacity: 0;
   transform: translateY(-25px);
-  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
-    visibility 0.15s ease-in-out;
+  transition: transform 0.15s ease, opacity 0.1s ease,
+  visibility 0.1s ease;
+}
+
+.search_down {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Search__Inner {
@@ -634,11 +748,19 @@ body {
   font-style: var(--heading-font-style);
 }
 
-.Rte p:not(:last-child),
+.FeaturedMap__Hours {
+  font-size: 1em;
+}
+
+.Rte {
+  word-break: break-word;
+}
+
+/* .Rte p:not(:last-child),
 .Rte ul:not(:last-child),
 .Rte ol:not(:last-child) {
   margin-bottom: 1.6em;
-}
+} */
 
 .Image--lazyLoaded.Image--fadeIn {
   opacity: 1;
@@ -1003,7 +1125,9 @@ textarea:focus {
   background: none;
 }
 .Icon--close {
-  width: 16px;
+  width: 15px;
+  stroke-width: 1.25px;
+  height: 15px;
 }
 .Drawer__Content {
   position: relative;
@@ -1043,6 +1167,12 @@ textarea:focus {
 @media screen and (max-width: 1140px) {
   .bars {
     display: block;
+  }
+  .Header__Wrapper {
+    padding: 18px 30px;
+  }
+  .Header__LogoLink {
+    margin-left: 105px;
   }
   .Header__MainNav {
     display: none;
@@ -1118,6 +1248,9 @@ textarea:focus {
   .Text--subdued {
     color: var(--text-color-light);
   }
+  .drawer-main {
+    padding: 0px 30px 18px;
+  }
 }
 
 /* -------------------640px----------------- */
@@ -1134,10 +1267,29 @@ textarea:focus {
   .Header__Wrapper {
     padding: 15px 18px;
   }
+  .Header__LogoLink {
+    max-height: 49.5px;
+    /* margin-left: 20px 88px; */
+    /* margin-left: 100px; */
+  }
   .Header__LogoImage {
     max-width: 185px;
-    height: auto;
-    margin-left: 100px;
+    height: 49.5px;
+  }
+  #drawer {
+    width: calc(100vw - 65px);
+    left: -100vw;
+  }
+  .drawer-main {
+    padding: 0px 30px 18px;
+  }
+  .drawer-header {
+    height: 60px;
+    padding: 0px 24px 0px 18px;
+  }
+
+  .drawer-main {
+    padding: 0px 24px 0px 18px;
   }
   .navbar-icon {
     font-size: 18px;
@@ -1182,6 +1334,10 @@ textarea:focus {
     display: none;
   }
 
+  .SearchDropdown {
+    padding: 14px 18px;
+  }
+
   /*main collection */
 
   .Section--spacingNormal {
@@ -1218,7 +1374,7 @@ textarea:focus {
     background-position: center;
   }
 
-  .FeaturedMap__Store{
+  .FeaturedMap__Store {
     font-size: 22px;
   }
 
@@ -1226,20 +1382,20 @@ textarea:focus {
     display: flex;
     flex-direction: column;
   }
-  
+
   .Form__Group > .Form__Item {
     flex: 1;
   }
-  
+
   .Form--spacingTight .Form__Item {
     margin-bottom: 15px;
   }
-  
+
   .Form__Item {
     position: relative;
     margin-bottom: 15px;
   }
-  
+
   .Form--spacingTight .Form__Group > :nth-child(2) {
     margin-left: 0px;
   }
@@ -1365,129 +1521,24 @@ textarea:focus {
     color: #fff;
     text-decoration: none;
   }
+}
 
-  /* Customized Filter Drawer */
-
-  .Drawer--fromRight {
-    /* max-width: 575px; */
-    right: -575px;
-    width: 575px;
+/* -------------------450px----------------- */
+@media screen and (max-width: 450px) {
+  .AnnouncementBar__Wrapper {
+    padding: 10px 40px;
   }
-  .Drawer--open {
-    right: 0;
+  .Header__LogoLink {
+    margin-left: 77px;
   }
-
-  .Drawer--closing {
-    right: -575px;
-    transition: right 0.5s ease;
+  .navbar-icon:first-child {
+    margin-left: 0px;
   }
-  .Drawer__Main {
-    padding: 0px;
-    flex-grow: 1;
-  }
-  .Collapsible__Button {
-    margin: 0px;
-    padding: 20px 0px;
-  }
-  .Collapsible__Inner {
-    display: none;
-  }
-  .Collapsible__Inner--active {
-    display: block;
-  }
-  .Collapsible--padded {
-    margin: 0;
-    padding: 0 24px;
-    box-shadow: 0 -1px rgba(var(--border-color-rgb), 0.6) inset;
-  }
-
-  .Collapsible__Plus {
-    position: absolute;
-    right: 0;
-    top: calc(50% - 5.5px);
-    width: 11px;
-    height: 11px;
-  }
-
-  .Collapsible__Minus {
-    position: absolute;
-    right: 0;
-    top: calc(50% - 5.5px);
-    width: 11px;
-    height: 11px;
-  }
-
-  .Collapsible__Plus::before {
-    width: 11px;
-    height: 1px;
-    opacity: 1;
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    background-color: currentColor;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  }
-
-  .Collapsible__Plus::after {
-    width: 1px;
-    height: 11px;
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    background-color: currentColor;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  }
-
-  /* Rotate the plus and minus buttons for the initial state */
-  .Collapsible__Plus {
-    transform: rotate(-90deg);
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  }
-
-  .Collapsible__Minus {
-    transform: rotate(0);
-    opacity: 0;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  }
-
-  .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus::after {
-    transform: rotate(0);
-    opacity: 0;
-  }
-
-  .Collapsible__Button[aria-expanded="true"] .Collapsible__Minus {
-    transform: rotate(-90deg);
-    opacity: 1;
-  }
-
-  /* .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus:before {
-    opacity: 0;
+  /* #drawer {
+    width: 331px;
+    left: -331px;
+    height: 100vh;
   } */
-  .Collapsible__Content {
-    padding: 0px 0px 18px;
-  }
-}
-
-/* -------------------450px----------------- */
-@media screen and (max-width: 450px) {
-  .AnnouncementBar__Wrapper {
-    padding: 10px 40px;
-  }
-  .Header__LogoImage {
-    margin-left: 30px;
-  }
-  .navbar-icon:first-child {
-    margin-left: 0px;
-  }
-  #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100%;
-  }
   .SearchDropdown {
     padding: 14px 18px;
   }
@@ -1503,44 +1554,14 @@ textarea:focus {
   }
 }
 
-/* -------------------450px----------------- */
-@media screen and (max-width: 450px) {
-  .AnnouncementBar__Wrapper {
-    padding: 10px 40px;
-  }
-  .Header__LogoImage {
-    margin-left: 30px;
-  }
-  .navbar-icon:first-child {
-    margin-left: 0px;
-  }
-  #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100%;
-  }
-  .SearchDropdown {
-    padding: 14px 18px;
-  }
-  .Drawer--fromRight {
-    width: 335px;
-  }
-  .Drawer--open {
-    right: 0;
-  }
-  .Drawer--closing {
-    right: -335px;
-    transition: right 0.5s ease;
-  }
-}
-
-/* -------------------350px----------------- */
-@media screen and (max-width: 350px) {
+/* -------------------410px----------------- */
+@media screen and (max-width: 410px) {
   .Header__LogoLink {
     max-height: 49.5px;
+    margin-left: 0px;
   }
   .Header__LogoImage {
-    margin-left: auto;
+    /* margin-left: auto; */
   }
   .navbar-icon {
     margin-left: auto;
@@ -1548,16 +1569,16 @@ textarea:focus {
   .navbar-icon:last-child {
     margin-left: 15px;
   }
-  #drawer {
+  /* #drawer {
     width: 331px;
     left: -331px;
     height: 100vh;
-  }
-  #drawer {
-    width: 234px;
-    left: -234px;
+  } */
+  /* #drawer {
+    width: 255px;
+    left: -255px;
     height: 100vh;
-  }
+  } */
   .Drawer--fromRight {
     width: 234px;
   }
@@ -1568,4 +1589,11 @@ textarea:focus {
     right: -234px;
     transition: right 0.5s ease;
   }
+  .social-list {
+    padding: 12px 30px;
+  }
+  span {
+    display: block;
+  }
+
 }

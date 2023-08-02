@@ -1677,7 +1677,6 @@ a {
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
 
-  /* Rotate the plus and minus buttons for the initial state */
   .Collapsible__Plus {
     transform: rotate(-90deg);
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
