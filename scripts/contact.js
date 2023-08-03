@@ -61,7 +61,9 @@ dropdownIcon.addEventListener("click", function () {
     pageOverlay.style.display = "block";
     pageOverlay.style.zIndex = "5";
 
-    searchDropdown.classList.toggle("search_down")
+    searchDropdown.classList.add("search_down")
+    searchDropdown.setAttribute("tabindex", "-1");
+
 
     console.log(searchDropdown.style.visibility);
   });
@@ -72,7 +74,9 @@ dropdownIcon.addEventListener("click", function () {
     // searchDropdown.style.visibility = "visible";
     pageOverlay.style.display = "block";
     pageOverlay.style.zIndex = "5";
-    searchDropdown.classList.toggle("search_down")
+    searchDropdown.classList.add("search_down")
+    searchDropdown.setAttribute("tabindex", "-1");
+
 
 
     console.log(pageOverlay.style.display);
@@ -82,7 +86,8 @@ dropdownIcon.addEventListener("click", function () {
     event.preventDefault();
 
     // searchDropdown.style.visibility = "hidden";
-    searchDropdown.classList.remove("search_down")
+    searchDropdown.classList.remove("search_down");
+    searchDropdown.removeAttribute("tabindex");
 
     pageOverlay.style.display = "none";
     pageOverlay.style.zIndex = "20";

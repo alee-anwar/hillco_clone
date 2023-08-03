@@ -974,6 +974,9 @@ input:focus {
   .bars {
     display: block;
   }
+  .Header__Wrapper {
+    padding: 18px 30px;
+  }
   .Header__MainNav {
     display: none;
   }

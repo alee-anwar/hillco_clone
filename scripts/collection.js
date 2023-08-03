@@ -88,6 +88,7 @@ openDrawerButton.addEventListener("click", function (event) {
   filterDrawer.style.display = "block";
   pageOverlay.style.display = "block";
   drawer.classList.toggle("Drawer--open");
+  document.getElementById("result-footer-animation").classList.toggle("drawer-up");
   pageOverlay.style.zIndex = "30";
   // seeResultsButton.classList.add("moved-up");
   console.log("darwer " + filterDrawer.style.display);
@@ -101,6 +102,7 @@ closeFilterDrawer.addEventListener("click", function (event) {
     // seeResultsButton.classList.remove("moved-up");
     filterDrawer.style.display = "none";
     pageOverlay.style.display = "none";
+    document.getElementById("result-footer-animation").classList.remove("drawer-up");
     pageOverlay.style.zIndex = "10";
     console.log("drawer " + filterDrawer.style.display);
     console.log("pageoverlay " + pageOverlay.style.display);

@@ -185,16 +185,18 @@
               <a href="/pages/contact" class="primary-link">Contact</a>
               <hr class="horizontal-line" />
 
-              <a
-                href="/pages/login.html"
-                class="primary-link account-drawer"
+              <a href="/pages/login.html" class="primary-link account-drawer"
                 >Account</a
               >
             </nav>
           </div>
         </div>
 
-        <aside id="drawer-footer-animation" class="drawer-footer" data-drawer-animated-bottom>
+        <aside
+          id="drawer-footer-animation"
+          class="drawer-footer"
+          data-drawer-animated-bottom
+        >
           <hr class="horizontal-line" />
 
           <ul class="social-list">
@@ -220,7 +222,6 @@
             </li>
           </ul>
         </aside>
-        
       </div>
     </div>
 
@@ -353,8 +354,8 @@
             <li class="HorizontalList__Item">
               <a href="/pages/index.html" class="Heading Link">Home</a>
             </li>
-            <li class="HorizontalList__Item">
-              <a href="/collections/all" class="Heading Link">Shop</a>
+            <li class="HorizontalList__Item Link--noUnderline">
+              <a href="/collections/all" class="Heading Link ">Shop</a>
               <div class="DropdownMenu" aria-hidden="true">
                 <ul class="Linklist">
                   <li class="Linklist__Item">
@@ -599,17 +600,19 @@
                   <br />
                   <strong>
                     Business Hours:
-                  <br/>
+                    <br />
                   </strong>
-                    Monday-Friday: 9am to 5pm
+                  Monday-Friday: 9am to 5pm
                   <br />
-                    Saturday: 9am to 1pm
-                  </p>
-                  <p>
-                    Customer service:&nbsp;<strong>sales@hillcobees.com</strong>
-                  </p>
-                  <p>
-                    Technical Help:&nbsp;<strong>techsupport@hillcobees.com</strong>
+                  Saturday: 9am to 1pm
+                </p>
+                <p>
+                  Customer service:&nbsp;<strong>sales@hillcobees.com</strong>
+                </p>
+                <p>
+                  Technical Help:&nbsp;<strong
+                    >techsupport@hillcobees.com</strong
+                  >
                 </p>
               </div>
             </div>
@@ -627,70 +630,74 @@
         </div>
       </section>
 
-      <div class="Container">
-        <header class="PageHeader">
-          <div class="SectionHeader SectionHeader--center">
-            <h1 class="SectionHeader__Heading">Contact</h1>
-          </div>
-        </header>
-
-        <div class="PageContent PageContent--narrow">
-          <div class="Rte">
-            <form
-              method="post"
-              action="/contact#contact_form"
-              id="contact_form"
-              accept-charset="UTF-8"
-              class="Form Form--spacingTight"
-            >
-              <div class="Form__Group">
-                <div class="Form__Item">
-                  <input
-                    type="text"
-                    class="Form__Input"
-                    name="contact[name]"
-                    aria-label="Your name"
-                    placeholder="Your name"
-                    required=""
-                  />
-                  <label class="Form__FloatingLabel">Your name</label>
-                </div>
-
-                <div class="Form__Item">
-                  <input
-                    type="email"
-                    class="Form__Input"
-                    name="contact[email]"
-                    aria-label="Your email"
-                    placeholder="Your email"
-                    required=""
-                  />
-                  <label class="Form__FloatingLabel">Your email</label>
-                </div>
-              </div>
-              <div class="Form__Item">
-                <textarea
-                  name="contact[body]"
-                  cols="30"
-                  rows="10"
-                  class="Form__Textarea"
-                  aria-label="Your message"
-                  placeholder="Your message"
-                  required=""
-                ></textarea>
-                <label class="Form__FloatingLabel">Your message</label>
-              </div>
-
-              <button
-                type="submit"
-                class="Form__Submit Button Button--primary Button--full"
+      <section class="Section Section--Contact">
+        <div class="Container">
+          <header class="PageHeader">
+            <div class="SectionHeader SectionHeader--center">
+              <h1 class="SectionHeader__Heading">Contact</h1>
+            </div>
+          </header>
+  
+          <div class="PageContent PageContent--narrow">
+            <div class="Rte">
+              <form
+                method="post"
+                action="/contact#contact_form"
+                id="contact_form"
+                accept-charset="UTF-8"
+                class="Form Form--spacingTight"
               >
-                Send message
-              </button>
-            </form>
+                <div class="Form__Group">
+                  <div class="Form__Item">
+                    <input
+                      type="text"
+                      class="Form__Input"
+                      name="contact[name]"
+                      aria-label="Your name"
+                      placeholder="Your name"
+                      required=""
+                    />
+                    <label class="Form__FloatingLabel">Your name</label>
+                  </div>
+  
+                  <div class="Form__Item">
+                    <input
+                      type="email"
+                      class="Form__Input"
+                      name="contact[email]"
+                      aria-label="Your email"
+                      placeholder="Your email"
+                      required=""
+                    />
+                    <label class="Form__FloatingLabel">Your email</label>
+                  </div>
+                </div>
+                <div class="Form__Item">
+                  <textarea
+                    name="contact[body]"
+                    cols="30"
+                    rows="10"
+                    class="Form__Textarea"
+                    aria-label="Your message"
+                    placeholder="Your message"
+                    required=""
+                  ></textarea>
+                  <label class="Form__FloatingLabel">Your message</label>
+                </div>
+  
+                <button
+                  type="submit"
+                  class="Form__Submit Button Button--primary Button--full"
+                >
+                  Send message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      
     </main>
 
     <!-- footer -->

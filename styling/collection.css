@@ -1291,7 +1291,19 @@ a {
 .Drawer__Footer {
   padding: 24px 30px;
   box-shadow: 0 -1px rgba(var(--border-color-rgb), 0.6);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  transition: bottom 0.4s ease-out 0.2s;
+  background: white;
 }
+
+.drawer-up {
+  bottom: 0;
+}
+
+
 .Button--results {
   width: 100%;
   background: black;
@@ -1729,7 +1741,7 @@ a {
     padding: 14px 18px;
   }
   .Drawer--fromRight {
-    width: 335px;
+    width: calc(100vw - 65px);
   }
   .Drawer--open {
     right: 0;
@@ -1768,7 +1780,7 @@ a {
     height: 100vh;
   }
   .Drawer--fromRight {
-    width: 234px;
+    width: calc(100vw - 65px);
   }
   .Drawer--open {
     right: 0;
@@ -1776,5 +1788,24 @@ a {
   .Drawer--closing {
     right: -234px;
     transition: right 0.5s ease;
+  }
+  .Drawer__Footer {
+    padding: 24px;
+  }
+
+  .Button {
+    padding: 14px 22px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .Drawer__Content {
+    /* position: relative;
+    display: flex;
+    flex-direction: column; */
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    /* height: calc(100% - 60px); */
+    /* max-height: calc(100% - 10px); */
+    max-height: auto;
   }
 }

@@ -124,7 +124,9 @@ body {
   top: 0;
   left: -340px;
   transition: left 0.5s ease-in-out;
+  /* transition: left 0.5s var(--drawer-transition-timing); */
   z-index: 30;
+  /* transition: transform .5s var(--drawer-transition-timing),visibility .5s var(--drawer-transition-timing); */
   /* transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1),visibility .5s cubic-bezier(0.645, 0.045, 0.355, 1); */
 }
 
@@ -138,11 +140,11 @@ body {
   font-weight: bold;
 }
 
-/* .drawer-main::after {
+ .drawer-main::after {
   display: block;
   content: "";
   height: 35px;
-} */
+} 
 
 .drawer-main {
   padding: 26px 30px 18px;
@@ -297,7 +299,9 @@ body {
   width: 100%;
   height: 48px;
   /* padding-top: 10px; */
-  transition: bottom 0.4s ease-out 0.2s;
+  /* transition: bottom 0.4s ease-out 0.2s; */
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
 
 .drawer-up {
@@ -422,6 +426,14 @@ body {
 
 .Contact_HorizontalList_Item:hover::after {
   width: 50px;
+}
+
+.Link--noUnderline::after {
+  width: 0;
+}
+
+.Link--noUnderline:hover::after {
+  width: 0;
 }
 
 .Header__FlexItem {
@@ -616,7 +628,9 @@ body {
   visibility: hidden;
   opacity: 0;
   transform: translateY(-25px);
-  transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease;
+  /* transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease; */
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
+    visibility 0.15s ease-in-out;
 }
 
 .search_down {
@@ -707,6 +721,19 @@ body {
   padding: 80px 0px;
 }
 
+/* .Contact-Info {
+  display: block;
+  padding: 50px 0;
+  margin-top: 0;
+  margin-bottom: 0;
+} */
+
+/* .Section--spacingNormal::before {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
 .Container {
   padding: 0px 80px;
 }
@@ -751,6 +778,11 @@ body {
 
 .Rte {
   word-break: break-word;
+}
+
+.FeaturedMap__Hours p:not(:last-child) {
+  margin-bottom: 1.6em;
+  letter-spacing: 0.1px;
 }
 
 /* .Rte p:not(:last-child),
@@ -1343,6 +1375,13 @@ textarea:focus {
     margin-bottom: 0;
   }
 
+  /* .Contact-Info {
+    display: block;
+    padding: 50px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  } */
+
   .Container {
     margin: 0 auto;
     padding: 0 24px;
@@ -1592,8 +1631,14 @@ textarea:focus {
   span {
     display: block;
   }
-  .Rte p:not(:last-child) {
-    margin-bottom: 1.6em;
-    letter-spacing: 0.2px;
+  .Section--Contact {
+    padding: 100px 0px 0px;
+  }
+  .PageContent {   
+    margin: 35px auto 35px;
+  }
+  .Rte .Form {
+    margin-top: 35px;
+    margin-bottom: 0px;
   }
 }
