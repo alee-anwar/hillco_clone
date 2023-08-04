@@ -140,11 +140,11 @@ body {
   font-weight: bold;
 }
 
- .drawer-main::after {
+.drawer-main::after {
   display: block;
   content: "";
   height: 35px;
-} 
+}
 
 .drawer-main {
   padding: 26px 30px 18px;
@@ -169,10 +169,6 @@ body {
   display: flex;
   align-items: center;
   padding: 18px 30px;
-}
-
-#drawer.open {
-  left: 0;
 }
 
 #menu-button {
@@ -615,19 +611,16 @@ body {
 /* Search Section */
 
 .SearchDropdown {
-  /* display: block; */
   position: absolute;
-  top: 100%;
+  top: 101%;
   width: 100%;
   left: 0;
   z-index: -1;
-  /* border: 2px solid black; */
-  /* border-top: none; */
   padding: 28px 50px;
   background: #f2b737;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-25px);
+  transform: translateY(-5px);
   /* transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease; */
   transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
     visibility 0.15s ease-in-out;
@@ -652,6 +645,7 @@ body {
 .Search__Form {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .Search__Input {
@@ -1570,11 +1564,6 @@ textarea:focus {
   .navbar-icon:first-child {
     margin-left: 0px;
   }
-  /* #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100vh;
-  } */
   .SearchDropdown {
     padding: 14px 18px;
   }
@@ -1605,16 +1594,6 @@ textarea:focus {
   .navbar-icon:last-child {
     margin-left: 15px;
   }
-  /* #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100vh;
-  } */
-  /* #drawer {
-    width: 255px;
-    left: -255px;
-    height: 100vh;
-  } */
   .Drawer--fromRight {
     width: 234px;
   }
@@ -1634,7 +1613,7 @@ textarea:focus {
   .Section--Contact {
     padding: 100px 0px 0px;
   }
-  .PageContent {   
+  .PageContent {
     margin: 35px auto 35px;
   }
   .Rte .Form {

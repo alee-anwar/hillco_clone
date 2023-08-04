@@ -1,12 +1,15 @@
 // left drawer
 document.getElementById("menu-button").addEventListener("click", function () {
   document.getElementById("drawer").classList.toggle("open");
+  document.body.classList.add("body-overflow-hidden");
+
   // document.querySelector(".menu-icon").classList.toggle("open");
 });
 
 document.getElementById("close-button").addEventListener("click", function () {
   document.getElementById("drawer").classList.remove("open");
-  document.querySelector(".menu-icon").classList.remove("open");
+  document.body.classList.remove("body-overflow-hidden");
+  // document.querySelector(".menu-icon").classList.remove("open");
 });
 
 //plus minu
@@ -86,6 +89,7 @@ closeSearchButton.addEventListener("click", function (event) {
 openDrawerButton.addEventListener("click", function (event) {
   event.preventDefault();
   filterDrawer.style.display = "block";
+  document.body.classList.add("body-overflow-hidden");
   pageOverlay.style.display = "block";
   drawer.classList.toggle("Drawer--open");
   document.getElementById("result-footer-animation").classList.toggle("drawer-up");
@@ -101,6 +105,7 @@ closeFilterDrawer.addEventListener("click", function (event) {
   setTimeout(function () {
     // seeResultsButton.classList.remove("moved-up");
     filterDrawer.style.display = "none";
+    document.body.classList.remove("body-overflow-hidden");
     pageOverlay.style.display = "none";
     document.getElementById("result-footer-animation").classList.remove("drawer-up");
     pageOverlay.style.zIndex = "10";

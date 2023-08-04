@@ -23,18 +23,71 @@ body {
   overflow-x: hidden;
 }
 
+/* WELCOME POPUP */
+.Icon--close {
+  width: 14px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #efecec;
+  padding: 20px;
+  /* border-radius: 5px; */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  height: 200px;
+  /* height: 150px; */
+  /* padding: 80px auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  /* background-color: #f2b737; */
+  /* padding: 1px 7px; */
+  /* border-radius: 50%; */
+  stroke-width: 2.25px;
+}
+
+/* WELCOME POPUP END */
+
 .PageOverlay {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 10;
-  /* visibility: visible; */
-  display: none;
-  /* opacity: 0.1; */
-  background: #36363680;
-  /* transition: opacity .3s ease-in-out,visibility .3s ease-in-out; */
+  z-index: 20;
+  visibility: hidden;
+  /* display: none; */
+  opacity: 0;
+  background: #363636;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.is-visible {
+  opacity: 0.5;
+  visibility: visible;
 }
 
 .drawer-dropdown {
@@ -60,13 +113,14 @@ body {
 
 #drawer {
   position: relative;
-  width: 500px;
+  width: 340px;
   height: 100vh;
   background-color: #f2b737;
   position: fixed;
   top: 0;
   left: -500px;
   transition: left 0.5s ease;
+  z-index: 30;
   /* transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1),visibility .5s cubic-bezier(0.645, 0.045, 0.355, 1); */
 }
 
@@ -164,10 +218,53 @@ body {
   font-weight: 700;
 }
 
+.Collapsible__Plus {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 5.5px);
+  width: 11px;
+  height: 11px;
+  transform-origin: center; /* Set the transform origin to the center of the plus icon */
+}
+
+.Collapsible__Plus:before {
+  width: 11px;
+  height: 1px;
+  opacity: 1;
+}
+
+.Collapsible__Plus:before,
+.Collapsible__Plus:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  background-color: currentColor;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.Collapsible__Plus:after {
+  width: 1px;
+  height: 11px;
+}
+
+/* CSS for the Minus icon */
+.Collapsible__Plus.minus:before {
+  transform: translate(-50%, -50%) rotate(0deg); /* Rotate back to 0 degrees */
+}
+
+.Collapsible__Plus.minus:after {
+  width: 0; /* Hide the vertical line */
+  height: 0; /* Hide the vertical line */
+}
+
 .account-drawer {
   color: #00000080;
   font-weight: 300 !important;
   font-size: 15px;
+  margin-top: 8px;
+  padding-bottom: 0px;
 }
 
 .social-list {
@@ -175,16 +272,52 @@ body {
   list-style: none;
   color: #00000080;
   justify-content: space-around;
-  padding: 12px 0px;
+  padding: 12px 50px;
+  align-items: center;
 }
 
 .drawer-footer {
   position: absolute;
-  bottom: 0;
+  bottom: -100%;
   left: 0;
   width: 100%;
   height: 48px;
   /* padding-top: 10px; */
+  /* transition: bottom 0.4s ease-out 0.2s; */
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s,
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.drawer-up {
+  bottom: 0;
+}
+
+.drawer-footer::before {
+  bottom: 100%;
+  height: 30px;
+  background-image: linear-gradient(
+    rgba(var(--navigation-background-rgb), 0.5),
+    rgba(var(--navigation-background-rgb), 0.8) 40%,
+    var(--navigation-background)
+  );
+  position: absolute;
+  content: "";
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  /* backdrop-filter: blur(1px); Standard syntax  */
+}
+
+.Icon--facebook {
+  height: 15px;
+  width: 15px;
+  fill: currentColor;
+}
+
+.Icon--youtube {
+  height: 15px;
+  width: 15px;
+  fill: currentColor;
 }
 
 /* AnnoucementBar */
@@ -348,10 +481,10 @@ body {
   display: flex;
   align-items: center;
   /* background-color: #262626; */
-  padding: 18px 50px 11px;
+  padding: 18px 50px 18px;
   position: sticky !important;
   top: 0;
-  z-index: 100;
+  z-index: 10;
   border-bottom: 1px solid #fff;
 }
 
@@ -377,6 +510,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .DropdownMenu {
@@ -402,9 +536,16 @@ body {
 }
 
 .Linklist__Item {
-  list-style: none;
+  /* list-style: none;
   line-height: -1px;
-  padding: 5px 0px;
+  padding: 5px 0px; */
+  position: relative;
+  display: block;
+  margin-bottom: 12px;
+  width: 100%;
+  line-height: 1.5;
+  text-align: left;
+  transition: all .2s ease-in-out;
 }
 
 .Link--secondary {
@@ -455,6 +596,7 @@ body {
   text-decoration: none;
   padding: 0;
   margin: 0;
+  max-height: 93.5px;
 }
 
 .Header__LogoImage {
@@ -464,22 +606,39 @@ body {
 
 /* Search Section */
 
-.SearchDropdown {
-  /* display: block; */
+/* .SearchDropdown {
   position: absolute;
   top: 120%;
   width: 100%;
   left: 0;
-  /* border: 2px solid black; */
-  /* border-top: none; */
   padding: 28px 50px;
   background: #f2b737;
   visibility: hidden;
-  /* opacity: 0; */
   transform: translateY(-25px);
   transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
+  visibility 0.15s ease-in-out;
+} */
+
+.SearchDropdown {
+  position: absolute;
+  top: 101%;
+  width: 100%;
+  left: 0;
+  z-index: -10;
+  padding: 28px 50px;
+  background: #f2b737;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  /* transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease; */
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
     visibility 0.15s ease-in-out;
-  /* z-index: -1; */
+}
+
+.search_down {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Search__Inner {
@@ -495,6 +654,7 @@ body {
 .Search__Form {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 /* .Search__Input {
@@ -515,8 +675,10 @@ body {
   outline: none; /* Remove the default focus outline */
   font-size: 14px;
   vertical-align: middle;
-  padding: 0px;
-  box-sizing: border-box; /* Ensure the padding is included in the width */
+  /* padding: 0px; */
+  padding-top: 3px; /* Adjust the value as needed */
+  box-sizing: border-box;
+  line-height: normal;
 }
 
 .Search__Input::placeholder {
@@ -561,7 +723,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 .custom-heading {
@@ -578,19 +740,20 @@ body {
   max-width: 430px;
 }
 
-.honey-extractor-link {
+/* .honey-extractor-link {
   width: 430px;
-}
+} */
 
 .custom-link-transiton {
+  letter-spacing: 0.5px;
   position: relative;
   display: inline-block;
   font-size: 15px;
   font-weight: 400;
-  text-align: left !important;
+  text-align: left;
   text-decoration: none;
   color: black;
-  /* transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out; */
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .custom-link-transiton::after {
@@ -603,7 +766,7 @@ body {
   background: currentColor;
   transform: scale(1);
   transform-origin: left center;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .custom-link-transiton:hover::after {
@@ -628,7 +791,7 @@ body {
   /* flex: 1; */
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
 }
@@ -984,7 +1147,10 @@ input:focus {
 /* -------------------1140px----------------- */
 @media screen and (max-width: 1140px) {
   .Header__Wrapper {
-    padding: 18px 30px 10px;
+    padding: 18px 30px 18px;
+  }
+  .Header__LogoLink {
+    max-height: 93.5px;
   }
   .Icon--nav {
     display: none;
@@ -1012,7 +1178,8 @@ input:focus {
     padding-right: 25px;
   }
   .account-icon {
-    display: none !important;
+    display: block;
+    margin-left: 0px;
   }
   .hidden-tablet-and-up {
     width: 18px;
@@ -1159,6 +1326,10 @@ input:focus {
   }
   .bee-image-section {
     width: 100%;
+    justify-content: center;
+  }
+  .custom-link-transiton {
+    text-align: center;
   }
   .colo {
     padding-right: 50px;
@@ -1257,7 +1428,6 @@ input:focus {
 
   .custom-block:last-child {
     margin-bottom: 0;
-
   }
 
   /* Logo */
@@ -1351,6 +1521,11 @@ input:focus {
 
 /* -------------------450px----------------- */
 @media screen and (max-width: 450px) {
+  .popup-content {
+    width: 300px;
+    height: 150px;
+    font-size: 14px;
+  }
   .AnnouncementBar__Wrapper {
     padding: 10px 40px;
   }
@@ -1379,9 +1554,8 @@ input:focus {
     padding: 50px 24px 20px;
   }
   #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100%;
+    width: calc(100vw - 65px);
+    left: -100vw;
   }
   .SearchDropdown {
     padding: 14px 18px;
@@ -1389,7 +1563,7 @@ input:focus {
   .custom-padding {
     padding: 0px;
   }
- 
+
   .custom-info-item {
     font-size: 15px;
   }
@@ -1400,8 +1574,8 @@ input:focus {
     padding: 0px;
   }
   .custom-newsletter-form {
-      margin-top: 18px;
-      max-width: 100%;
+    margin-top: 18px;
+    max-width: 100%;
   }
   .custom-block {
     margin-bottom: 48px;
@@ -1416,6 +1590,11 @@ input:focus {
 
 /* -------------------350px----------------- */
 @media screen and (max-width: 350px) {
+  .popup-content {
+    width: 250px;
+    height: 120px;
+    font-size: 11px;
+  }
   .Header__LogoLink {
     max-height: 49.5px;
   }
@@ -1427,16 +1606,6 @@ input:focus {
   }
   .navbar-icon:last-child {
     margin-left: 15px;
-  }
-  #drawer {
-    width: 331px;
-    left: -331px;
-    height: 100vh;
-  }
-  #drawer {
-    width: 234px;
-    left: -234px;
-    height: 100vh;
   }
   .Drawer--fromRight {
     width: 234px;

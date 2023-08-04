@@ -80,6 +80,10 @@ body {
   /* overflow-x: hidden; */
 }
 
+.body-overflow-hidden {
+  overflow: hidden;
+}
+
 .PageOverlay {
   position: fixed;
   top: 0;
@@ -1273,7 +1277,7 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   overflow-y: auto;
   /* height: calc(100% - 60px); */
   max-height: calc(100% - 50px);
@@ -1309,6 +1313,7 @@ a {
   background: black;
   color: white;
   transition: transform 0.5s ease;
+  font-size: 12px;
 }
 
 .Button--results.moved-up {
