@@ -1,7 +1,13 @@
 const navImages = document.querySelectorAll(".navImage");
+const productSpaces = document.querySelectorAll(".productSpace");
 
 const reviewButton = document.querySelector(".ReviewButton");
 const sprContent = document.querySelector(".spr-content");
+
+// const firstProductImage = document.getElementById("Media31932391489791");
+const secondProductImage = document.getElementById("Media31932391555327");
+
+// const secondProduct = document.getElementById("Media31932391555327")
 
 // ***************
 
@@ -52,15 +58,26 @@ drawerItems.forEach((item) => {
       selectedValue;
     // dropdownToggleBtn.setAttribute("aria-expanded", "false");
     bottomDrawer.classList.remove("drawer-open");
-    pageOverlay.style.display = "block";
-    pageOverlay.style.zIndex = "30";
+    // pageOverlay.style.display = "block";
+    // pageOverlay.style.zIndex = "30";
+    pageOverlay.style.display = "none";
+    pageOverlay.style.zIndex = "10";
   });
 });
+
+pageOverlay.addEventListener("click", function () {
+  bottomDrawer.classList.remove("drawer-open");
+  pageOverlay.style.display = "none";
+  searchDropdown.style.visibility = "hidden";
+  pageOverlay.style.zIndex = "10";
+});
+
 // ----------------------------End----------------------------------
 
 // ------------------------Option List------------------------------
 
 const optionItems = document.querySelectorAll(".ProductForm__OptionItem");
+// const optionItems = document.querySelectorAll(".ProductForm__Item");
 
 optionItems.forEach((item) => {
   item.addEventListener("click", function () {
@@ -86,12 +103,12 @@ optionItems.forEach((item) => {
 
 function hideOptionsList(event) {
   if (
-      !optionsList.contains(event.target) &&
-      event.target !== dropdownToggleBtn &&
-      optionsList.style.display === "block"
+    !optionsList.contains(event.target) &&
+    event.target !== dropdownToggleBtn &&
+    optionsList.style.display === "block"
   ) {
-      optionsList.style.display = "none";
-      dropdownToggleBtn.setAttribute("aria-expanded", "false");
+    optionsList.style.display = "none";
+    dropdownToggleBtn.setAttribute("aria-expanded", "false");
   }
 }
 
@@ -121,18 +138,31 @@ navImages.forEach((navImage) => {
 
     // Add .is-selected class to the clicked nav image
     this.classList.add("is-selected");
+
+    productSpaces.forEach((space) => space.classList.remove("addSpace"));
+
+    secondProductImage.classList.add("addSpace");
+
+    // Toggle the active state
+    isFirstProductActive = !isFirstProductActive;
+
+    // Toggle the active state
   });
 });
 
 // header
 document.getElementById("menu-button").addEventListener("click", function () {
+  pageOverlay.style.display = "block";
+  pageOverlay.style.zIndex = "21";
   document.getElementById("drawer").classList.toggle("open");
-  document.querySelector(".menu-icon").classList.toggle("open");
+  // document.querySelector(".menu-icon").classList.toggle("open");
 });
 
 document.getElementById("close-button").addEventListener("click", function () {
+  pageOverlay.style.display = "none";
+  pageOverlay.style.zIndex = "10";
   document.getElementById("drawer").classList.remove("open");
-  document.querySelector(".menu-icon").classList.remove("open");
+  // document.querySelector(".menu-icon").classList.remove("open");
 });
 
 //plus minu

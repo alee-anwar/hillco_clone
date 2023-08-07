@@ -1274,6 +1274,12 @@ textarea:focus {
   .drawer-main {
     padding: 0px 30px 18px;
   }
+  .Section--spacingNormal {
+    padding: 50px 0px;
+  }
+  .Container {
+    padding: 0px 50px;
+}
 }
 
 /* -------------------640px----------------- */
@@ -1386,7 +1392,7 @@ textarea:focus {
     flex-direction: column;
     /* align-items: left; */
     padding-top: 0;
-    height: 671px;
+    height: auto;
     max-width: 1150px;
     margin: 0 auto;
   }
@@ -1434,8 +1440,13 @@ textarea:focus {
     font-size: 22px;
   }
 
-  .SectionHeader {
+  .PageHeader {
     margin: 35px 0px;
+
+  }
+
+  .SectionHeader {
+    margin: 0px;
   }
 
   /* main end */
@@ -1577,6 +1588,14 @@ textarea:focus {
     right: -335px;
     transition: right 0.5s ease;
   }
+  .PageContent {
+    margin: 0px auto 35px;
+
+  }
+  .Rte .Form {
+    margin-top: 2.4em;
+    margin-bottom: 2.4em;
+}
 }
 
 /* -------------------410px----------------- */
@@ -1611,8 +1630,9 @@ textarea:focus {
     display: block;
   }
   .Section--Contact {
-    padding: 100px 0px 0px;
+    /* padding: 100px 0px 0px; */
   }
+  
   .PageContent {
     margin: 35px auto 35px;
   }

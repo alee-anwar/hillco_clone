@@ -598,7 +598,7 @@ body {
 .PageContent {
   max-width: 1000px;
   margin: 35px auto;
-  padding: 0px 50px;
+  /* padding: 0px 50px; */
 }
 .Cart__ItemList {
   display: table;
@@ -633,13 +633,7 @@ th {
 td {
   padding: 30px 0px;
 }
-/* .CartItem__ImageWrapper {
-  width: 120px;
-  min-width: 90px;
-  text-align: center;
-  height: 120px;
 
-}  */
 .CartItem__Image {
   width: 120px;
   min-width: 90px;
@@ -650,30 +644,39 @@ td {
   display: flex;
 }
 .CartItem__Info {
-  max-width: 425px;
+  /* max-width: 425px; */
   padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .CartItem__Title  {
   font-size: 16px;
   font-weight: 700;
   font-family: var(--text-font-family);
   margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
+
 .CartItem__Title > a {
   text-decoration: none;
   color: black;
   font-family: var(--text-font-family);
+  width: 100%;
+} 
 
-}
+
 .CartItem__Variant {
   font-size: 12px;
   font-weight: 700;
   font-family: var(--text-font-family);
   margin-bottom: 8px;
 }
+
 .QuantitySelector__CurrentQuantity {
   border: none;
   background: transparent;
@@ -1220,11 +1223,16 @@ select:focus {
     display: block;
   }
   /* CART */
+  .Container {
+    padding: 0px 50px;
+  }
 }
 
 /* -------------------1007px----------------- */
 @media only screen and (max-width: 1007px) {
-  
+  .Section--spacingExtraLarge {
+    margin: 90px 0px;
+}
 }
 
 /* -------------------640px----------------- */
@@ -1304,11 +1312,14 @@ select:focus {
   thead {
     display: none;
   }
+  .Container {
+    padding: 0px 24px;
+  }
 
   .PageContent {
     max-width: 1000px;
     margin: 35px auto;
-    padding: 0px 24px;
+    /* padding: 0px 24px; */
   }
 
   .Cart__Footer {
@@ -1360,12 +1371,12 @@ select:focus {
   }
 
   .CartItem__Title {
-    margin-bottom: 4px;
+    margin-bottom: 4px;  
   }
 
   .CartItem__Info {
     justify-content: flex-start;
-    max-width: 100%;
+    /* max-width: 100%; */
     width: 100%;
   }
 
@@ -1386,6 +1397,7 @@ select:focus {
   }
 
   .secondColumn {
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
   }
@@ -1523,6 +1535,9 @@ select:focus {
   .SearchDropdown {
     padding: 14px 18px;
   }
+  .CartItem__Info {
+    min-width:fit-content;
+  }
 }
 
 /* -------------------350px----------------- */
@@ -1558,5 +1573,8 @@ select:focus {
   .Drawer--closing {
     right: -234px;
     transition: right 0.5s ease;
+  }
+  .CartItem__Title {
+    max-width: 160px;  
   }
 }

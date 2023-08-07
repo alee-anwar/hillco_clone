@@ -28,6 +28,12 @@ body {
   width: 14px;
 }
 
+.Drawer--close {
+  width: 15px;
+  stroke-width: 1.25px;
+  height: 15px;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -77,7 +83,7 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 20;
+  z-index: 10;
   visibility: hidden;
   /* display: none; */
   opacity: 0;
@@ -481,10 +487,10 @@ body {
   display: flex;
   align-items: center;
   /* background-color: #262626; */
-  padding: 18px 50px 18px;
+  padding: 18px 50px;
   position: sticky !important;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   border-bottom: 1px solid #fff;
 }
 
@@ -624,7 +630,7 @@ body {
   top: 101%;
   width: 100%;
   left: 0;
-  z-index: -10;
+  z-index: -1!important;
   padding: 28px 50px;
   background: #f2b737;
   visibility: hidden;
@@ -639,6 +645,10 @@ body {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
+  /* transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease; */
+  /* transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out,
+  visibility 0.15s ease-in-out; */
 }
 
 .Search__Inner {
@@ -858,9 +868,9 @@ body {
   /* outline: 5px solid white; */
   width: calc(16.666% - 20px);
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+      display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-image {
@@ -922,7 +932,7 @@ body {
   background-size: 200% 100%;
   color: white;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 60px;
   border: 1px solid #f2b737;
   letter-spacing: 2px;
   font-weight: bold;
@@ -1150,7 +1160,7 @@ input:focus {
 /* -------------------1140px----------------- */
 @media screen and (max-width: 1140px) {
   .Header__Wrapper {
-    padding: 18px 30px 18px;
+    padding: 18px 30px;
   }
   .Header__LogoLink {
     max-height: 93.5px;
@@ -1175,6 +1185,9 @@ input:focus {
   .product-card {
     width: calc(50% - 20px);
     border: none;
+  }
+  .product-image {
+    padding: 60px 60px 0px;
   }
   .custom-padding {
     padding-left: 155px;
@@ -1318,7 +1331,7 @@ input:focus {
     margin: 0;
     color: #000;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.65;
     margin: 10px 0px 12px;
   }
   .view-product-button {
@@ -1542,9 +1555,9 @@ input:focus {
   .Header__LogoImage {
     margin-left: 30px;
   }
-  .Header__Wrapper {
-    padding: 15px 18px 15px;
-  }
+  /* .Header__Wrapper {
+    padding: 15px 18px;
+  } */
   .Shipping__Text {
     font-size: 18px;
   }
@@ -1596,6 +1609,12 @@ input:focus {
   .colo {
     width: 75%;
   }
+  .view-product-button {
+    border-radius: 60px;
+  }
+  .product-image {
+    padding: 30px 30px 0px;
+  }
 }
 
 /* -------------------350px----------------- */
@@ -1626,5 +1645,14 @@ input:focus {
   .Drawer--closing {
     right: -234px;
     transition: right 0.5s ease;
+  }
+  .product-image {
+    padding: 0px;
+  }
+  .product-details {
+    padding-top: 0px;
+  }
+  .product-title {
+    margin: 5px 0px;
   }
 }

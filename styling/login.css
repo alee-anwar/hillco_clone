@@ -1383,14 +1383,14 @@ input:focus {
     transition: right 0.5s ease;
   }
 
-  .PageContent--fitScreen {
+  /* .PageContent--fitScreen { */
     /* display: flex; */
     /* min-height: calc(100vh - 120px); */
     /* align-items: center; */
     /* min-height: calc(var(--window-height) - var(--header-height) - 0px - 160px); */
     /* min-height: calc(var(--window-height) - var(--header-height) - var(--announcement-bar-height, 0px) - 160px); */
-    min-height: 599px;
-  }
+    /* min-height: 599px; */
+  /* } */
 }
 
 /* -------------------450px----------------- */

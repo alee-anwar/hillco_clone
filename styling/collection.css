@@ -1052,7 +1052,7 @@ select:focus {
 .Pagination__NavItem {
   display: inline-block;
   list-style: none;
-  padding: 16px 20px;
+  padding: 16px 28px;
   border-bottom: 1px solid var(--border-color);
 }
 .Pagination__NavItem.is-active {
@@ -1386,7 +1386,7 @@ a {
   }
   .CollectionToolbar__Item {
     /* flex: 1 0 auto; */
-    padding: 18px 45px;
+    padding: 20px 45px;
     background: transparent;
     border: none;
     border-left: 1px solid var(--border-color);

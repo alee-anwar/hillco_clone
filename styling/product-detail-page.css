@@ -125,6 +125,7 @@ body {
   top: 0;
   left: -500px;
   transition: left 0.5s ease;
+  z-index: 30;
   /* transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1),visibility .5s cubic-bezier(0.645, 0.045, 0.355, 1); */
 }
 
@@ -583,6 +584,7 @@ main {
 }
 .Product__Wrapper {
   display: flex;
+  min-height: 1440px;
 }
 
 .Product__Gallary {
@@ -617,6 +619,10 @@ main {
   border: 1px solid var(--heading-color);
 }
 
+.addSpace {
+  padding: 70px;
+}
+
 .Product__Slideshow {
   padding-left: 50px;
   flex: 1 0 auto;
@@ -624,6 +630,8 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
+
+
 
 .carousel_cell {
   outline: none;
@@ -911,7 +919,9 @@ main {
 .BuyButton {
   text-decoration: none;
   text-align: center;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 28px;
   color: #000;
   position: relative;
@@ -941,7 +951,7 @@ main {
 
 .Button__SeparatorDot {
   display: inline-block;
-  margin: 0 18px 3px;
+  margin: 0px 18px;
   content: "";
   height: 3px;
   width: 3px;
