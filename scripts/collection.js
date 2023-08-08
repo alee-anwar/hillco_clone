@@ -43,26 +43,69 @@ const drawer = document.getElementById("collection-filter-drawer");
 
 const collapsibleButtons = document.querySelectorAll(".Collapsible__Button");
 
+// collapsibleButtons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     const collapsibleInner = this.nextElementSibling;
+//     collapsibleInner.classList.toggle("Collapsible__Inner--active");
+//     this.setAttribute(
+//       "aria-expanded",
+//       collapsibleInner.classList.contains("Collapsible__Inner--active")
+//     );
+
+//     // Toggle the plus and minus buttons when the collapsible inner section is active
+//     const plusSign = this.querySelector(".Collapsible__Plus");
+//     plusSign.classList.toggle("Collapsible__Plus--hidden",
+//         collapsibleInner.classList.contains("Collapsible__Inner--active"));
+
+//     const minusSign = this.querySelector(".Collapsible__Minus");
+//     minusSign.classList.toggle("Collapsible__Minus--hidden",
+//         !collapsibleInner.classList.contains("Collapsible__Inner--active"));
+//   });
+// });
+
+// const collapsibleButtons = document.querySelectorAll(".collapsible-button");
+
 collapsibleButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const collapsibleInner = this.nextElementSibling;
+
+    // Close all other open collapsible inner sections
+    collapsibleButtons.forEach((otherButton) => {
+      const otherCollapsibleInner = otherButton.nextElementSibling;
+      if (
+        otherButton !== button &&
+        otherCollapsibleInner.classList.contains("Collapsible__Inner--active")
+      ) {
+        otherCollapsibleInner.classList.remove("Collapsible__Inner--active");
+        otherButton.setAttribute("aria-expanded", false);
+
+        const plusSign = otherButton.querySelector(".Collapsible__Plus");
+        plusSign.classList.remove("Collapsible__Plus--hidden");
+
+        const minusSign = otherButton.querySelector(".Collapsible__Minus");
+        minusSign.classList.add("Collapsible__Minus--hidden");
+      }
+    });
+
     collapsibleInner.classList.toggle("Collapsible__Inner--active");
     this.setAttribute(
       "aria-expanded",
       collapsibleInner.classList.contains("Collapsible__Inner--active")
     );
 
-    // Toggle the plus and minus buttons when the collapsible inner section is active
     const plusSign = this.querySelector(".Collapsible__Plus");
-    plusSign.classList.toggle("Collapsible__Plus--hidden", 
-        collapsibleInner.classList.contains("Collapsible__Inner--active"));
-        
+    plusSign.classList.toggle(
+      "Collapsible__Plus--hidden",
+      collapsibleInner.classList.contains("Collapsible__Inner--active")
+    );
+
     const minusSign = this.querySelector(".Collapsible__Minus");
-    minusSign.classList.toggle("Collapsible__Minus--hidden", 
-        !collapsibleInner.classList.contains("Collapsible__Inner--active"));
+    minusSign.classList.toggle(
+      "Collapsible__Minus--hidden",
+      !collapsibleInner.classList.contains("Collapsible__Inner--active")
+    );
   });
 });
-
 
 searchIcon.addEventListener("click", function (event) {
   event.preventDefault();
@@ -92,7 +135,9 @@ openDrawerButton.addEventListener("click", function (event) {
   document.body.classList.add("body-overflow-hidden");
   pageOverlay.style.display = "block";
   drawer.classList.toggle("Drawer--open");
-  document.getElementById("result-footer-animation").classList.toggle("drawer-up");
+  document
+    .getElementById("result-footer-animation")
+    .classList.toggle("drawer-up");
   pageOverlay.style.zIndex = "30";
   // seeResultsButton.classList.add("moved-up");
   console.log("darwer " + filterDrawer.style.display);
@@ -107,7 +152,9 @@ closeFilterDrawer.addEventListener("click", function (event) {
     filterDrawer.style.display = "none";
     document.body.classList.remove("body-overflow-hidden");
     pageOverlay.style.display = "none";
-    document.getElementById("result-footer-animation").classList.remove("drawer-up");
+    document
+      .getElementById("result-footer-animation")
+      .classList.remove("drawer-up");
     pageOverlay.style.zIndex = "10";
     console.log("drawer " + filterDrawer.style.display);
     console.log("pageoverlay " + pageOverlay.style.display);
@@ -115,4 +162,23 @@ closeFilterDrawer.addEventListener("click", function (event) {
     drawer.classList.remove("Drawer--open");
     drawer.style.display = "block";
   }, 500);
+});
+
+pageOverlay.addEventListener("click", function () {
+  // if (!searchDropdown.classList.contains("search_down")) {
+  drawer.classList.add("Drawer--closing");
+  setTimeout(function () {
+    filterDrawer.style.display = "none";
+    document.body.classList.remove("body-overflow-hidden");
+    pageOverlay.style.display = "none";
+    document
+      .getElementById("result-footer-animation")
+      .classList.remove("drawer-up");
+    pageOverlay.style.zIndex = "10";
+    drawer.classList.remove("Drawer--closing");
+    drawer.classList.remove("Drawer--open");
+    drawer.style.display = "block";
+  }, 500);
+
+  // }
 });

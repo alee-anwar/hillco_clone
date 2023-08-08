@@ -33,6 +33,7 @@ window.addEventListener("load", function () {
   const image = document.getElementById("bee-animated-image");
   image.classList.add("show-image");
 });
+
 // Wait for the image to load
 window.addEventListener("load", function () {
   const productImages = document.querySelectorAll(".product-image img");
@@ -54,6 +55,8 @@ document.getElementById("menu-button").addEventListener("click", function () {
   pageOverlay.classList.add("is-visible");
   pageOverlay.style.zIndex = "21";
   searchDropdown.classList.remove("search_down");
+  document.body.classList.toggle("no-scroll");
+
   console.log("page overlay block");
 });
 
@@ -65,6 +68,8 @@ document.getElementById("close-button").addEventListener("click", function () {
   document.getElementById("drawer").setAttribute("aria-hidden", "true");
   pageOverlay.classList.remove("is-visible");
   pageOverlay.style.zIndex = "10";
+  document.body.classList.remove("no-scroll");
+
   console.log("page overlay none");
 });
 

@@ -1235,7 +1235,7 @@ a {
   width: 400px;
   height: 100vh;
   display: block;
-  transition: right 0.5s ease; /* Use 'right' instead of 'left' for reverse animation */
+  transition: right 0.5s ease-out;
 }
 
 .Drawer--open {
@@ -1244,7 +1244,7 @@ a {
 
 .Drawer--closing {
   right: -400px;
-  transition: right 0.5s ease;
+  transition: right 0.5s ease-out;
 }
 
 .Drawer--fromRight .Drawer__Container {
@@ -1284,8 +1284,10 @@ a {
 }
 .Drawer__Main {
   max-height: calc(100vh - 60px);
+  /* max-height: 100vh; */
   overflow-y: auto;
   padding-top: 32px;
+  margin-bottom: 120px;
 }
 .Collapsible--padded {
   padding: 0px 24px 0px;
@@ -1293,18 +1295,27 @@ a {
 }
 
 .Drawer__Footer {
+  position: absolute;
   padding: 24px 30px;
   box-shadow: 0 -1px rgba(var(--border-color-rgb), 0.6);
-  position: absolute;
-  bottom: -100%;
+  /* bottom: -100%; */
+  bottom: 20px;
   left: 0;
   width: 100%;
-  transition: bottom 0.4s ease-out 0.2s;
+  /* transition: bottom 0.4s ease-out 0.2s; */
   background: white;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity .35s cubic-bezier(.25,.46,.45,.94),transform .35s cubic-bezier(.25,.46,.45,.94);
 }
 
 .drawer-up {
-  bottom: 0;
+  /* bottom: 20px;
+  transition: bottom 0.4s ease-out 0.2s; */
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .25s cubic-bezier(.25,.46,.45,.94) .45s,transform .25s cubic-bezier(.25,.46,.45,.94) .45s;
 }
 
 
@@ -1619,18 +1630,25 @@ a {
   }
 
   /* Customized Filter Drawer */
+  .Drawer__Footer {
+    bottom: 0;
+  }
 
   .Drawer--fromRight {
     /* max-width: 575px; */
-    right: -575px;
-    width: 575px;
+    /* right: -575px; */
+    right: -100vw;
+    /* width: 575px; */
+    width: calc(100vw - 65px);
   }
   .Drawer--open {
     right: 0;
   }
 
   .Drawer--closing {
-    right: -575px;
+    /* right: -575px; */
+    right: -100vw;
+
     transition: right 0.5s ease;
   }
   .Drawer__Main {
@@ -1641,12 +1659,24 @@ a {
     margin: 0px;
     padding: 20px 0px;
   }
+
   .Collapsible__Inner {
-    display: none;
-  }
-  .Collapsible__Inner--active {
     display: block;
+    height: 0;
+    visibility: hidden;
+    /* transition: height .35s ease-in-out, visibility 0s ease-in-out .35s; */
+    transition: height 1s ease, visibility 1s ease .35s;
+    overflow: hidden;
   }
+
+  .Collapsible__Inner--active {
+    overflow: visible;
+    height: auto;
+    visibility: visible;
+    /* transition: height .35s ease-in-out; */
+    transition: height 1s ease;
+  }
+
   .Collapsible--padded {
     margin: 0;
     padding: 0 24px;
@@ -1746,14 +1776,20 @@ a {
     padding: 14px 18px;
   }
   .Drawer--fromRight {
+    /* right: -335px; */
+    right: -100vw;
     width: calc(100vw - 65px);
   }
   .Drawer--open {
     right: 0;
   }
   .Drawer--closing {
-    right: -335px;
+    /* right: -335px; */
+    right: -100vw;
     transition: right 0.5s ease;
+  }
+  .drawer-up {
+    bottom: 0px;
   }
   .CollectionToolbar--top {
     top: 80px;
@@ -1785,19 +1821,27 @@ a {
     height: 100vh;
   }
   .Drawer--fromRight {
+    /* right: -255px;
+     */
+     right: -100vw;
+
     width: calc(100vw - 65px);
   }
   .Drawer--open {
     right: 0;
   }
   .Drawer--closing {
-    right: -234px;
+    /* right: -255px; */
+    right: -100vw;
+
     transition: right 0.5s ease;
   }
   .Drawer__Footer {
     padding: 24px;
   }
-
+  .drawer-up {
+    bottom: 0px;
+  }
   .Button {
     padding: 14px 22px;
     font-weight: 700;

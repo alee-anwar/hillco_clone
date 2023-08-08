@@ -141,10 +141,10 @@ navImages.forEach((navImage) => {
 
     productSpaces.forEach((space) => space.classList.remove("addSpace"));
 
-    secondProductImage.classList.add("addSpace");
+    secondProductImage.classList.toggle("addSpace");
 
     // Toggle the active state
-    isFirstProductActive = !isFirstProductActive;
+    // isFirstProductActive = !isFirstProductActive;
 
     // Toggle the active state
   });

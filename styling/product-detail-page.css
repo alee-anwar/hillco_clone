@@ -599,12 +599,10 @@ main {
 .Product__SlideshowNav.Product__SlideshowNav--thumbnails {
   position: sticky;
   top: 0;
-}
-
-.Product__SlideshowNav--thumbnails {
   padding: 0 0 50px;
   width: 70px;
 }
+
 .Product__SlideshowNavScroller {
   width: 68px;
   height: auto;
@@ -629,6 +627,10 @@ main {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.Horizontal__Slideshow {
+  display: none;
 }
 
 
@@ -1628,6 +1630,14 @@ textarea::placeholder {
 
   .Product__SlideshowNav {
     display: none;
+  }
+
+  .Verticle__Slideshow {
+    display: none;
+  }
+
+  .Horizontal__Slideshow {
+    display: block;
   }
 
   .Product__Gallary {

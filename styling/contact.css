@@ -317,8 +317,7 @@ body {
   width: 100%;
   pointer-events: none;
   z-index: 1;
-  /* backdrop-filter: blur(1px); Standard syntax  */
-}
+} 
 
 /* [data-drawer-animated-bottom] {
   opacity: 0;
@@ -1309,9 +1308,9 @@ textarea:focus {
     width: calc(100vw - 65px);
     left: -100vw;
   }
-  .drawer-main {
+  /* .drawer-main {
     padding: 0px 30px 18px;
-  }
+  } */
   .drawer-header {
     height: 60px;
     padding: 0px 24px 0px 18px;
